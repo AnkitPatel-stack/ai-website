@@ -915,6 +915,462 @@
 // });
 
 
+// const express = require('express');
+// const path = require('path');
+// const cors = require('cors');
+// const helmet = require('helmet');
+// const morgan = require('morgan');
+// const rateLimit = require('express-rate-limit');
+// require('dotenv').config();
+
+// const app = express();
+
+// // Security middleware
+// app.use(helmet({
+//   contentSecurityPolicy: false,
+// }));
+
+// // Rate limiting
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 1000,
+// });
+// app.use('/api/', limiter);
+
+// // CORS configuration for production
+// const allowedOrigins = process.env.NODE_ENV === 'production' 
+//   ? [
+//       process.env.FRONTEND_URL,
+//       'https://your-render-app.onrender.com', // Your Render frontend URL
+//       'http://localhost:3000' // For local testing
+//     ].filter(Boolean)
+//   : [
+//       'http://localhost:3000',
+//       'http://10.251.140.151:3000',
+//       process.env.FRONTEND_URL
+//     ].filter(Boolean);
+
+// console.log('🌐 Allowed origins:', allowedOrigins);
+// console.log('🏭 Environment:', process.env.NODE_ENV);
+
+// // CORS middleware
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     // Allow requests with no origin (like mobile apps or curl requests)
+//     if (!origin && process.env.NODE_ENV === 'development') {
+//       return callback(null, true);
+//     }
+    
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       console.warn('CORS blocked origin:', origin);
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+// }));
+
+// // Handle preflight requests
+// app.options('*', cors());
+
+// // Body parsing middleware
+// app.use(express.json({ limit: '10mb' }));
+// app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// // Logging
+// app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
+
+// // Mock data for content
+// const mockContent = {
+//   hero: {
+//     hero_title: 'Transform Your Business with AI-Powered Solutions',
+//     hero_subtitle: 'We build enterprise-grade AI solutions that drive innovation, efficiency, and growth for forward-thinking companies.',
+//     hero_cta_primary: 'Start Your AI Journey',
+//     hero_cta_secondary: 'View Case Studies',
+//     hero_background: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+//   },
+//   about: {
+//     about_title: 'Leading the AI Revolution',
+//     about_description: 'We are at the forefront of artificial intelligence innovation, developing cutting-edge solutions that transform how businesses operate.',
+//     about_stats: [
+//       { label: 'Projects Delivered', value: '150', suffix: '+' },
+//       { label: 'AI Models Deployed', value: '500', suffix: '+' },
+//       { label: 'Client Satisfaction', value: '98', suffix: '%' },
+//       { label: 'Team Members', value: '50', suffix: '+' },
+//     ],
+//   },
+//   services: {
+//     services_title: 'Our AI Services',
+//     services_subtitle: 'Comprehensive AI solutions tailored to your business needs',
+//     services_list: [
+//       {
+//         title: 'AI Strategy & Consulting',
+//         description: 'Develop a comprehensive AI roadmap aligned with your business objectives.',
+//         icon: 'strategy',
+//       },
+//       {
+//         title: 'Machine Learning Development',
+//         description: 'Custom ML models built and deployed for your specific use cases.',
+//         icon: 'ml',
+//       },
+//       {
+//         title: 'Natural Language Processing',
+//         description: 'Advanced NLP solutions for text analysis, chatbots, and language understanding.',
+//         icon: 'nlp',
+//       },
+//       {
+//         title: 'Computer Vision',
+//         description: 'Image and video analysis solutions for automation and insights.',
+//         icon: 'vision',
+//       },
+//       {
+//         title: 'AI Integration',
+//         description: 'Seamlessly integrate AI capabilities into your existing systems.',
+//         icon: 'integration',
+//       },
+//       {
+//         title: 'AI Training & Support',
+//         description: 'Comprehensive training and ongoing support for your teams.',
+//         icon: 'support',
+//       },
+//     ],
+//   },
+//   team: {
+//     team_title: 'Meet Our Leadership',
+//     team_subtitle: 'Our team combines decades of experience in AI, technology, and business transformation.',
+//     team_members: [
+//       {
+//         name: 'Dr. Sarah Chen',
+//         position: 'CEO & Founder',
+//         bio: 'Former AI Research Lead at Google, PhD in Computer Science from Stanford',
+//         image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+//         linkedin: '#',
+//       },
+//       {
+//         name: 'Michael Rodriguez',
+//         position: 'CTO',
+//         bio: 'Ex-Microsoft AI Architect, 15+ years in machine learning systems',
+//         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+//         linkedin: '#',
+//       },
+//       {
+//         name: 'Jessica Williams',
+//         position: 'Head of Product',
+//         bio: 'Former Product Director at OpenAI, specializes in AI product strategy',
+//         image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+//         linkedin: '#',
+//       },
+//       {
+//         name: 'David Kim',
+//         position: 'Lead ML Engineer',
+//         bio: 'PhD in AI from MIT, published researcher in neural networks',
+//         image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+//         linkedin: '#',
+//       },
+//     ],
+//   },
+//   why_choose_us: {
+//     why_title: 'Why Choose Our AI Solutions',
+//     why_points: [
+//       {
+//         title: 'Enterprise-Grade Security',
+//         description: 'Bank-level security protocols and compliance standards for all our solutions.',
+//       },
+//       {
+//         title: 'Scalable Architecture',
+//         description: 'Designed to grow with your business from day one.',
+//       },
+//       {
+//         title: 'Transparent Pricing',
+//         description: 'Clear, predictable pricing with no hidden fees.',
+//       },
+//       {
+//         title: '24/7 Expert Support',
+//         description: 'Round-the-clock support from our AI specialists.',
+//       },
+//       {
+//         title: 'Proven Track Record',
+//         description: 'Successfully delivered AI solutions for Fortune 500 companies.',
+//       },
+//       {
+//         title: 'Continuous Innovation',
+//         description: 'We stay ahead of the curve with cutting-edge AI research.',
+//       },
+//     ],
+//   },
+//   contact: {
+//     contact_title: 'Ready to Transform Your Business?',
+//     contact_subtitle: "Let's discuss how AI can drive growth and efficiency in your organization.",
+//   },
+// };
+
+// // Mock authentication data
+// const mockUsers = [
+//   {
+//     id: '1',
+//     email: 'admin@aiwebsite.com',
+//     password: 'Admin@123',
+//     name: 'System Administrator',
+//     role: 'admin'
+//   }
+// ];
+
+// // Add request logging middleware
+// app.use((req, res, next) => {
+//   console.log(`${req.method} ${req.url}`);
+//   next();
+// });
+
+// // ==================== MOCK API ENDPOINTS ====================
+
+// // Health check endpoint
+// app.get('/api/health', (req, res) => {
+//   res.status(200).json({
+//     status: 'healthy',
+//     database: 'mock-mode',
+//     timestamp: new Date().toISOString(),
+//     uptime: process.uptime(),
+//     allowedOrigins: allowedOrigins,
+//     environment: process.env.NODE_ENV,
+//     message: 'AI Website API is running'
+//   });
+// });
+
+// // Content endpoints
+// app.get('/api/content/page/:page', (req, res) => {
+//   const { page } = req.params;
+//   const { section } = req.query;
+  
+//   console.log(`📁 Getting content for page: ${page}, section: ${section}`);
+  
+//   if (page === 'home') {
+//     if (section && mockContent[section]) {
+//       // Return specific section
+//       return res.json({ [section]: mockContent[section] });
+//     } else if (!section) {
+//       // Return all sections
+//       return res.json(mockContent);
+//     }
+//   }
+  
+//   // Return empty for other pages
+//   res.json({});
+// });
+
+// app.get('/api/content/item/:key', (req, res) => {
+//   const { key } = req.params;
+//   res.json({
+//     key,
+//     value: `Mock value for ${key}`,
+//     type: 'text',
+//     page: 'home',
+//     section: 'hero'
+//   });
+// });
+
+// // Auth endpoints
+// app.post('/api/auth/login', (req, res) => {
+//   const { email, password } = req.body;
+  
+//   const user = mockUsers.find(u => u.email === email && u.password === password);
+  
+//   if (user) {
+//     res.json({
+//       message: 'Login successful',
+//       user: {
+//         id: user.id,
+//         email: user.email,
+//         name: user.name,
+//         role: user.role,
+//       },
+//       token: 'mock-jwt-token-for-development',
+//     });
+//   } else {
+//     res.status(401).json({ error: 'Invalid credentials' });
+//   }
+// });
+
+// app.post('/api/auth/register', (req, res) => {
+//   const { email, password, name } = req.body;
+  
+//   res.status(201).json({
+//     message: 'User registered successfully',
+//     user: {
+//       id: Date.now().toString(),
+//       email,
+//       name,
+//       role: 'user',
+//     },
+//     token: 'mock-jwt-token-for-development',
+//   });
+// });
+
+// // Contact endpoint
+// app.post('/api/contact', (req, res) => {
+//   const { name, email, subject, message } = req.body;
+  
+//   console.log('📧 Contact form submitted:', { name, email, subject });
+  
+//   res.status(201).json({
+//     message: 'Thank you for your enquiry. We will get back to you soon!',
+//     contact: {
+//       id: Date.now().toString(),
+//       name,
+//       email,
+//       subject,
+//     },
+//   });
+// });
+
+// // Chatbot endpoint
+// app.post('/api/chatbot/chat', (req, res) => {
+//   const { message } = req.body;
+  
+//   const responses = [
+//     "Hello! I'm your AI assistant. How can I help you today?",
+//     "I can help you with information about our AI services, pricing, or schedule a consultation.",
+//     "Our AI solutions help businesses transform their operations with machine learning and automation.",
+//     "Would you like to learn more about our specific AI services?",
+//     "I'm here to answer any questions you have about our AI solutions.",
+//   ];
+  
+//   const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+  
+//   res.json({
+//     response: randomResponse,
+//     sessionId: 'mock-session-id',
+//     history: [],
+//     tokens: 0,
+//   });
+// });
+
+// // Admin endpoints (protected with mock auth)
+// const mockAuthMiddleware = (req, res, next) => {
+//   const token = req.headers.authorization;
+  
+//   if (token && token.includes('mock-jwt-token')) {
+//     req.user = { id: '1', role: 'admin' };
+//     return next();
+//   }
+  
+//   res.status(401).json({ error: 'Unauthorized' });
+// };
+
+// app.get('/api/admin/dashboard/stats', mockAuthMiddleware, (req, res) => {
+//   res.json({
+//     statistics: {
+//       users: { total: 1, active: 1 },
+//       contacts: { total: 5, recent: 2 },
+//       chatSessions: 10,
+//       contentUpdates: 3,
+//     },
+//     contactStatus: [
+//       { _id: 'new', count: 2 },
+//       { _id: 'read', count: 2 },
+//       { _id: 'replied', count: 1 },
+//     ],
+//     userTrend: [
+//       { _id: new Date().toISOString().split('T')[0], count: 1 }
+//     ],
+//   });
+// });
+
+// // 404 handler for API routes
+// app.use('/api/*', (req, res) => {
+//   console.log(`API 404: ${req.method} ${req.originalUrl}`);
+//   res.status(404).json({ 
+//     error: 'API endpoint not found',
+//     requestedUrl: req.originalUrl,
+//     availableEndpoints: [
+//       'GET  /api/health',
+//       'GET  /api/content/page/:page',
+//       'POST /api/auth/login',
+//       'POST /api/auth/register',
+//       'POST /api/contact',
+//       'POST /api/chatbot/chat',
+//       'GET  /api/admin/dashboard/stats (requires auth)',
+//     ]
+//   });
+// });
+
+// // Serve frontend build if in production and frontend files exist
+// if (process.env.NODE_ENV === 'production') {
+//   // Serve static files from the frontend build directory
+//   const frontendBuildPath = path.join(__dirname, 'frontend', 'build');
+  
+//   // Check if frontend build exists
+//   const fs = require('fs');
+//   if (fs.existsSync(frontendBuildPath)) {
+//     console.log('📁 Serving frontend from:', frontendBuildPath);
+//     app.use(express.static(frontendBuildPath));
+    
+//     // Handle React routing, return all requests to React app
+//     app.get('*', (req, res) => {
+//       res.sendFile(path.join(frontendBuildPath, 'index.html'));
+//     });
+//   } else {
+//     console.log('⚠️ Frontend build not found, serving API only');
+    
+//     // Basic route for root
+//     app.get('/', (req, res) => {
+//       res.json({
+//         message: 'AI Website API',
+//         status: 'running',
+//         endpoints: {
+//           api: '/api/health',
+//           content: '/api/content/page/home',
+//           admin: 'POST /api/auth/login with admin@aiwebsite.com / Admin@123'
+//         }
+//       });
+//     });
+//   }
+// } else {
+//   // Development mode - just serve API
+//   app.get('/', (req, res) => {
+//     res.json({
+//       message: 'AI Website API (Development Mode)',
+//       status: 'running',
+//       environment: process.env.NODE_ENV,
+//       endpoints: {
+//         health: '/api/health',
+//         content: '/api/content/page/home',
+//         login: 'POST /api/auth/login',
+//         contact: 'POST /api/contact',
+//         chatbot: 'POST /api/chatbot/chat'
+//       }
+//     });
+//   });
+// }
+
+// // Error handling middleware
+// app.use((err, req, res, next) => {
+//   console.error('Error:', err.message);
+  
+//   res.status(err.status || 500).json({
+//     error: {
+//       message: err.message || 'Internal Server Error',
+//       ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+//     },
+//   });
+// });
+
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running on port ${PORT}`);
+//   console.log(`🌐 Allowed origins: ${allowedOrigins.join(', ')}`);
+//   console.log(`🏭 Environment: ${process.env.NODE_ENV || 'development'}`);
+//   console.log(`💡 Running in MOCK MODE (no MongoDB required)`);
+//   console.log(`📡 Health check: http://localhost:${PORT}/api/health`);
+  
+//   if (process.env.NODE_ENV === 'production') {
+//     console.log(`🔗 Production URL: https://your-app.onrender.com`);
+//   }
+// });
+
+
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -937,40 +1393,51 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
-// CORS configuration for production
+// CORS configuration - Merged version
 const allowedOrigins = process.env.NODE_ENV === 'production' 
   ? [
       process.env.FRONTEND_URL,
-      'https://your-render-app.onrender.com', // Your Render frontend URL
+      'https://ai-website-eight-delta.vercel.app', // Your Vercel frontend
+      'https://ai-website-q79r.onrender.com', // Your Render backend
       'http://localhost:3000' // For local testing
     ].filter(Boolean)
   : [
       'http://localhost:3000',
       'http://10.251.140.151:3000',
-      process.env.FRONTEND_URL
+      process.env.FRONTEND_URL,
+      'https://ai-website-eight-delta.vercel.app', // Include for development testing
+      'https://ai-website-q79r.onrender.com' // Include for development testing
     ].filter(Boolean);
 
 console.log('🌐 Allowed origins:', allowedOrigins);
 console.log('🏭 Environment:', process.env.NODE_ENV);
 
-// CORS middleware
+// Enhanced CORS middleware with more flexible options
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin && process.env.NODE_ENV === 'development') {
+    if (!origin) {
       return callback(null, true);
     }
     
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+    // Check if origin is in allowed list
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else if (process.env.NODE_ENV === 'development') {
+      // In development, log but allow all origins for easier testing
+      console.log('Development mode: Allowing origin:', origin);
       callback(null, true);
     } else {
+      // In production, block unauthorized origins
       console.warn('CORS blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  exposedHeaders: ['Content-Range', 'X-Content-Range'],
+  maxAge: 86400 // 24 hours
 }));
 
 // Handle preflight requests
@@ -1135,7 +1602,9 @@ app.get('/api/health', (req, res) => {
     uptime: process.uptime(),
     allowedOrigins: allowedOrigins,
     environment: process.env.NODE_ENV,
-    message: 'AI Website API is running'
+    frontendUrl: process.env.FRONTEND_URL,
+    message: 'AI Website API is running',
+    cors: 'configured'
   });
 });
 
@@ -1358,7 +1827,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌐 Allowed origins: ${allowedOrigins.join(', ')}`);
   console.log(`🏭 Environment: ${process.env.NODE_ENV || 'development'}`);
@@ -1366,6 +1835,7 @@ app.listen(PORT, () => {
   console.log(`📡 Health check: http://localhost:${PORT}/api/health`);
   
   if (process.env.NODE_ENV === 'production') {
-    console.log(`🔗 Production URL: https://your-app.onrender.com`);
+    console.log(`🔗 Production URL: https://ai-website-q79r.onrender.com`);
+    console.log(`🔗 Frontend URL: https://ai-website-eight-delta.vercel.app`);
   }
 });
