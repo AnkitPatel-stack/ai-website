@@ -1,0 +1,73 @@
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { Box } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
+
+// Pages
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import AdminDashboard from './admin/AdminDashboard';
+import AdminLogin from './admin/AdminLogin';
+
+// Services
+import { AuthProvider } from './services/AuthContext';
+import ProtectedRoute from './services/ProtectedRoute';
+
+function App() {
+  const location = useLocation();
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  useEffect(() => {
+    // Show chatbot after 30 seconds on home page
+    if (location.pathname === '/') {
+      const timer = setTimeout(() => {
+        setShowChatbot(true);
+      }, 30000);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
+
+  return (
+    <AuthProvider>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
+        <Navbar />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Routes location={location}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route
+                path="/admin/*"
+                element={
+                  <ProtectedRoute role="admin">
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </motion.div>
+        </AnimatePresence>
+        <Footer />
+        {showChatbot && <Chatbot onClose={() => setShowChatbot(false)} />}
+      </Box>
+    </AuthProvider>
+  );
+}
+
+export default App;
