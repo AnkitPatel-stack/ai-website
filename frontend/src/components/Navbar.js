@@ -1002,6 +1002,620 @@
 // export default Navbar;
 
 
+// // src/components/Navbar.js
+// import React, { useState, useEffect } from 'react';
+// import {
+//   AppBar,
+//   Toolbar,
+//   Container,
+//   Button,
+//   Box,
+//   IconButton,
+//   Drawer,
+//   List,
+//   ListItem,
+//   ListItemText,
+//   Typography,
+//   Avatar,
+//   Menu,
+//   MenuItem,
+//   alpha,
+// } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import CloseIcon from '@mui/icons-material/Close';
+// import SmartToyIcon from '@mui/icons-material/SmartToy';
+// import LoginIcon from '@mui/icons-material/Login';
+// import PersonAddIcon from '@mui/icons-material/PersonAdd';
+// import DashboardIcon from '@mui/icons-material/Dashboard';
+// import LogoutIcon from '@mui/icons-material/Logout';
+// import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { useAuth } from '../contexts/AuthContext';
+
+// const Navbar = () => {
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [anchorEl, setAnchorEl] = useState(null);
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   const { user, logout, isAuthenticated } = useAuth();
+
+//   const navItems = [
+//     { label: 'Home', path: '/', section: 'hero' },
+//     { label: 'About', path: '/about', section: 'about' },
+//     { label: 'Services', path: '/services', section: 'services' },
+//     { label: 'Team', path: '/team', section: 'team' },
+//     { label: 'Contact', path: '/contact', section: 'contact' },
+//   ];
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 10);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleDrawerToggle = () => {
+//     setMobileOpen(!mobileOpen);
+//   };
+
+//   const handleMenuOpen = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+
+//   const handleMenuClose = () => {
+//     setAnchorEl(null);
+//   };
+
+//   const handleLogout = () => {
+//     logout();
+//     handleMenuClose();
+//     navigate('/');
+//   };
+
+//   const handleNavClick = (path, section = null) => {
+//     if (section && location.pathname === '/') {
+//       const element = document.getElementById(section);
+//       if (element) {
+//         const yOffset = -70;
+//         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//         window.scrollTo({ top: y, behavior: 'smooth' });
+//       }
+//     } else if (section) {
+//       navigate(`/#${section}`);
+//       setTimeout(() => {
+//         const element = document.getElementById(section);
+//         if (element) {
+//           const yOffset = -70;
+//           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//         }
+//       }, 100);
+//     } else {
+//       navigate(path);
+//     }
+//     setMobileOpen(false);
+//   };
+
+//   const drawer = (
+//     <Box sx={{ 
+//       width: 280, 
+//       height: '100%', 
+//       background: 'linear-gradient(180deg, #000000 0%, #121212 100%)',
+//       position: 'relative',
+//       overflow: 'hidden'
+//     }}>
+//       {/* Animated Background Effects */}
+//       <Box sx={{
+//         position: 'absolute',
+//         top: 0,
+//         left: 0,
+//         right: 0,
+//         bottom: 0,
+//         background: 'radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%)',
+//         animation: 'pulseEffect 8s infinite alternate'
+//       }} />
+      
+//       <Box sx={{ 
+//         position: 'relative', 
+//         zIndex: 1,
+//         p: 3, 
+//         borderBottom: '1px solid rgba(255,255,255,0.1)',
+//         background: 'rgba(0,0,0,0.7)',
+//         backdropFilter: 'blur(10px)'
+//       }}>
+//         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+//           <Typography variant="h6" sx={{ 
+//             color: '#00FF88', 
+//             fontWeight: 800,
+//             fontSize: '1.5rem',
+//             textShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+//           }}>
+//             AI<span style={{ color: '#fff', fontWeight: 600 }}>VISION</span>
+//           </Typography>
+//           <IconButton onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
+//             <CloseIcon />
+//           </IconButton>
+//         </Box>
+//       </Box>
+      
+//       <List sx={{ p: 2, position: 'relative', zIndex: 1 }}>
+//         {navItems.map((item, index) => (
+//           <motion.div
+//             key={item.label}
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.3, delay: index * 0.05 }}
+//           >
+//             <ListItem
+//               component="button"
+//               onClick={() => handleNavClick(item.path, item.section)}
+//               sx={{
+//                 py: 2,
+//                 borderRadius: 2,
+//                 mb: 1,
+//                 background: (location.pathname === item.path || 
+//                            (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                            ? 'linear-gradient(90deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0.1) 100%)' 
+//                            : 'transparent',
+//                 border: '1px solid',
+//                 borderColor: (location.pathname === item.path || 
+//                             (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                             ? 'rgba(0, 255, 136, 0.3)' : 'rgba(255,255,255,0.1)',
+//                 transition: 'all 0.3s ease',
+//                 '&:hover': {
+//                   background: 'linear-gradient(90deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 255, 136, 0.05) 100%)',
+//                   borderColor: 'rgba(0, 255, 136, 0.5)',
+//                   transform: 'translateX(5px)',
+//                 },
+//               }}
+//             >
+//               <ListItemText 
+//                 primary={item.label} 
+//                 primaryTypographyProps={{
+//                   fontWeight: 600,
+//                   fontSize: '1.1rem',
+//                   color: (location.pathname === item.path || 
+//                          (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                          ? '#00FF88' : '#fff'
+//                 }}
+//               />
+//             </ListItem>
+//           </motion.div>
+//         ))}
+        
+//         {isAuthenticated && user?.role === 'admin' && (
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.3, delay: navItems.length * 0.05 }}
+//           >
+//             <ListItem
+//               component="button"
+//               onClick={() => handleNavClick('/admin')}
+//               sx={{
+//                 py: 2,
+//                 borderRadius: 2,
+//                 mb: 1,
+//                 background: 'linear-gradient(90deg, rgba(138, 43, 226, 0.2) 0%, rgba(138, 43, 226, 0.1) 100%)',
+//                 border: '1px solid rgba(138, 43, 226, 0.3)',
+//                 transition: 'all 0.3s ease',
+//                 '&:hover': {
+//                   background: 'linear-gradient(90deg, rgba(138, 43, 226, 0.3) 0%, rgba(138, 43, 226, 0.2) 100%)',
+//                   borderColor: 'rgba(138, 43, 226, 0.5)',
+//                   transform: 'translateX(5px)',
+//                 },
+//               }}
+//             >
+//               <DashboardIcon sx={{ mr: 2, color: '#8A2BE2' }} />
+//               <ListItemText 
+//                 primary="Admin Dashboard" 
+//                 primaryTypographyProps={{
+//                   fontWeight: 600,
+//                   color: '#8A2BE2'
+//                 }}
+//               />
+//             </ListItem>
+//           </motion.div>
+//         )}
+//       </List>
+      
+//       {/* User Info in Drawer */}
+//       {isAuthenticated && (
+//         <Box sx={{ 
+//           p: 3, 
+//           mt: 'auto',
+//           borderTop: '1px solid rgba(255,255,255,0.1)',
+//           background: 'rgba(0,0,0,0.5)'
+//         }}>
+//           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+//             <Avatar
+//               sx={{
+//                 width: 40,
+//                 height: 40,
+//                 bgcolor: '#00FF88',
+//                 color: '#000',
+//                 fontWeight: 'bold',
+//                 mr: 2
+//               }}
+//             >
+//               {user?.name?.charAt(0) || 'U'}
+//             </Avatar>
+//             <Box>
+//               <Typography variant="body1" sx={{ color: '#fff', fontWeight: 600 }}>
+//                 {user?.name || 'User'}
+//               </Typography>
+//               <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)' }}>
+//                 {user?.email}
+//               </Typography>
+//             </Box>
+//           </Box>
+//           <Button
+//             fullWidth
+//             variant="contained"
+//             startIcon={<LogoutIcon />}
+//             onClick={handleLogout}
+//             sx={{
+//               bgcolor: 'rgba(255, 0, 0, 0.2)',
+//               color: '#ff4444',
+//               border: '1px solid rgba(255, 0, 0, 0.3)',
+//               '&:hover': {
+//                 bgcolor: 'rgba(255, 0, 0, 0.3)',
+//               }
+//             }}
+//           >
+//             Logout
+//           </Button>
+//         </Box>
+//       )}
+//     </Box>
+//   );
+
+//   return (
+//     <>
+//       <AppBar
+//         position="fixed" // ✅ Fixed position for sticky navbar
+//         sx={{
+//           bgcolor: scrolled ? 'rgba(0, 0, 0, 0.98)' : 'rgba(0, 0, 0, 0.95)',
+//           transition: 'all 0.3s ease',
+//           boxShadow: scrolled 
+//             ? '0 5px 20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 136, 0.15)' 
+//             : '0 2px 10px rgba(0, 0, 0, 0.5)',
+//           backdropFilter: 'blur(15px)',
+//           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+//           backgroundImage: 'linear-gradient(to bottom, #000000, #121212)',
+//           position: 'relative',
+//           overflow: 'hidden',
+//           zIndex: 9999, // ✅ High z-index to ensure it's on top
+//         }}
+//       >
+//         {/* Glowing Border Effect */}
+//         <Box sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           right: 0,
+//           height: '2px',
+//           background: 'linear-gradient(90deg, #00FF88, #8A2BE2, #00FF88)',
+//           backgroundSize: '200% 100%',
+//           animation: 'shimmer 3s infinite linear',
+//           '@keyframes shimmer': {
+//             '0%': { backgroundPosition: '-200% 0' },
+//             '100%': { backgroundPosition: '200% 0' }
+//           }
+//         }} />
+        
+//         {/* Particle Effect Background */}
+//         <Box sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           right: 0,
+//           bottom: 0,
+//           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300ff88' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+//           opacity: 0.3,
+//           pointerEvents: 'none'
+//         }} />
+
+//         <Container maxWidth="xl">
+//           <Toolbar disableGutters sx={{ 
+//             py: 0.5, // ✅ Reduced padding to make navbar more compact
+//             minHeight: '64px', // ✅ Fixed height
+//             position: 'relative', 
+//             zIndex: 1 
+//           }}>
+//             {/* Logo with Glow Effect */}
+//             <motion.div
+//               initial={{ opacity: 0, x: -20 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.5 }}
+//               whileHover={{ scale: 1.05 }}
+//             >
+//               <Typography
+//                 component={RouterLink}
+//                 to="/"
+//                 sx={{
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   textDecoration: 'none',
+//                   mr: 4,
+//                   filter: 'drop-shadow(0 0 10px rgba(0, 255, 136, 0.3))'
+//                 }}
+//               >
+//                 <SmartToyIcon sx={{ 
+//                   color: '#00FF88', 
+//                   mr: 1, 
+//                   fontSize: 30, // ✅ Slightly smaller
+//                   filter: 'drop-shadow(0 0 8px rgba(0, 255, 136, 0.5))'
+//                 }} />
+//                 <Typography
+//                   variant="h5"
+//                   sx={{
+//                     fontWeight: 900,
+//                     fontSize: '1.7rem', // ✅ Slightly smaller
+//                     letterSpacing: '1px',
+//                     background: 'linear-gradient(135deg, #00FF88 0%, #8A2BE2 50%, #00FF88 100%)',
+//                     backgroundClip: 'text',
+//                     WebkitBackgroundClip: 'text',
+//                     WebkitTextFillColor: 'transparent',
+//                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+//                     animation: 'glow 3s infinite alternate',
+//                     '@keyframes glow': {
+//                       '0%': { filter: 'drop-shadow(0 0 5px rgba(0, 255, 136, 0.3))' },
+//                       '100%': { filter: 'drop-shadow(0 0 15px rgba(138, 43, 226, 0.3))' }
+//                     }
+//                   }}
+//                 >
+//                   AIVISION
+//                 </Typography>
+//               </Typography>
+//             </motion.div>
+
+//             {/* Desktop Navigation with Hover Effects */}
+//             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+//               {navItems.map((item, index) => (
+//                 <motion.div
+//                   key={item.label}
+//                   initial={{ opacity: 0, y: -20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 0.5, delay: index * 0.1 }}
+//                   whileHover={{ scale: 1.05 }}
+//                 >
+//                   <Button
+//                     onClick={() => handleNavClick(item.path, item.section)}
+//                     sx={{
+//                       color: (location.pathname === item.path || 
+//                              (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                              ? '#00FF88' : '#fff',
+//                       position: 'relative',
+//                       px: 2.5, // ✅ Reduced padding
+//                       fontWeight: 600,
+//                       fontSize: '0.9rem', // ✅ Slightly smaller
+//                       letterSpacing: '0.5px',
+//                       borderRadius: '6px',
+//                       overflow: 'hidden',
+//                       '&:before': {
+//                         content: '""',
+//                         position: 'absolute',
+//                         top: 0,
+//                         left: '-100%',
+//                         width: '100%',
+//                         height: '100%',
+//                         background: 'linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent)',
+//                         transition: 'left 0.7s'
+//                       },
+//                       '&:hover:before': {
+//                         left: '100%'
+//                       },
+//                       '&:after': {
+//                         content: '""',
+//                         position: 'absolute',
+//                         bottom: 0,
+//                         left: '50%',
+//                         transform: 'translateX(-50%)',
+//                         width: (location.pathname === item.path || 
+//                                (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                                ? '70%' : '0%',
+//                         height: '2px',
+//                         bgcolor: '#00FF88',
+//                         borderRadius: '2px',
+//                         transition: 'width 0.3s ease',
+//                         boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+//                       },
+//                       '&:hover': {
+//                         background: 'rgba(0, 255, 136, 0.1)',
+//                         color: '#00FF88'
+//                       }
+//                     }}
+//                   >
+//                     {item.label}
+//                   </Button>
+//                 </motion.div>
+//               ))}
+//             </Box>
+
+//             {/* User Menu & Mobile Button */}
+//             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+//               {isAuthenticated ? (
+//                 <>
+//                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+//                     <IconButton onClick={handleMenuOpen} size="small" sx={{
+//                       border: '2px solid rgba(0, 255, 136, 0.3)',
+//                       '&:hover': {
+//                         borderColor: '#00FF88',
+//                         boxShadow: '0 0 15px rgba(0, 255, 136, 0.5)'
+//                       }
+//                     }}>
+//                       <Avatar
+//                         sx={{
+//                           width: 34,
+//                           height: 34,
+//                           bgcolor: '#00FF88',
+//                           color: '#121218',
+//                           fontWeight: 'bold',
+//                           boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+//                         }}
+//                       >
+//                         {user?.name?.charAt(0) || 'U'}
+//                       </Avatar>
+//                     </IconButton>
+//                   </motion.div>
+//                   <Menu
+//                     anchorEl={anchorEl}
+//                     open={Boolean(anchorEl)}
+//                     onClose={handleMenuClose}
+//                     PaperProps={{
+//                       sx: {
+//                         mt: 1.5,
+//                         minWidth: 200,
+//                         background: 'linear-gradient(135deg, #000000 0%, #121212 100%)',
+//                         border: '1px solid rgba(0, 255, 136, 0.3)',
+//                         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 136, 0.2)',
+//                         '& .MuiMenuItem-root': {
+//                           color: '#fff',
+//                           '&:hover': {
+//                             background: 'rgba(0, 255, 136, 0.1)',
+//                             color: '#00FF88'
+//                           }
+//                         }
+//                       },
+//                     }}
+//                   >
+//                     <MenuItem disabled sx={{ opacity: 0.7, py: 1 }}>
+//                       <Typography variant="body2" sx={{ color: '#fff', fontSize: '0.8rem' }}>
+//                         {user?.email}
+//                       </Typography>
+//                     </MenuItem>
+//                     {user?.role === 'admin' && (
+//                       <MenuItem onClick={() => handleNavClick('/admin')}>
+//                         <DashboardIcon sx={{ mr: 2, fontSize: 20 }} />
+//                         Admin Dashboard
+//                       </MenuItem>
+//                     )}
+//                     <MenuItem onClick={handleLogout} sx={{ color: '#ff4444' }}>
+//                       <LogoutIcon sx={{ mr: 2, fontSize: 20 }} />
+//                       Logout
+//                     </MenuItem>
+//                   </Menu>
+//                 </>
+//               ) : (
+//                 <>
+//                   <Button
+//                     variant="outlined"
+//                     startIcon={<LoginIcon />}
+//                     onClick={() => navigate('/login')}
+//                     sx={{ 
+//                       display: { xs: 'none', md: 'flex' },
+//                       borderColor: 'rgba(255,255,255,0.3)',
+//                       color: '#fff',
+//                       fontWeight: 600,
+//                       fontSize: '0.9rem',
+//                       px: 2,
+//                       py: 0.7,
+//                       '&:hover': {
+//                         borderColor: '#00FF88',
+//                         backgroundColor: 'rgba(0, 255, 136, 0.1)',
+//                         boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)'
+//                       }
+//                     }}
+//                   >
+//                     Login
+//                   </Button>
+//                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+//                     <Button
+//                       variant="contained"
+//                       startIcon={<PersonAddIcon />}
+//                       onClick={() => navigate('/contact')}
+//                       sx={{ 
+//                         display: { xs: 'none', md: 'flex' },
+//                         bgcolor: '#00FF88',
+//                         color: '#121218',
+//                         fontWeight: 700,
+//                         fontSize: '0.9rem',
+//                         px: 2.5,
+//                         py: 0.7,
+//                         '&:hover': {
+//                           bgcolor: '#00CC6D',
+//                           transform: 'translateY(-2px)',
+//                           boxShadow: '0 10px 20px rgba(0, 255, 136, 0.4)',
+//                         }
+//                       }}
+//                     >
+//                       Get Started
+//                     </Button>
+//                   </motion.div>
+//                 </>
+//               )}
+
+//               {/* Mobile Menu Button with Animation */}
+//               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+//                 <IconButton
+//                   color="inherit"
+//                   onClick={handleDrawerToggle}
+//                   sx={{ 
+//                     display: { md: 'none' }, 
+//                     color: '#fff',
+//                     border: '1px solid rgba(255,255,255,0.2)',
+//                     '&:hover': {
+//                       borderColor: '#00FF88',
+//                       background: 'rgba(0, 255, 136, 0.1)'
+//                     }
+//                   }}
+//                 >
+//                   <MenuIcon />
+//                 </IconButton>
+//               </motion.div>
+//             </Box>
+//           </Toolbar>
+//         </Container>
+//       </AppBar>
+
+//       {/* Mobile Drawer */}
+//       <AnimatePresence>
+//         {mobileOpen && (
+//           <motion.div
+//             initial={{ x: '100%' }}
+//             animate={{ x: 0 }}
+//             exit={{ x: '100%' }}
+//             transition={{ type: 'spring', damping: 25 }}
+//             style={{
+//               position: 'fixed',
+//               top: 0,
+//               right: 0,
+//               bottom: 0,
+//               zIndex: 1300,
+//             }}
+//           >
+//             <Drawer
+//               variant="temporary"
+//               anchor="right"
+//               open={mobileOpen}
+//               onClose={handleDrawerToggle}
+//               ModalProps={{ keepMounted: true }}
+//               sx={{
+//                 display: { xs: 'block', md: 'none' },
+//                 '& .MuiDrawer-paper': { 
+//                   boxSizing: 'border-box', 
+//                   width: 280,
+//                   border: 'none'
+//                 },
+//               }}
+//             >
+//               {drawer}
+//             </Drawer>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+
+//       {/* No spacer needed - HeroSection will start immediately below navbar */}
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
 // src/components/Navbar.js
 import React, { useState, useEffect } from 'react';
 import {
@@ -1019,7 +1633,6 @@ import {
   Avatar,
   Menu,
   MenuItem,
-  alpha,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -1028,6 +1641,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
+import BoltIcon from '@mui/icons-material/Bolt';
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
@@ -1035,6 +1649,7 @@ import { useAuth } from '../contexts/AuthContext';
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [aiActive, setAiActive] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -1053,7 +1668,16 @@ const Navbar = () => {
       setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // AI active animation
+    const aiInterval = setInterval(() => {
+      setAiActive(prev => !prev);
+    }, 3000);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(aiInterval);
+    };
   }, []);
 
   const handleDrawerToggle = () => {
@@ -1100,47 +1724,95 @@ const Navbar = () => {
 
   const drawer = (
     <Box sx={{ 
-      width: 280, 
+      width: 320, 
       height: '100%', 
-      background: 'linear-gradient(180deg, #000000 0%, #121212 100%)',
+      background: 'linear-gradient(180deg, #0A0A0F 0%, #121218 100%)',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Animated Background Effects */}
-      <Box sx={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%)',
-        animation: 'pulseEffect 8s infinite alternate'
-      }} />
-      
+      {/* AI Circuit Background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `
+            linear-gradient(45deg, transparent 49%, rgba(0, 255, 136, 0.05) 50%, transparent 51%),
+            linear-gradient(-45deg, transparent 49%, rgba(138, 43, 226, 0.05) 50%, transparent 51%)
+          `,
+          backgroundSize: '40px 40px',
+          opacity: 0.3,
+        }}
+      />
+
+      {/* AI Active Indicator */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1,
+        }}
+      >
+        <Box
+          sx={{
+            width: 8,
+            height: 8,
+            borderRadius: '50%',
+            bgcolor: aiActive ? '#00FF88' : 'transparent',
+            boxShadow: aiActive ? '0 0 15px #00FF88' : 'none',
+            animation: aiActive ? 'aiPulse 1.5s infinite' : 'none',
+            '@keyframes aiPulse': {
+              '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
+              '50%': { opacity: 1, transform: 'scale(1.5)' }
+            }
+          }}
+        />
+        <Typography variant="caption" sx={{ color: '#00FF88', fontWeight: 600 }}>
+          AI ONLINE
+        </Typography>
+      </Box>
+
       <Box sx={{ 
         position: 'relative', 
         zIndex: 1,
         p: 3, 
-        borderBottom: '1px solid rgba(255,255,255,0.1)',
-        background: 'rgba(0,0,0,0.7)',
+        borderBottom: '1px solid',
+        borderColor: 'rgba(0, 255, 136, 0.2)',
+        background: 'rgba(10, 10, 15, 0.8)',
         backdropFilter: 'blur(10px)'
       }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h6" sx={{ 
-            color: '#00FF88', 
-            fontWeight: 800,
-            fontSize: '1.5rem',
-            textShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <SmartToyIcon sx={{ color: '#00FF88', fontSize: 28 }} />
+            <Typography variant="h6" sx={{ 
+              color: '#00FF88', 
+              fontWeight: 900,
+              fontSize: '1.8rem',
+              letterSpacing: '1px',
+              background: 'linear-gradient(135deg, #00FF88 0%, #8A2BE2 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              AIVISION
+            </Typography>
+          </Box>
+          <IconButton onClick={handleDrawerToggle} sx={{ 
+            color: '#00FF88',
+            border: '1px solid rgba(0, 255, 136, 0.3)',
+            '&:hover': { bgcolor: 'rgba(0, 255, 136, 0.1)' }
           }}>
-            AI<span style={{ color: '#fff', fontWeight: 600 }}>VISION</span>
-          </Typography>
-          <IconButton onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
             <CloseIcon />
           </IconButton>
         </Box>
       </Box>
       
-      <List sx={{ p: 2, position: 'relative', zIndex: 1 }}>
+      <List sx={{ p: 3, position: 'relative', zIndex: 1 }}>
         {navItems.map((item, index) => (
           <motion.div
             key={item.label}
@@ -1154,33 +1826,65 @@ const Navbar = () => {
               sx={{
                 py: 2,
                 borderRadius: 2,
-                mb: 1,
+                mb: 2,
                 background: (location.pathname === item.path || 
                            (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                           ? 'linear-gradient(90deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0.1) 100%)' 
+                           ? 'linear-gradient(90deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0.05) 100%)' 
                            : 'transparent',
-                border: '1px solid',
+                border: '2px solid',
                 borderColor: (location.pathname === item.path || 
                             (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                            ? 'rgba(0, 255, 136, 0.3)' : 'rgba(255,255,255,0.1)',
+                            ? 'rgba(0, 255, 136, 0.4)' : 'rgba(255,255,255,0.1)',
                 transition: 'all 0.3s ease',
+                position: 'relative',
+                overflow: 'hidden',
                 '&:hover': {
-                  background: 'linear-gradient(90deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 255, 136, 0.05) 100%)',
-                  borderColor: 'rgba(0, 255, 136, 0.5)',
+                  borderColor: 'rgba(0, 255, 136, 0.6)',
                   transform: 'translateX(5px)',
+                  boxShadow: '0 10px 20px rgba(0, 255, 136, 0.1)',
+                  '& .nav-glow': {
+                    opacity: 1,
+                  }
                 },
               }}
             >
-              <ListItemText 
-                primary={item.label} 
-                primaryTypographyProps={{
-                  fontWeight: 600,
-                  fontSize: '1.1rem',
-                  color: (location.pathname === item.path || 
-                         (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                         ? '#00FF88' : '#fff'
+              {/* Glow Effect */}
+              <Box
+                className="nav-glow"
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'radial-gradient(circle at center, rgba(0,255,136,0.1) 0%, transparent 70%)',
+                  opacity: 0,
+                  transition: 'opacity 0.3s ease',
                 }}
               />
+
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <Box
+                  sx={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    bgcolor: '#00FF88',
+                    opacity: (location.pathname === item.path || 
+                             (location.pathname === '/' && window.location.hash === `#${item.section}`)) ? 1 : 0.3,
+                  }}
+                />
+                <ListItemText 
+                  primary={item.label} 
+                  primaryTypographyProps={{
+                    fontWeight: 600,
+                    fontSize: '1.1rem',
+                    color: (location.pathname === item.path || 
+                           (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+                           ? '#00FF88' : '#fff'
+                  }}
+                />
+              </Box>
             </ListItem>
           </motion.div>
         ))}
@@ -1197,25 +1901,27 @@ const Navbar = () => {
               sx={{
                 py: 2,
                 borderRadius: 2,
-                mb: 1,
-                background: 'linear-gradient(90deg, rgba(138, 43, 226, 0.2) 0%, rgba(138, 43, 226, 0.1) 100%)',
-                border: '1px solid rgba(138, 43, 226, 0.3)',
+                mb: 2,
+                background: 'linear-gradient(90deg, rgba(138, 43, 226, 0.2) 0%, rgba(138, 43, 226, 0.05) 100%)',
+                border: '2px solid rgba(138, 43, 226, 0.3)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  background: 'linear-gradient(90deg, rgba(138, 43, 226, 0.3) 0%, rgba(138, 43, 226, 0.2) 100%)',
-                  borderColor: 'rgba(138, 43, 226, 0.5)',
+                  borderColor: 'rgba(138, 43, 226, 0.6)',
                   transform: 'translateX(5px)',
+                  boxShadow: '0 10px 20px rgba(138, 43, 226, 0.1)',
                 },
               }}
             >
-              <DashboardIcon sx={{ mr: 2, color: '#8A2BE2' }} />
-              <ListItemText 
-                primary="Admin Dashboard" 
-                primaryTypographyProps={{
-                  fontWeight: 600,
-                  color: '#8A2BE2'
-                }}
-              />
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <DashboardIcon sx={{ color: '#8A2BE2' }} />
+                <ListItemText 
+                  primary="Admin Dashboard" 
+                  primaryTypographyProps={{
+                    fontWeight: 600,
+                    color: '#8A2BE2'
+                  }}
+                />
+              </Box>
             </ListItem>
           </motion.div>
         )}
@@ -1226,18 +1932,20 @@ const Navbar = () => {
         <Box sx={{ 
           p: 3, 
           mt: 'auto',
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          background: 'rgba(0,0,0,0.5)'
+          borderTop: '1px solid rgba(0, 255, 136, 0.2)',
+          background: 'rgba(10, 10, 15, 0.8)',
+          backdropFilter: 'blur(10px)'
         }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, gap: 2 }}>
             <Avatar
               sx={{
-                width: 40,
-                height: 40,
-                bgcolor: '#00FF88',
+                width: 50,
+                height: 50,
+                bgcolor: 'linear-gradient(135deg, #00FF88, #8A2BE2)',
+                background: 'linear-gradient(135deg, #00FF88, #8A2BE2)',
                 color: '#000',
                 fontWeight: 'bold',
-                mr: 2
+                border: '2px solid #00FF88',
               }}
             >
               {user?.name?.charAt(0) || 'U'}
@@ -1257,11 +1965,15 @@ const Navbar = () => {
             startIcon={<LogoutIcon />}
             onClick={handleLogout}
             sx={{
-              bgcolor: 'rgba(255, 0, 0, 0.2)',
-              color: '#ff4444',
-              border: '1px solid rgba(255, 0, 0, 0.3)',
+              bgcolor: 'rgba(255, 69, 69, 0.2)',
+              background: 'linear-gradient(135deg, rgba(255, 69, 69, 0.2), rgba(255, 69, 69, 0.1))',
+              color: '#ff4545',
+              border: '1px solid rgba(255, 69, 69, 0.3)',
+              fontWeight: 600,
+              py: 1.5,
               '&:hover': {
-                bgcolor: 'rgba(255, 0, 0, 0.3)',
+                bgcolor: 'rgba(255, 69, 69, 0.3)',
+                transform: 'translateY(-2px)',
               }
             }}
           >
@@ -1275,64 +1987,66 @@ const Navbar = () => {
   return (
     <>
       <AppBar
-        position="fixed" // ✅ Fixed position for sticky navbar
+        position="fixed"
         sx={{
-          bgcolor: scrolled ? 'rgba(0, 0, 0, 0.98)' : 'rgba(0, 0, 0, 0.95)',
+          bgcolor: scrolled ? 'rgba(10, 10, 15, 0.95)' : 'rgba(10, 10, 15, 0.9)',
           transition: 'all 0.3s ease',
           boxShadow: scrolled 
-            ? '0 5px 20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 136, 0.15)' 
-            : '0 2px 10px rgba(0, 0, 0, 0.5)',
-          backdropFilter: 'blur(15px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-          backgroundImage: 'linear-gradient(to bottom, #000000, #121212)',
-          position: 'relative',
-          overflow: 'hidden',
-          zIndex: 9999, // ✅ High z-index to ensure it's on top
+            ? '0 5px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 136, 0.1)' 
+            : 'none',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(0, 255, 136, 0.2)',
+          zIndex: 9999,
+          background: scrolled 
+            ? 'linear-gradient(to bottom, rgba(10, 10, 15, 0.95), rgba(18, 18, 24, 0.9))'
+            : 'linear-gradient(to bottom, rgba(10, 10, 15, 0.9), transparent)',
         }}
       >
-        {/* Glowing Border Effect */}
-        <Box sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '2px',
-          background: 'linear-gradient(90deg, #00FF88, #8A2BE2, #00FF88)',
-          backgroundSize: '200% 100%',
-          animation: 'shimmer 3s infinite linear',
-          '@keyframes shimmer': {
-            '0%': { backgroundPosition: '-200% 0' },
-            '100%': { backgroundPosition: '200% 0' }
-          }
-        }} />
-        
-        {/* Particle Effect Background */}
+        {/* Animated AI Border */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '2px',
+            background: 'linear-gradient(90deg, #00FF88, #8A2BE2, #0066FF, #00FF88)',
+            backgroundSize: '300% 100%',
+            animation: 'aiBorderFlow 4s linear infinite',
+            '@keyframes aiBorderFlow': {
+              '0%': { backgroundPosition: '0% 50%' },
+              '100%': { backgroundPosition: '300% 50%' }
+            }
+          }}
+        />
+
+        {/* AI Particles */}
         <Box sx={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300ff88' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ff88' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           opacity: 0.3,
-          pointerEvents: 'none'
+          pointerEvents: 'none',
         }} />
 
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ 
-            py: 0.5, // ✅ Reduced padding to make navbar more compact
-            minHeight: '64px', // ✅ Fixed height
+            py: 1,
+            minHeight: '70px',
             position: 'relative', 
             zIndex: 1 
           }}>
-            {/* Logo with Glow Effect */}
+            {/* Logo with AI Animation */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <Typography
+              <Box
                 component={RouterLink}
                 to="/"
                 sx={{
@@ -1340,28 +2054,54 @@ const Navbar = () => {
                   alignItems: 'center',
                   textDecoration: 'none',
                   mr: 4,
-                  filter: 'drop-shadow(0 0 10px rgba(0, 255, 136, 0.3))'
+                  position: 'relative',
                 }}
               >
+                {/* AI Glow Effect */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    width: 40,
+                    height: 40,
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, #00FF88, transparent 70%)',
+                    filter: 'blur(10px)',
+                    opacity: aiActive ? 0.6 : 0.3,
+                    transition: 'opacity 0.5s ease',
+                    animation: 'aiPulse 3s infinite',
+                    '@keyframes aiPulse': {
+                      '0%, 100%': { opacity: 0.3 },
+                      '50%': { opacity: 0.6 }
+                    }
+                  }}
+                />
+                
                 <SmartToyIcon sx={{ 
                   color: '#00FF88', 
-                  mr: 1, 
-                  fontSize: 30, // ✅ Slightly smaller
-                  filter: 'drop-shadow(0 0 8px rgba(0, 255, 136, 0.5))'
+                  mr: 1.5, 
+                  fontSize: 32,
+                  position: 'relative',
+                  filter: 'drop-shadow(0 0 8px rgba(0, 255, 136, 0.5))',
+                  animation: aiActive ? 'aiFloat 3s infinite ease-in-out' : 'none',
+                  '@keyframes aiFloat': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-3px)' }
+                  }
                 }} />
+                
                 <Typography
                   variant="h5"
                   sx={{
                     fontWeight: 900,
-                    fontSize: '1.7rem', // ✅ Slightly smaller
+                    fontSize: '1.8rem',
                     letterSpacing: '1px',
-                    background: 'linear-gradient(135deg, #00FF88 0%, #8A2BE2 50%, #00FF88 100%)',
+                    background: 'linear-gradient(135deg, #00FF88 0%, #8A2BE2 50%, #0066FF 100%)',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
-                    animation: 'glow 3s infinite alternate',
-                    '@keyframes glow': {
+                    animation: aiActive ? 'aiGlow 2s infinite alternate' : 'none',
+                    '@keyframes aiGlow': {
                       '0%': { filter: 'drop-shadow(0 0 5px rgba(0, 255, 136, 0.3))' },
                       '100%': { filter: 'drop-shadow(0 0 15px rgba(138, 43, 226, 0.3))' }
                     }
@@ -1369,18 +2109,51 @@ const Navbar = () => {
                 >
                   AIVISION
                 </Typography>
-              </Typography>
+
+                {/* AI Active Indicator */}
+                <Box
+                  sx={{
+                    ml: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      bgcolor: aiActive ? '#00FF88' : 'transparent',
+                      boxShadow: aiActive ? '0 0 10px #00FF88' : 'none',
+                      animation: aiActive ? 'aiBlink 1.5s infinite' : 'none',
+                      '@keyframes aiBlink': {
+                        '0%, 100%': { opacity: 0.3 },
+                        '50%': { opacity: 1 }
+                      }
+                    }}
+                  />
+                  <Typography variant="caption" sx={{ 
+                    color: '#00FF88', 
+                    fontWeight: 700,
+                    fontSize: '0.6rem',
+                    letterSpacing: '1px',
+                  }}>
+                    AI
+                  </Typography>
+                </Box>
+              </Box>
             </motion.div>
 
-            {/* Desktop Navigation with Hover Effects */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+            {/* Desktop Navigation */}
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 1, ml: 4 }}>
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.label}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ y: -2 }}
                 >
                   <Button
                     onClick={() => handleNavClick(item.path, item.section)}
@@ -1389,13 +2162,14 @@ const Navbar = () => {
                              (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
                              ? '#00FF88' : '#fff',
                       position: 'relative',
-                      px: 2.5, // ✅ Reduced padding
+                      px: 3,
                       fontWeight: 600,
-                      fontSize: '0.9rem', // ✅ Slightly smaller
+                      fontSize: '0.95rem',
                       letterSpacing: '0.5px',
-                      borderRadius: '6px',
+                      borderRadius: '8px',
                       overflow: 'hidden',
-                      '&:before': {
+                      transition: 'all 0.3s ease',
+                      '&::before': {
                         content: '""',
                         position: 'absolute',
                         top: 0,
@@ -1405,10 +2179,10 @@ const Navbar = () => {
                         background: 'linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent)',
                         transition: 'left 0.7s'
                       },
-                      '&:hover:before': {
+                      '&:hover::before': {
                         left: '100%'
                       },
-                      '&:after': {
+                      '&::after': {
                         content: '""',
                         position: 'absolute',
                         bottom: 0,
@@ -1416,16 +2190,17 @@ const Navbar = () => {
                         transform: 'translateX(-50%)',
                         width: (location.pathname === item.path || 
                                (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                               ? '70%' : '0%',
+                               ? '80%' : '0%',
                         height: '2px',
-                        bgcolor: '#00FF88',
+                        background: 'linear-gradient(90deg, #00FF88, #8A2BE2)',
                         borderRadius: '2px',
                         transition: 'width 0.3s ease',
                         boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
                       },
                       '&:hover': {
                         background: 'rgba(0, 255, 136, 0.1)',
-                        color: '#00FF88'
+                        color: '#00FF88',
+                        transform: 'translateY(-2px)',
                       }
                     }}
                   >
@@ -1435,26 +2210,42 @@ const Navbar = () => {
               ))}
             </Box>
 
-            {/* User Menu & Mobile Button */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            {/* Right Section */}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, ml: 'auto' }}>
+              {/* AI Status Indicator */}
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1, mr: 2 }}>
+                <Box
+                  sx={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    bgcolor: aiActive ? '#00FF88' : '#666',
+                    boxShadow: aiActive ? '0 0 15px #00FF88' : 'none',
+                    animation: aiActive ? 'aiPulse 2s infinite' : 'none',
+                  }}
+                />
+              
+              </Box>
+
               {isAuthenticated ? (
                 <>
                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                     <IconButton onClick={handleMenuOpen} size="small" sx={{
                       border: '2px solid rgba(0, 255, 136, 0.3)',
+                      background: 'linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(138, 43, 226, 0.1))',
                       '&:hover': {
                         borderColor: '#00FF88',
-                        boxShadow: '0 0 15px rgba(0, 255, 136, 0.5)'
+                        boxShadow: '0 0 20px rgba(0, 255, 136, 0.5)',
                       }
                     }}>
                       <Avatar
                         sx={{
-                          width: 34,
-                          height: 34,
-                          bgcolor: '#00FF88',
+                          width: 36,
+                          height: 36,
+                          background: 'linear-gradient(135deg, #00FF88, #8A2BE2)',
                           color: '#121218',
                           fontWeight: 'bold',
-                          boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+                          boxShadow: '0 0 15px rgba(0, 255, 136, 0.5)'
                         }}
                       >
                         {user?.name?.charAt(0) || 'U'}
@@ -1468,12 +2259,14 @@ const Navbar = () => {
                     PaperProps={{
                       sx: {
                         mt: 1.5,
-                        minWidth: 200,
-                        background: 'linear-gradient(135deg, #000000 0%, #121212 100%)',
+                        minWidth: 220,
+                        background: 'linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(18, 18, 24, 0.95))',
+                        backdropFilter: 'blur(20px)',
                         border: '1px solid rgba(0, 255, 136, 0.3)',
-                        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 136, 0.2)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 136, 0.2)',
                         '& .MuiMenuItem-root': {
                           color: '#fff',
+                          py: 1.5,
                           '&:hover': {
                             background: 'rgba(0, 255, 136, 0.1)',
                             color: '#00FF88'
@@ -1489,8 +2282,8 @@ const Navbar = () => {
                     </MenuItem>
                     {user?.role === 'admin' && (
                       <MenuItem onClick={() => handleNavClick('/admin')}>
-                        <DashboardIcon sx={{ mr: 2, fontSize: 20 }} />
-                        Admin Dashboard
+                        <DashboardIcon sx={{ mr: 2, fontSize: 20, color: '#8A2BE2' }} />
+                        <Typography sx={{ color: '#8A2BE2' }}>Admin Dashboard</Typography>
                       </MenuItem>
                     )}
                     <MenuItem onClick={handleLogout} sx={{ color: '#ff4444' }}>
@@ -1507,16 +2300,17 @@ const Navbar = () => {
                     onClick={() => navigate('/login')}
                     sx={{ 
                       display: { xs: 'none', md: 'flex' },
-                      borderColor: 'rgba(255,255,255,0.3)',
-                      color: '#fff',
+                      borderColor: 'rgba(0, 255, 136, 0.3)',
+                      color: '#00FF88',
                       fontWeight: 600,
                       fontSize: '0.9rem',
-                      px: 2,
-                      py: 0.7,
+                      px: 3,
+                      py: 0.8,
                       '&:hover': {
                         borderColor: '#00FF88',
                         backgroundColor: 'rgba(0, 255, 136, 0.1)',
-                        boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)'
+                        boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)',
+                        transform: 'translateY(-2px)',
                       }
                     }}
                   >
@@ -1525,41 +2319,41 @@ const Navbar = () => {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       variant="contained"
-                      startIcon={<PersonAddIcon />}
+                      startIcon={<BoltIcon />}
                       onClick={() => navigate('/contact')}
                       sx={{ 
                         display: { xs: 'none', md: 'flex' },
-                        bgcolor: '#00FF88',
+                        background: 'linear-gradient(135deg, #00FF88 0%, #8A2BE2 100%)',
                         color: '#121218',
                         fontWeight: 700,
                         fontSize: '0.9rem',
-                        px: 2.5,
-                        py: 0.7,
+                        px: 3.5,
+                        py: 0.8,
                         '&:hover': {
-                          bgcolor: '#00CC6D',
+                          background: 'linear-gradient(135deg, #00CC6D 0%, #7A1BD2 100%)',
                           transform: 'translateY(-2px)',
-                          boxShadow: '0 10px 20px rgba(0, 255, 136, 0.4)',
-                        }
+                          boxShadow: '0 10px 25px rgba(0, 255, 136, 0.4)',
+                        },
                       }}
                     >
-                      Get Started
+                      Start AI Journey
                     </Button>
                   </motion.div>
                 </>
               )}
 
-              {/* Mobile Menu Button with Animation */}
+              {/* Mobile Menu Button */}
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <IconButton
-                  color="inherit"
                   onClick={handleDrawerToggle}
                   sx={{ 
                     display: { md: 'none' }, 
-                    color: '#fff',
-                    border: '1px solid rgba(255,255,255,0.2)',
+                    color: '#00FF88',
+                    border: '1px solid rgba(0, 255, 136, 0.3)',
                     '&:hover': {
                       borderColor: '#00FF88',
-                      background: 'rgba(0, 255, 136, 0.1)'
+                      background: 'rgba(0, 255, 136, 0.1)',
+                      boxShadow: '0 0 15px rgba(0, 255, 136, 0.3)',
                     }
                   }}
                 >
@@ -1597,7 +2391,7 @@ const Navbar = () => {
                 display: { xs: 'block', md: 'none' },
                 '& .MuiDrawer-paper': { 
                   boxSizing: 'border-box', 
-                  width: 280,
+                  width: 320,
                   border: 'none'
                 },
               }}
@@ -1607,8 +2401,6 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* No spacer needed - HeroSection will start immediately below navbar */}
     </>
   );
 };

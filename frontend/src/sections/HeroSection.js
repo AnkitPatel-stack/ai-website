@@ -1980,38 +1980,6 @@ const HeroSection = () => {
             gap: 1,
           }}
         >
-          <Typography variant="caption" sx={{ color: '#FFFFFF', opacity: 0.9 }}>
-            Scroll to explore
-          </Typography>
-          <Box
-            sx={{
-              width: 24,
-              height: 40,
-              border: '2px solid',
-              borderColor: '#FFFFFF',
-              borderRadius: 12,
-              display: 'flex',
-              justifyContent: 'center',
-              paddingTop: 1,
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
-              backdropFilter: 'blur(5px)',
-            }}
-          >
-            <Box
-              sx={{
-                width: 4,
-                height: 8,
-                bgcolor: '#FFFFFF',
-                borderRadius: 2,
-                animation: 'scroll 2s infinite',
-                '@keyframes scroll': {
-                  '0%': { transform: 'translateY(0)', opacity: 1 },
-                  '50%': { transform: 'translateY(8px)', opacity: 0.5 },
-                  '100%': { transform: 'translateY(0)', opacity: 1 },
-                },
-              }}
-            />
-          </Box>
         </Box>
       </motion.div>
     </Box>
