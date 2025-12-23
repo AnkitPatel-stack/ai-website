@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useAuth } from '../services/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -64,7 +64,7 @@ const AdminLogin = () => {
           elevation={24}
           sx={{
             p: { xs: 3, md: 6 },
-            bgcolor: 'background.paper',
+            bgcolor: '#121218',
             border: '1px solid',
             borderColor: 'divider',
             borderRadius: 2,
@@ -75,7 +75,7 @@ const AdminLogin = () => {
               variant="h3"
               sx={{
                 mb: 2,
-                color: 'primary.main',
+                color: '#00FF88',
                 fontWeight: 700,
               }}
             >
@@ -129,7 +129,7 @@ const AdminLogin = () => {
               sx={{
                 py: 1.5,
                 mb: 2,
-                bgcolor: 'primary.main',
+                bgcolor: '#00FF88',
                 '&:hover': {
                   bgcolor: 'primary.dark',
                 },

@@ -98,7 +98,7 @@ const DashboardStats = () => {
         <Grid item xs={12} sm={6} md={3} key={stat.title}>
           <Card
             sx={{
-              bgcolor: 'background.paper',
+              bgcolor: '#121218',
               border: '1px solid',
               borderColor: 'divider',
               transition: 'all 0.3s ease',
