@@ -1653,8 +1653,371 @@
 // export default AboutSection;
 
 
-// src/sections/AboutSection.js
-import React, { useState, useEffect } from 'react';
+// // src/sections/AboutSection.js
+// import React, { useState, useEffect } from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+// import TimelineIcon from '@mui/icons-material/Timeline';
+// import GroupsIcon from '@mui/icons-material/Groups';
+// import { useNavigate } from 'react-router-dom';
+
+// const AboutSection = () => {
+//   const [content] = useState({
+//     about_title: 'Leading in Practical AI Solutions',
+//     about_description: 'We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.',
+//     about_stats: [
+//       { label: 'Projects Delivered', value: '150', suffix: '+', icon: <RocketLaunchIcon /> },
+//       { label: 'AI Models Deployed', value: '500', suffix: '+', icon: <AutoAwesomeIcon /> },
+//       { label: 'Client Satisfaction', value: '98', suffix: '%', icon: <TimelineIcon /> },
+//       { label: 'Team Members', value: '50', suffix: '+', icon: <GroupsIcon /> },
+//     ],
+//   });
+
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/about');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       bgcolor: '#121218',
+//       position: 'relative',
+//       overflow: 'hidden'
+//     }}>
+//       {/* Background AI Pattern */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           right: 0,
+//           bottom: 0,
+//           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300ff88' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+//           opacity: 0.5,
+//           zIndex: 0,
+//         }}
+//       />
+
+//       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
+//         <Grid container spacing={6} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, x: -50 }}
+//               animate={inView ? { opacity: 1, x: 0 } : {}}
+//               transition={{ duration: 0.6 }}
+//             >
+//               <Typography
+//                 variant="h2"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#00FF88',
+//                   fontWeight: 700,
+//                   fontSize: { xs: '2.5rem', md: '3.5rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 {content.about_title}
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#E0E0E0',
+//                   lineHeight: 1.8,
+//                   fontSize: { xs: '1rem', md: '1.25rem' },
+//                 }}
+//               >
+//                 {content.about_description}
+//               </Typography>
+              
+//               <Button
+//                 variant="outlined"
+//                 size="large"
+//                 endIcon={<ArrowForwardIcon />}
+//                 onClick={handleLearnMore}
+//                 sx={{
+//                   px: 4,
+//                   py: 1.5,
+//                   borderWidth: 2,
+//                   borderColor: '#00FF88',
+//                   color: '#00FF88',
+//                   fontWeight: 600,
+//                   '&:hover': {
+//                     borderWidth: 2,
+//                     borderColor: '#00FF88',
+//                     backgroundColor: 'rgba(0, 255, 136, 0.1)',
+//                     transform: 'translateY(-2px)',
+//                     boxShadow: '0 10px 20px rgba(0, 255, 136, 0.2)',
+//                   },
+//                 }}
+//               >
+//                 Learn More About Us
+//               </Button>
+//             </motion.div>
+//           </Grid>
+          
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, scale: 0.9 }}
+//               animate={inView ? { opacity: 1, scale: 1 } : {}}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//             >
+//               {/* AI Showcase Container */}
+//               <Box
+//                 sx={{
+//                   position: 'relative',
+//                   bgcolor: '#1a1a1a',
+//                   borderRadius: 4,
+//                   overflow: 'hidden',
+//                   border: '1px solid',
+//                   borderColor: '#333',
+//                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
+//                   height: { xs: 400, md: 500 },
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   justifyContent: 'center',
+//                 }}
+//               >
+//                 {/* Animated AI Visualization */}
+//                 <Box
+//                   sx={{
+//                     position: 'relative',
+//                     width: '100%',
+//                     height: '100%',
+//                     display: 'flex',
+//                     flexDirection: 'column',
+//                     alignItems: 'center',
+//                     justifyContent: 'center',
+//                     p: 4,
+//                   }}
+//                 >
+//                   {/* Neural Network Animation */}
+//                   <Box sx={{ 
+//                     position: 'relative', 
+//                     width: 300, 
+//                     height: 200,
+//                     mb: 4
+//                   }}>
+//                     {/* Main Network Lines */}
+//                     <Box sx={{
+//                       position: 'absolute',
+//                       top: '50%',
+//                       left: '50%',
+//                       transform: 'translate(-50%, -50%)',
+//                       width: '100%',
+//                       height: '100%',
+//                     }}>
+//                       {/* Horizontal Lines */}
+//                       {[0, 1, 2, 3].map((i) => (
+//                         <Box
+//                           key={`h-${i}`}
+//                           sx={{
+//                             position: 'absolute',
+//                             top: `${25 * i}%`,
+//                             left: 0,
+//                             width: '100%',
+//                             height: '2px',
+//                             background: `linear-gradient(90deg, transparent, #00FF88, transparent)`,
+//                             animation: `pulseLine 3s infinite ${i * 0.5}s`,
+//                             '@keyframes pulseLine': {
+//                               '0%, 100%': { opacity: 0.3 },
+//                               '50%': { opacity: 1 }
+//                             }
+//                           }}
+//                         />
+//                       ))}
+                      
+//                       {/* Vertical Connections */}
+//                       {[0, 1, 2, 3, 4].map((i) => (
+//                         <Box
+//                           key={`v-${i}`}
+//                           sx={{
+//                             position: 'absolute',
+//                             top: 0,
+//                             left: `${25 * i}%`,
+//                             width: '2px',
+//                             height: '100%',
+//                             background: `linear-gradient(180deg, transparent, #8A2BE2, transparent)`,
+//                             animation: `pulseLine 2s infinite ${i * 0.3}s`,
+//                           }}
+//                         />
+//                       ))}
+                      
+//                       {/* Animated Nodes */}
+//                       {[0, 1, 2, 3].map((row) => (
+//                         [0, 1, 2, 3, 4].map((col) => (
+//                           <Box
+//                             key={`node-${row}-${col}`}
+//                             sx={{
+//                               position: 'absolute',
+//                               top: `${25 * row}%`,
+//                               left: `${25 * col}%`,
+//                               width: 12,
+//                               height: 12,
+//                               borderRadius: '50%',
+//                               bgcolor: row % 2 === 0 ? '#00FF88' : '#8A2BE2',
+//                               transform: 'translate(-50%, -50%)',
+//                               boxShadow: `0 0 20px ${row % 2 === 0 ? '#00FF88' : '#8A2BE2'}`,
+//                               animation: `pulse 2s infinite ${(row + col) * 0.2}s`,
+//                               '@keyframes pulse': {
+//                                 '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
+//                                 '50%': { transform: 'translate(-50%, -50%) scale(1.5)' }
+//                               }
+//                             }}
+//                           />
+//                         ))
+//                       ))}
+//                     </Box>
+//                   </Box>
+                  
+//                   {/* Stats Grid */}
+//                   <Grid container spacing={2} sx={{ width: '100%', maxWidth: 600 }}>
+//                     {content.about_stats.map((stat, index) => (
+//                       <Grid item xs={6} key={stat.label}>
+//                         <motion.div
+//                           initial={{ opacity: 0, y: 20 }}
+//                           animate={inView ? { opacity: 1, y: 0 } : {}}
+//                           transition={{ delay: 0.5 + index * 0.1 }}
+//                         >
+//                           <Card
+//                             sx={{
+//                               bgcolor: 'rgba(26, 26, 26, 0.8)',
+//                               border: '1px solid',
+//                               borderColor: 'rgba(0, 255, 136, 0.2)',
+//                               backdropFilter: 'blur(10px)',
+//                               transition: 'all 0.3s ease',
+//                               height: '100%',
+//                               '&:hover': {
+//                                 transform: 'translateY(-5px)',
+//                                 borderColor: '#00FF88',
+//                                 boxShadow: '0 10px 30px rgba(0, 255, 136, 0.3)',
+//                               },
+//                             }}
+//                           >
+//                             <CardContent sx={{ textAlign: 'center', p: 2 }}>
+//                               <Box sx={{ 
+//                                 color: '#00FF88', 
+//                                 mb: 1,
+//                                 display: 'flex',
+//                                 justifyContent: 'center'
+//                               }}>
+//                                 {stat.icon}
+//                               </Box>
+//                               <Typography
+//                                 variant="h3"
+//                                 sx={{
+//                                   color: '#00FF88',
+//                                   fontWeight: 700,
+//                                   fontSize: '2rem',
+//                                   mb: 0.5,
+//                                 }}
+//                               >
+//                                 {stat.value}
+//                                 <Box
+//                                   component="span"
+//                                   sx={{ color: '#FFFFFF', fontSize: '1.2rem' }}
+//                                 >
+//                                   {stat.suffix}
+//                                 </Box>
+//                               </Typography>
+//                               <Typography
+//                                 variant="body2"
+//                                 sx={{ 
+//                                   color: '#A0A0A0',
+//                                   fontSize: '0.9rem',
+//                                   fontWeight: 500
+//                                 }}
+//                               >
+//                                 {stat.label}
+//                               </Typography>
+//                             </CardContent>
+//                           </Card>
+//                         </motion.div>
+//                       </Grid>
+//                     ))}
+//                   </Grid>
+                  
+//                   {/* Floating AI Elements */}
+//                   <Box
+//                     sx={{
+//                       position: 'absolute',
+//                       top: '20%',
+//                       left: '10%',
+//                       width: 40,
+//                       height: 40,
+//                       borderRadius: '50%',
+//                       background: 'radial-gradient(circle, #00FF88, transparent)',
+//                       opacity: 0.6,
+//                       filter: 'blur(5px)',
+//                       animation: 'float 8s infinite ease-in-out',
+//                       '@keyframes float': {
+//                         '0%, 100%': { transform: 'translateY(0px)' },
+//                         '50%': { transform: 'translateY(-20px)' }
+//                       }
+//                     }}
+//                   />
+//                   <Box
+//                     sx={{
+//                       position: 'absolute',
+//                       bottom: '30%',
+//                       right: '15%',
+//                       width: 30,
+//                       height: 30,
+//                       borderRadius: '50%',
+//                       background: 'radial-gradient(circle, #8A2BE2, transparent)',
+//                       opacity: 0.6,
+//                       filter: 'blur(5px)',
+//                       animation: 'float 6s infinite ease-in-out reverse',
+//                     }}
+//                   />
+//                 </Box>
+                
+//                 {/* Glow Effect */}
+//                 <Box
+//                   sx={{
+//                     position: 'absolute',
+//                     top: 0,
+//                     left: 0,
+//                     right: 0,
+//                     bottom: 0,
+//                     borderRadius: 4,
+//                     boxShadow: 'inset 0 0 100px rgba(0, 255, 136, 0.1)',
+//                     pointerEvents: 'none',
+//                   }}
+//                 />
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default AboutSection;
+
+
+import React from 'react';
 import {
   Box,
   Container,
@@ -1674,17 +2037,6 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { useNavigate } from 'react-router-dom';
 
 const AboutSection = () => {
-  const [content] = useState({
-    about_title: 'Leading in Practical AI Solutions',
-    about_description: 'We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.',
-    about_stats: [
-      { label: 'Projects Delivered', value: '150', suffix: '+', icon: <RocketLaunchIcon /> },
-      { label: 'AI Models Deployed', value: '500', suffix: '+', icon: <AutoAwesomeIcon /> },
-      { label: 'Client Satisfaction', value: '98', suffix: '%', icon: <TimelineIcon /> },
-      { label: 'Team Members', value: '50', suffix: '+', icon: <GroupsIcon /> },
-    ],
-  });
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -1699,25 +2051,9 @@ const AboutSection = () => {
   return (
     <Box ref={ref} sx={{ 
       py: { xs: 8, md: 12 }, 
-      bgcolor: '#121218',
-      position: 'relative',
-      overflow: 'hidden'
+      bgcolor: '#0A0A0F',
     }}>
-      {/* Background AI Pattern */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300ff88' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-          opacity: 0.5,
-          zIndex: 0,
-        }}
-      />
-
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="xl">
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
             <motion.div
@@ -1729,25 +2065,25 @@ const AboutSection = () => {
                 variant="h2"
                 sx={{
                   mb: 3,
-                  color: '#00FF88',
+                  color: '#8A2BE2',
                   fontWeight: 700,
-                  fontSize: { xs: '2.5rem', md: '3.5rem' },
+                  fontSize: { xs: '2rem', md: '2.5rem' },
                   lineHeight: 1.2,
                 }}
               >
-                {content.about_title}
+                Leading in Practical AI Solutions
               </Typography>
               
               <Typography
                 variant="h6"
                 sx={{
                   mb: 4,
-                  color: '#E0E0E0',
+                  color: '#A0A0A0',
                   lineHeight: 1.8,
-                  fontSize: { xs: '1rem', md: '1.25rem' },
+                  fontSize: { xs: '0.9rem', md: '1.1rem' },
                 }}
               >
-                {content.about_description}
+                We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.
               </Typography>
               
               <Button
@@ -1758,16 +2094,13 @@ const AboutSection = () => {
                 sx={{
                   px: 4,
                   py: 1.5,
-                  borderWidth: 2,
-                  borderColor: '#00FF88',
-                  color: '#00FF88',
+                  borderColor: '#8A2BE2',
+                  color: '#8A2BE2',
                   fontWeight: 600,
                   '&:hover': {
-                    borderWidth: 2,
-                    borderColor: '#00FF88',
-                    backgroundColor: 'rgba(0, 255, 136, 0.1)',
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 10px 20px rgba(0, 255, 136, 0.2)',
+                    borderColor: '#7A1BD2',
+                    color: '#7A1BD2',
+                    bgcolor: 'rgba(138, 43, 226, 0.1)',
                   },
                 }}
               >
@@ -1777,236 +2110,66 @@ const AboutSection = () => {
           </Grid>
           
           <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {/* AI Showcase Container */}
-              <Box
-                sx={{
-                  position: 'relative',
-                  bgcolor: '#1a1a1a',
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  border: '1px solid',
-                  borderColor: '#333',
-                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
-                  height: { xs: 400, md: 500 },
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                {/* Animated AI Visualization */}
-                <Box
-                  sx={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    p: 4,
-                  }}
-                >
-                  {/* Neural Network Animation */}
-                  <Box sx={{ 
-                    position: 'relative', 
-                    width: 300, 
-                    height: 200,
-                    mb: 4
-                  }}>
-                    {/* Main Network Lines */}
-                    <Box sx={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '100%',
-                      height: '100%',
-                    }}>
-                      {/* Horizontal Lines */}
-                      {[0, 1, 2, 3].map((i) => (
-                        <Box
-                          key={`h-${i}`}
+            <Grid container spacing={2}>
+              {[
+                { label: 'Projects Delivered', value: '150+', icon: <RocketLaunchIcon />, color: '#8A2BE2' },
+                { label: 'AI Models Deployed', value: '500+', icon: <AutoAwesomeIcon />, color: '#FF2D55' },
+                { label: 'Client Satisfaction', value: '98%', icon: <TimelineIcon />, color: '#9370DB' },
+                { label: 'Team Members', value: '50+', icon: <GroupsIcon />, color: '#8A2BE2' },
+              ].map((stat, index) => (
+                <Grid item xs={6} key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                  >
+                    <Card
+                      sx={{
+                        bgcolor: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        transition: 'all 0.3s ease',
+                        height: '100%',
+                        '&:hover': {
+                          borderColor: stat.color,
+                        },
+                      }}
+                    >
+                      <CardContent sx={{ textAlign: 'center', p: 2 }}>
+                        <Box sx={{ 
+                          color: stat.color, 
+                          mb: 1,
+                          display: 'flex',
+                          justifyContent: 'center'
+                        }}>
+                          {stat.icon}
+                        </Box>
+                        <Typography
+                          variant="h3"
                           sx={{
-                            position: 'absolute',
-                            top: `${25 * i}%`,
-                            left: 0,
-                            width: '100%',
-                            height: '2px',
-                            background: `linear-gradient(90deg, transparent, #00FF88, transparent)`,
-                            animation: `pulseLine 3s infinite ${i * 0.5}s`,
-                            '@keyframes pulseLine': {
-                              '0%, 100%': { opacity: 0.3 },
-                              '50%': { opacity: 1 }
-                            }
+                            color: stat.color,
+                            fontWeight: 700,
+                            fontSize: '1.8rem',
+                            mb: 0.5,
                           }}
-                        />
-                      ))}
-                      
-                      {/* Vertical Connections */}
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <Box
-                          key={`v-${i}`}
-                          sx={{
-                            position: 'absolute',
-                            top: 0,
-                            left: `${25 * i}%`,
-                            width: '2px',
-                            height: '100%',
-                            background: `linear-gradient(180deg, transparent, #8A2BE2, transparent)`,
-                            animation: `pulseLine 2s infinite ${i * 0.3}s`,
-                          }}
-                        />
-                      ))}
-                      
-                      {/* Animated Nodes */}
-                      {[0, 1, 2, 3].map((row) => (
-                        [0, 1, 2, 3, 4].map((col) => (
-                          <Box
-                            key={`node-${row}-${col}`}
-                            sx={{
-                              position: 'absolute',
-                              top: `${25 * row}%`,
-                              left: `${25 * col}%`,
-                              width: 12,
-                              height: 12,
-                              borderRadius: '50%',
-                              bgcolor: row % 2 === 0 ? '#00FF88' : '#8A2BE2',
-                              transform: 'translate(-50%, -50%)',
-                              boxShadow: `0 0 20px ${row % 2 === 0 ? '#00FF88' : '#8A2BE2'}`,
-                              animation: `pulse 2s infinite ${(row + col) * 0.2}s`,
-                              '@keyframes pulse': {
-                                '0%, 100%': { transform: 'translate(-50%, -50%) scale(1)' },
-                                '50%': { transform: 'translate(-50%, -50%) scale(1.5)' }
-                              }
-                            }}
-                          />
-                        ))
-                      ))}
-                    </Box>
-                  </Box>
-                  
-                  {/* Stats Grid */}
-                  <Grid container spacing={2} sx={{ width: '100%', maxWidth: 600 }}>
-                    {content.about_stats.map((stat, index) => (
-                      <Grid item xs={6} key={stat.label}>
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={inView ? { opacity: 1, y: 0 } : {}}
-                          transition={{ delay: 0.5 + index * 0.1 }}
                         >
-                          <Card
-                            sx={{
-                              bgcolor: 'rgba(26, 26, 26, 0.8)',
-                              border: '1px solid',
-                              borderColor: 'rgba(0, 255, 136, 0.2)',
-                              backdropFilter: 'blur(10px)',
-                              transition: 'all 0.3s ease',
-                              height: '100%',
-                              '&:hover': {
-                                transform: 'translateY(-5px)',
-                                borderColor: '#00FF88',
-                                boxShadow: '0 10px 30px rgba(0, 255, 136, 0.3)',
-                              },
-                            }}
-                          >
-                            <CardContent sx={{ textAlign: 'center', p: 2 }}>
-                              <Box sx={{ 
-                                color: '#00FF88', 
-                                mb: 1,
-                                display: 'flex',
-                                justifyContent: 'center'
-                              }}>
-                                {stat.icon}
-                              </Box>
-                              <Typography
-                                variant="h3"
-                                sx={{
-                                  color: '#00FF88',
-                                  fontWeight: 700,
-                                  fontSize: '2rem',
-                                  mb: 0.5,
-                                }}
-                              >
-                                {stat.value}
-                                <Box
-                                  component="span"
-                                  sx={{ color: '#FFFFFF', fontSize: '1.2rem' }}
-                                >
-                                  {stat.suffix}
-                                </Box>
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                sx={{ 
-                                  color: '#A0A0A0',
-                                  fontSize: '0.9rem',
-                                  fontWeight: 500
-                                }}
-                              >
-                                {stat.label}
-                              </Typography>
-                            </CardContent>
-                          </Card>
-                        </motion.div>
-                      </Grid>
-                    ))}
-                  </Grid>
-                  
-                  {/* Floating AI Elements */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: '20%',
-                      left: '10%',
-                      width: 40,
-                      height: 40,
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle, #00FF88, transparent)',
-                      opacity: 0.6,
-                      filter: 'blur(5px)',
-                      animation: 'float 8s infinite ease-in-out',
-                      '@keyframes float': {
-                        '0%, 100%': { transform: 'translateY(0px)' },
-                        '50%': { transform: 'translateY(-20px)' }
-                      }
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      bottom: '30%',
-                      right: '15%',
-                      width: 30,
-                      height: 30,
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle, #8A2BE2, transparent)',
-                      opacity: 0.6,
-                      filter: 'blur(5px)',
-                      animation: 'float 6s infinite ease-in-out reverse',
-                    }}
-                  />
-                </Box>
-                
-                {/* Glow Effect */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    borderRadius: 4,
-                    boxShadow: 'inset 0 0 100px rgba(0, 255, 136, 0.1)',
-                    pointerEvents: 'none',
-                  }}
-                />
-              </Box>
-            </motion.div>
+                          {stat.value}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{ 
+                            color: '#A0A0A0',
+                            fontSize: '0.85rem',
+                            fontWeight: 500
+                          }}
+                        >
+                          {stat.label}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
       </Container>

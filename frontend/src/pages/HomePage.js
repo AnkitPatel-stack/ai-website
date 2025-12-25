@@ -2958,7 +2958,66 @@
 
 
 
-// src/pages/HomePage.js
+// // src/pages/HomePage.js
+// import React, { useEffect } from 'react';
+// import { Box } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import HeroSection from '../sections/HeroSection';
+// import AboutSection from '../sections/AboutSection';
+// import ServicesSection from '../sections/ServicesSection';
+// import TeamSection from '../sections/TeamSection';
+// import WhyChooseUsSection from '../sections/WhyChooseUsSection';
+// import ContactCTASection from '../sections/ContactCTASection';
+
+// const HomePage = () => {
+//   useEffect(() => {
+//     // Scroll to section if hash exists in URL
+//     const hash = window.location.hash;
+//     if (hash) {
+//       const element = document.getElementById(hash.replace('#', ''));
+//       if (element) {
+//         setTimeout(() => {
+//           const yOffset = -70; // ✅ Adjusted for fixed navbar
+//           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//         }, 100);
+//       }
+//     }
+//   }, []);
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       transition={{ duration: 0.5 }}
+//     >
+//       <Box sx={{ mt: 0 }}> {/* ✅ No margin top - navbar is fixed */}
+//         <div id="hero">
+//           <HeroSection />
+//         </div>
+//         <div id="about">
+//           <AboutSection />
+//         </div>
+//         <div id="services">
+//           <ServicesSection />
+//         </div>
+//         <div id="team">
+//           <TeamSection />
+//         </div>
+//         <div id="why-choose-us">
+//           <WhyChooseUsSection />
+//         </div>
+//         <div id="contact">
+//           <ContactCTASection />
+//         </div>
+//       </Box>
+//     </motion.div>
+//   );
+// };
+
+// export default HomePage;
+
+// src/pages/HomePage.js - Keep as is
 import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -2971,13 +3030,12 @@ import ContactCTASection from '../sections/ContactCTASection';
 
 const HomePage = () => {
   useEffect(() => {
-    // Scroll to section if hash exists in URL
     const hash = window.location.hash;
     if (hash) {
       const element = document.getElementById(hash.replace('#', ''));
       if (element) {
         setTimeout(() => {
-          const yOffset = -70; // ✅ Adjusted for fixed navbar
+          const yOffset = -70;
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }, 100);
@@ -2991,7 +3049,7 @@ const HomePage = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Box sx={{ mt: 0 }}> {/* ✅ No margin top - navbar is fixed */}
+      <Box sx={{ mt: 0 }}>
         <div id="hero">
           <HeroSection />
         </div>

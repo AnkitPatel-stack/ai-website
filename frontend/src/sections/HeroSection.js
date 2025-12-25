@@ -1730,8 +1730,265 @@
 // export default HeroSection;
 
 
-// src/sections/HeroSection.js
-import React, { useState } from 'react';
+// // src/sections/HeroSection.js
+// import React, { useState } from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// // Import your local video file
+// import heroVideo from './herosection.mp4';
+
+// const HeroSection = () => {
+//   const [content] = useState({
+//     hero_title: 'Transform Your Business with AI Solutions',
+//     hero_subtitle: 'We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.',
+//     hero_cta_primary: 'Start Your AI Journey',
+//     hero_cta_secondary: 'View Our Work',
+//   });
+
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         overflow: 'hidden',
+//         pt: { xs: 4, md: 0 },
+//         backgroundColor: 'transparent',
+//       }}
+//     >
+//       {/* Main Video Background - Using your local video */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           width: '100%',
+//           height: '100%',
+//           zIndex: 0,
+//           overflow: 'hidden',
+//         }}
+//       >
+//         <video
+//           autoPlay
+//           loop
+//           muted
+//           playsInline
+//           style={{
+//             width: '100%',
+//             height: '100%',
+//             objectFit: 'cover',
+//           }}
+//         >
+//           <source src={heroVideo} type="video/mp4" />
+//           Your browser does not support the video tag.
+//         </video>
+//       </Box>
+
+//       {/* Dark Overlay for better text readability */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           width: '100%',
+//           height: '100%',
+//           background: 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)',
+//           zIndex: 1,
+//         }}
+//       />
+
+//       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#FFFFFF',
+//                   fontWeight: 800,
+//                   fontSize: { xs: '2.5rem', md: '4.5rem' },
+//                   lineHeight: 1.1,
+//                   textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+//                 }}
+//               >
+//                 {content.hero_title}
+//               </Typography>
+              
+//               <Typography
+//                 variant="h5"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#E0E0E0',
+//                   fontSize: { xs: '1.1rem', md: '1.5rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 {content.hero_subtitle}
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+//                   <Button
+//                     variant="contained"
+//                     size="large"
+//                     endIcon={<ArrowForwardIcon />}
+//                     onClick={handleGetStarted}
+//                     sx={{
+//                       px: 4,
+//                       py: 1.5,
+//                       fontSize: '1.1rem',
+//                       fontWeight: 600,
+//                       bgcolor: '#00FF88',
+//                       color: '#121218',
+//                       '&:hover': {
+//                         bgcolor: '#00CC6D',
+//                         transform: 'translateY(-2px)',
+//                         boxShadow: '0 10px 20px rgba(0, 255, 136, 0.5)',
+//                       },
+//                     }}
+//                   >
+//                     {content.hero_cta_primary}
+//                   </Button>
+//                 </motion.div>
+                
+//                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+//                   <Button
+//                     variant="outlined"
+//                     size="large"
+//                     startIcon={<PlayArrowIcon />}
+//                     onClick={handleViewWork}
+//                     sx={{
+//                       px: 4,
+//                       py: 1.5,
+//                       fontSize: '1.1rem',
+//                       fontWeight: 600,
+//                       borderWidth: 2,
+//                       borderColor: '#FFFFFF',
+//                       color: '#FFFFFF',
+//                       '&:hover': {
+//                         borderColor: '#00FF88',
+//                         color: '#00FF88',
+//                         backgroundColor: 'rgba(0, 255, 136, 0.1)',
+//                         borderWidth: 2,
+//                         transform: 'translateY(-2px)',
+//                       },
+//                     }}
+//                   >
+//                     {content.hero_cta_secondary}
+//                   </Button>
+//                 </motion.div>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+          
+//           {/* Video Preview for Mobile */}
+//           <Grid item xs={12} md={6} sx={{ display: { xs: 'block', md: 'none' } }}>
+//             <motion.div
+//               initial={{ opacity: 0, scale: 0.8 }}
+//               animate={inView ? { opacity: 1, scale: 1 } : {}}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//             >
+//               <Box
+//                 sx={{
+//                   position: 'relative',
+//                   height: 300,
+//                   width: '100%',
+//                   borderRadius: 4,
+//                   overflow: 'hidden',
+//                   mt: 4,
+//                   border: '3px solid rgba(255,255,255,0.3)',
+//                   boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+//                 }}
+//               >
+//                 <video
+//                   autoPlay
+//                   loop
+//                   muted
+//                   playsInline
+//                   style={{
+//                     width: '100%',
+//                     height: '100%',
+//                     objectFit: 'cover',
+//                   }}
+//                 >
+//                   <source src={heroVideo} type="video/mp4" />
+//                   Your browser does not support the video tag.
+//                 </video>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+
+//       {/* Scroll Indicator */}
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ delay: 1, duration: 1 }}
+//         style={{
+//           position: 'absolute',
+//           bottom: 40,
+//           left: '50%',
+//           transform: 'translateX(-50%)',
+//           zIndex: 2,
+//         }}
+//       >
+//         <Box
+//           sx={{
+//             display: 'flex',
+//             flexDirection: 'column',
+//             alignItems: 'center',
+//             gap: 1,
+//           }}
+//         >
+//         </Box>
+//       </motion.div>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+import React from 'react';
 import {
   Box,
   Container,
@@ -1744,18 +2001,9 @@ import { useInView } from 'react-intersection-observer';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useNavigate } from 'react-router-dom';
-
-// Import your local video file
 import heroVideo from './herosection.mp4';
 
 const HeroSection = () => {
-  const [content] = useState({
-    hero_title: 'Transform Your Business with AI Solutions',
-    hero_subtitle: 'We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.',
-    hero_cta_primary: 'Start Your AI Journey',
-    hero_cta_secondary: 'View Our Work',
-  });
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -1786,10 +2034,10 @@ const HeroSection = () => {
         alignItems: 'center',
         overflow: 'hidden',
         pt: { xs: 4, md: 0 },
-        backgroundColor: 'transparent',
+        bgcolor: '#0A0A0F',
       }}
     >
-      {/* Main Video Background - Using your local video */}
+      {/* Simplified Background */}
       <Box
         sx={{
           position: 'absolute',
@@ -1797,35 +2045,8 @@ const HeroSection = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 0,
-          overflow: 'hidden',
-        }}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={heroVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </Box>
-
-      {/* Dark Overlay for better text readability */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%)',
+          bgcolor: '#0A0A0F',
+          opacity: 0.7,
           zIndex: 1,
         }}
       />
@@ -1843,145 +2064,74 @@ const HeroSection = () => {
                 sx={{
                   mb: 3,
                   color: '#FFFFFF',
-                  fontWeight: 800,
-                  fontSize: { xs: '2.5rem', md: '4.5rem' },
-                  lineHeight: 1.1,
-                  textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                  fontWeight: 700,
+                  fontSize: { xs: '2.5rem', md: '3.5rem' },
+                  lineHeight: 1.2,
                 }}
               >
-                {content.hero_title}
+                Transform Your Business with AI Solutions
               </Typography>
               
               <Typography
-                variant="h5"
+                variant="h6"
                 sx={{
                   mb: 4,
-                  color: '#E0E0E0',
-                  fontSize: { xs: '1.1rem', md: '1.5rem' },
+                  color: '#A0A0A0',
+                  fontSize: { xs: '1rem', md: '1.25rem' },
                   lineHeight: 1.6,
                   fontWeight: 400,
                 }}
               >
-                {content.hero_subtitle}
+                We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
               </Typography>
               
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="contained"
-                    size="large"
-                    endIcon={<ArrowForwardIcon />}
-                    onClick={handleGetStarted}
-                    sx={{
-                      px: 4,
-                      py: 1.5,
-                      fontSize: '1.1rem',
-                      fontWeight: 600,
-                      bgcolor: '#00FF88',
-                      color: '#121218',
-                      '&:hover': {
-                        bgcolor: '#00CC6D',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 10px 20px rgba(0, 255, 136, 0.5)',
-                      },
-                    }}
-                  >
-                    {content.hero_cta_primary}
-                  </Button>
-                </motion.div>
-                
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    startIcon={<PlayArrowIcon />}
-                    onClick={handleViewWork}
-                    sx={{
-                      px: 4,
-                      py: 1.5,
-                      fontSize: '1.1rem',
-                      fontWeight: 600,
-                      borderWidth: 2,
-                      borderColor: '#FFFFFF',
-                      color: '#FFFFFF',
-                      '&:hover': {
-                        borderColor: '#00FF88',
-                        color: '#00FF88',
-                        backgroundColor: 'rgba(0, 255, 136, 0.1)',
-                        borderWidth: 2,
-                        transform: 'translateY(-2px)',
-                      },
-                    }}
-                  >
-                    {content.hero_cta_secondary}
-                  </Button>
-                </motion.div>
-              </Box>
-            </motion.div>
-          </Grid>
-          
-          {/* Video Preview for Mobile */}
-          <Grid item xs={12} md={6} sx={{ display: { xs: 'block', md: 'none' } }}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: 300,
-                  width: '100%',
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  mt: 4,
-                  border: '3px solid rgba(255,255,255,0.3)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-                }}
-              >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
+                <Button
+                  variant="contained"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleGetStarted}
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    bgcolor: '#8A2BE2',
+                    color: '#FFFFFF',
+                    '&:hover': {
+                      bgcolor: '#7A1BD2',
+                    },
                   }}
                 >
-                  <source src={heroVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  Start Your AI Journey
+                </Button>
+                
+                <Button
+                  variant="outlined"
+                  size="large"
+                  startIcon={<PlayArrowIcon />}
+                  onClick={handleViewWork}
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    borderColor: '#FF2D55',
+                    color: '#FF2D55',
+                    '&:hover': {
+                      borderColor: '#E82D4D',
+                      color: '#E82D4D',
+                      bgcolor: 'rgba(255, 45, 85, 0.1)',
+                    },
+                  }}
+                >
+                  View Our Work
+                </Button>
               </Box>
             </motion.div>
           </Grid>
         </Grid>
       </Container>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        style={{
-          position: 'absolute',
-          bottom: 40,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 2,
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 1,
-          }}
-        >
-        </Box>
-      </motion.div>
     </Box>
   );
 };
