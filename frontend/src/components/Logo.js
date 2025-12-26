@@ -1684,7 +1684,7 @@ const SimpleLogo = ({ size = 'medium', sx = {} }) => {
         <Box
           component="span"
           sx={{
-            color: '#ff0090',
+            color: '#fa8072',
             display: 'block',
           }}
         >
@@ -1732,7 +1732,7 @@ const PinkLogo = ({ size = 'medium', sx = {} }) => {
         <Box
           component="span"
           sx={{
-            color: '#ff0090',
+            color: '#fa8072',
             display: 'block',
           }}
         >

@@ -1062,7 +1062,7 @@
 //                     transition: 'all 0.3s ease',
 //                     backdropFilter: 'blur(10px)',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
+//                       borderColor: '#fa8072',
 //                       transform: 'translateY(-5px)',
 //                     },
 //                   }}
@@ -1080,7 +1080,7 @@
 //                         width: 60,
 //                         height: 60,
 //                         borderRadius: '50%',
-//                         bgcolor: '#ff0090',
+//                         bgcolor: '#fa8072',
 //                         display: 'flex',
 //                         alignItems: 'center',
 //                         justifyContent: 'center',
@@ -1252,7 +1252,7 @@
 //                     height: '100%',
 //                     transition: 'all 0.3s ease',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
+//                       borderColor: '#fa8072',
 //                       transform: 'translateY(-5px)',
 //                     },
 //                   }}
@@ -1270,7 +1270,7 @@
 //                         width: 60,
 //                         height: 60,
 //                         borderRadius: '50%',
-//                         backgroundColor: '#ff0090',
+//                         backgroundColor: '#fa8072',
 //                         display: 'flex',
 //                         alignItems: 'center',
 //                         justifyContent: 'center',
@@ -1328,6 +1328,197 @@
 
 // export default WhyChooseUsSection;
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import SecurityIcon from '@mui/icons-material/Security';
+// import ScaleIcon from '@mui/icons-material/Scale';
+// import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+// import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+// import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+// import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+
+// const WhyChooseUsSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       backgroundColor: 'transparent',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Box sx={{ textAlign: 'center', mb: 6 }}>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={inView ? { opacity: 1, y: 0 } : {}}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 2,
+//                 color: '#ffffff',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//               }}
+//             >
+//               Why Choose Our AI Solutions
+//             </Typography>
+            
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#ffffff',
+//                 opacity: 0.9,
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.8,
+//               }}
+//             >
+//               Experience the difference with our cutting-edge AI technology and expert implementation
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         <Grid container spacing={3}>
+//           {[
+//             {
+//               title: 'Enterprise-Grade Security',
+//               description: 'Bank-level security protocols and compliance standards for all AI solutions.',
+//               icon: <SecurityIcon sx={{ fontSize: 32 }} />,
+//             },
+//             {
+//               title: 'Scalable AI Architecture',
+//               description: 'AI systems designed to grow intelligently with your business needs.',
+//               icon: <ScaleIcon sx={{ fontSize: 32 }} />,
+//             },
+//             {
+//               title: 'Transparent AI Pricing',
+//               description: 'Clear, predictable pricing with performance-based ROI metrics.',
+//               icon: <AttachMoneyIcon sx={{ fontSize: 32 }} />,
+//             },
+//             {
+//               title: '24/7 AI Expert Support',
+//               description: 'Round-the-clock support from specialized AI engineers and data scientists.',
+//               icon: <SupportAgentIcon sx={{ fontSize: 32 }} />,
+//             },
+//             {
+//               title: 'Proven AI Track Record',
+//               description: 'Successfully implemented AI solutions for Fortune 500 companies.',
+//               icon: <TrendingUpIcon sx={{ fontSize: 32 }} />,
+//             },
+//             {
+//               title: 'Continuous AI Innovation',
+//               description: 'Stay ahead with cutting-edge AI research and proprietary algorithms.',
+//               icon: <AutoAwesomeIcon sx={{ fontSize: 32 }} />,
+//             },
+//           ].map((point, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={point.title}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
+//                 animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+//                 transition={{ 
+//                   duration: 0.5, 
+//                   delay: index * 0.1,
+//                 }}
+//               >
+//                 <Card
+//                   sx={{
+//                     backgroundColor: '#111111',
+//                     border: '1px solid #333333',
+//                     height: '100%',
+//                     transition: 'all 0.3s ease',
+//                     '&:hover': {
+//                       borderColor: '#fa8072',
+//                       transform: 'translateY(-5px)',
+//                     },
+//                   }}
+//                 >
+//                   <CardContent sx={{ 
+//                     p: 3,
+//                     display: 'flex',
+//                     flexDirection: 'column',
+//                     alignItems: 'center',
+//                     textAlign: 'center',
+//                     height: '100%'
+//                   }}>
+//                     <Box
+//                       sx={{
+//                         width: 60,
+//                         height: 60,
+//                         borderRadius: '50%',
+//                         backgroundColor: '#fa8072',
+//                         display: 'flex',
+//                         alignItems: 'center',
+//                         justifyContent: 'center',
+//                         mb: 3,
+//                         transition: 'all 0.3s ease',
+//                         '&:hover': {
+//                           backgroundColor: '#ff1dce',
+//                           transform: 'scale(1.1)',
+//                         },
+//                       }}
+//                     >
+//                       <Box
+//                         sx={{
+//                           color: '#ffffff',
+//                         }}
+//                       >
+//                         {point.icon}
+//                       </Box>
+//                     </Box>
+                    
+//                     <Typography
+//                       variant="h5"
+//                       sx={{
+//                         mb: 2,
+//                         fontWeight: 600,
+//                         color: '#ffffff',
+//                         fontSize: '1.1rem',
+//                       }}
+//                     >
+//                       {point.title}
+//                     </Typography>
+                    
+//                     <Typography
+//                       variant="body1"
+//                       sx={{
+//                         lineHeight: 1.6,
+//                         color: '#ffffff',
+//                         opacity: 0.9,
+//                         fontSize: '0.9rem',
+//                         flexGrow: 1,
+//                       }}
+//                     >
+//                       {point.description}
+//                     </Typography>
+//                   </CardContent>
+//                 </Card>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default WhyChooseUsSection;
+
+
 import React from 'react';
 import {
   Box,
@@ -1351,6 +1542,11 @@ const WhyChooseUsSection = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  // Color palette
+  const primaryColor = '#fa8072'; // Telemagenta
+  const secondaryColor = '#fa8072'; // Salmon
+  const accentColors = [primaryColor, secondaryColor];
 
   return (
     <Box ref={ref} sx={{ 
@@ -1442,8 +1638,9 @@ const WhyChooseUsSection = () => {
                     height: '100%',
                     transition: 'all 0.3s ease',
                     '&:hover': {
-                      borderColor: '#ff0090',
+                      borderColor: accentColors[index % 2],
                       transform: 'translateY(-5px)',
+                      boxShadow: `0 8px 25px ${accentColors[index % 2]}33`,
                     },
                   }}
                 >
@@ -1460,14 +1657,14 @@ const WhyChooseUsSection = () => {
                         width: 60,
                         height: 60,
                         borderRadius: '50%',
-                        backgroundColor: '#ff0090',
+                        backgroundColor: accentColors[index % 2],
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         mb: 3,
                         transition: 'all 0.3s ease',
                         '&:hover': {
-                          backgroundColor: '#ff1dce',
+                          backgroundColor: index % 2 === 0 ? '#d94b8a' : '#fb9488',
                           transform: 'scale(1.1)',
                         },
                       }}
@@ -1486,7 +1683,7 @@ const WhyChooseUsSection = () => {
                       sx={{
                         mb: 2,
                         fontWeight: 600,
-                        color: '#ffffff',
+                        color: accentColors[index % 2],
                         fontSize: '1.1rem',
                       }}
                     >

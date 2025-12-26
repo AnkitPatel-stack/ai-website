@@ -1342,7 +1342,7 @@
 //               variant="h2"
 //               sx={{
 //                 mb: 3,
-//                 color: '#ff0090',
+//                 color: '#fa8072',
 //                 fontWeight: 700,
 //                 fontSize: { xs: '2rem', md: '2.5rem' },
 //               }}
@@ -1383,7 +1383,7 @@
 //                   >
 //                     <Box
 //                       sx={{
-//                         color: '#ff0090',
+//                         color: '#fa8072',
 //                         mb: 1,
 //                         '& .MuiSvgIcon-root': {
 //                           fontSize: 32,
@@ -1417,7 +1417,153 @@
 //                 py: 1.5,
 //                 fontSize: '1rem',
 //                 fontWeight: 600,
-//                 backgroundColor: '#ff0090',
+//                 backgroundColor: '#fa8072',
+//                 color: '#ffffff',
+//                 '&:hover': {
+//                   backgroundColor: '#ff1dce',
+//                 },
+//               }}
+//             >
+//               Start Your AI Journey
+//             </Button>
+//           </Box>
+//         </motion.div>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default ContactCTASection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+// import InsightsIcon from '@mui/icons-material/Insights';
+// import { useNavigate } from 'react-router-dom';
+
+// const ContactCTASection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetInTouch = () => {
+//     navigate('/contact');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       backgroundColor: 'transparent',
+//     }}>
+//       <Container maxWidth="lg">
+//         <motion.div
+//           initial={{ opacity: 0, y: 50 }}
+//           animate={inView ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.6 }}
+//         >
+//           <Box
+//             sx={{
+//               backgroundColor: '#111111',
+//               border: '1px solid #333333',
+//               borderRadius: 2,
+//               p: { xs: 3, md: 6 },
+//               textAlign: 'center',
+//             }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 3,
+//                 color: '#fa8072',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//               }}
+//             >
+//               Ready to Transform Your Business with AI?
+//             </Typography>
+            
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#ffffff',
+//                 opacity: 0.9,
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.8,
+//               }}
+//             >
+//               Let's discuss how advanced AI solutions can drive unprecedented growth, efficiency, and innovation in your organization.
+//             </Typography>
+
+//             <Grid container spacing={3} sx={{ mb: 6, justifyContent: 'center' }}>
+//               {[
+//                 { icon: <AutoAwesomeIcon />, text: 'Custom AI Solutions' },
+//                 { icon: <RocketLaunchIcon />, text: 'Rapid Implementation' },
+//                 { icon: <TrendingUpIcon />, text: 'Measurable ROI' },
+//                 { icon: <InsightsIcon />, text: 'AI-Powered Insights' },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={3} key={feature.text}>
+//                   <Box
+//                     sx={{
+//                       display: 'flex',
+//                       flexDirection: 'column',
+//                       alignItems: 'center',
+//                       p: 2,
+//                     }}
+//                   >
+//                     <Box
+//                       sx={{
+//                         color: '#fa8072',
+//                         mb: 1,
+//                         '& .MuiSvgIcon-root': {
+//                           fontSize: 32,
+//                         }
+//                       }}
+//                     >
+//                       {feature.icon}
+//                     </Box>
+//                     <Typography
+//                       variant="h6"
+//                       sx={{
+//                         color: '#ffffff',
+//                         fontWeight: 600,
+//                         fontSize: '0.9rem',
+//                       }}
+//                     >
+//                       {feature.text}
+//                     </Typography>
+//                   </Box>
+//                 </Grid>
+//               ))}
+//             </Grid>
+
+//             <Button
+//               variant="contained"
+//               size="large"
+//               endIcon={<ArrowForwardIcon />}
+//               onClick={handleGetInTouch}
+//               sx={{
+//                 px: 6,
+//                 py: 1.5,
+//                 fontSize: '1rem',
+//                 fontWeight: 600,
+//                 backgroundColor: '#fa8072',
 //                 color: '#ffffff',
 //                 '&:hover': {
 //                   backgroundColor: '#ff1dce',
@@ -1459,6 +1605,8 @@ const ContactCTASection = () => {
   });
 
   const navigate = useNavigate();
+  const primaryColor = '#fa8072'; // Telemagenta
+  const secondaryColor = '#fa8072'; // Salmon
 
   const handleGetInTouch = () => {
     navigate('/contact');
@@ -1478,17 +1626,18 @@ const ContactCTASection = () => {
           <Box
             sx={{
               backgroundColor: '#111111',
-              border: '1px solid #333333',
+              border: `1px solid ${primaryColor}33`,
               borderRadius: 2,
               p: { xs: 3, md: 6 },
               textAlign: 'center',
+              background: 'linear-gradient(145deg, #0a0a0a, #111111)',
             }}
           >
             <Typography
               variant="h2"
               sx={{
                 mb: 3,
-                color: '#ff0090',
+                color: primaryColor,
                 fontWeight: 700,
                 fontSize: { xs: '2rem', md: '2.5rem' },
               }}
@@ -1513,10 +1662,10 @@ const ContactCTASection = () => {
 
             <Grid container spacing={3} sx={{ mb: 6, justifyContent: 'center' }}>
               {[
-                { icon: <AutoAwesomeIcon />, text: 'Custom AI Solutions' },
-                { icon: <RocketLaunchIcon />, text: 'Rapid Implementation' },
-                { icon: <TrendingUpIcon />, text: 'Measurable ROI' },
-                { icon: <InsightsIcon />, text: 'AI-Powered Insights' },
+                { icon: <AutoAwesomeIcon />, text: 'Custom AI Solutions', color: primaryColor },
+                { icon: <RocketLaunchIcon />, text: 'Rapid Implementation', color: secondaryColor },
+                { icon: <TrendingUpIcon />, text: 'Measurable ROI', color: primaryColor },
+                { icon: <InsightsIcon />, text: 'AI-Powered Insights', color: secondaryColor },
               ].map((feature, index) => (
                 <Grid item xs={12} sm={6} md={3} key={feature.text}>
                   <Box
@@ -1529,11 +1678,15 @@ const ContactCTASection = () => {
                   >
                     <Box
                       sx={{
-                        color: '#ff0090',
+                        color: feature.color,
                         mb: 1,
                         '& .MuiSvgIcon-root': {
                           fontSize: 32,
-                        }
+                        },
+                        transition: 'all 0.3s ease',
+                        '&:hover': {
+                          transform: 'scale(1.1)',
+                        },
                       }}
                     >
                       {feature.icon}
@@ -1563,11 +1716,14 @@ const ContactCTASection = () => {
                 py: 1.5,
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: '#ff0090',
+                backgroundColor: primaryColor,
                 color: '#ffffff',
                 '&:hover': {
-                  backgroundColor: '#ff1dce',
+                  backgroundColor: '#d94b8a',
+                  transform: 'translateY(-2px)',
+                  boxShadow: `0 8px 25px ${primaryColor}33`,
                 },
+                transition: 'all 0.3s ease',
               }}
             >
               Start Your AI Journey

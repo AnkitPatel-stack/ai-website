@@ -48,7 +48,7 @@ const StarsBackground = () => {
           twinkleSpeed: Math.random() * 0.03 + 0.01,
           twinkleDirection: Math.random() > 0.5 ? 1 : -1,
           originalOpacity: Math.random() * 0.7 + 0.3,
-          color: '#ff0090'
+          color: '#fa8072'
         });
       }
       

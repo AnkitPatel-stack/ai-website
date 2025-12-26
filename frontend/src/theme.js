@@ -249,7 +249,7 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#ff0090',
+      main: '#fa8072',
       light: '#ff1dce',
       dark: '#cc0074',
     },
@@ -311,14 +311,14 @@ const theme = createTheme({
           },
         },
         containedPrimary: {
-          background: 'linear-gradient(135deg, #ff0090, #ff1dce)',
+          background: 'linear-gradient(135deg, #fa8072, #ff1dce)',
           '&:hover': {
-            background: 'linear-gradient(135deg, #ff1dce, #ff0090)',
+            background: 'linear-gradient(135deg, #ff1dce, #fa8072)',
           },
         },
         outlinedPrimary: {
-          borderColor: '#ff0090',
-          color: '#ff0090',
+          borderColor: '#fa8072',
+          color: '#fa8072',
           '&:hover': {
             borderColor: '#ff1dce',
             backgroundColor: 'rgba(255, 0, 144, 0.1)',
@@ -334,7 +334,7 @@ const theme = createTheme({
           border: '1px solid #222222',
           transition: 'all 0.3s ease',
           '&:hover': {
-            borderColor: '#ff0090',
+            borderColor: '#fa8072',
             boxShadow: '0 8px 32px rgba(255, 0, 144, 0.2)',
           },
         },

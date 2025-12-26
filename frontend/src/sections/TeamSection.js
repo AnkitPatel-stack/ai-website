@@ -1855,7 +1855,7 @@
 //               variant="h2"
 //               sx={{
 //                 mb: 2,
-//                 color: '#ff0090',
+//                 color: '#fa8072',
 //                 fontWeight: 700,
 //                 fontSize: { xs: '2rem', md: '2.5rem' },
 //                 textShadow: '0 2px 10px rgba(0,0,0,0.5)',
@@ -1883,10 +1883,10 @@
 
 //         <Grid container spacing={4} sx={{ mb: 6 }}>
 //           {[
-//             { icon: <GroupsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
-//             { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
-//             { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
-//             { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
+//             { icon: <GroupsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
+//             { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
+//             { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
+//             { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
 //           ].map((stat, index) => (
 //             <Grid item xs={12} sm={6} md={3} key={index}>
 //               <motion.div
@@ -1904,7 +1904,7 @@
 //                     backdropFilter: 'blur(10px)',
 //                     transition: 'all 0.3s ease',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
+//                       borderColor: '#fa8072',
 //                       transform: 'translateY(-5px)',
 //                     },
 //                   }}
@@ -1918,7 +1918,7 @@
 //                     sx={{
 //                       mb: 1,
 //                       fontWeight: 700,
-//                       color: '#ff0090',
+//                       color: '#fa8072',
 //                       fontSize: { xs: '2rem', md: '2.5rem' },
 //                     }}
 //                   >
@@ -1963,7 +1963,7 @@
 //               py: 1.5,
 //               fontSize: '1rem',
 //               fontWeight: 600,
-//               bgcolor: '#ff0090',
+//               bgcolor: '#fa8072',
 //               color: '#FFFFFF',
 //               '&:hover': {
 //                 bgcolor: '#ff1dce',
@@ -2028,7 +2028,7 @@
 //               variant="h2"
 //               sx={{
 //                 mb: 2,
-//                 color: '#ff0090',
+//                 color: '#fa8072',
 //                 fontWeight: 700,
 //                 fontSize: { xs: '2rem', md: '2.5rem' },
 //               }}
@@ -2055,10 +2055,10 @@
 
 //         <Grid container spacing={4} sx={{ mb: 6 }}>
 //           {[
-//             { icon: <GroupsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
-//             { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
-//             { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
-//             { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
+//             { icon: <GroupsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
+//             { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
+//             { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
+//             { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
 //           ].map((stat, index) => (
 //             <Grid item xs={12} sm={6} md={3} key={index}>
 //               <motion.div
@@ -2075,7 +2075,7 @@
 //                     height: '100%',
 //                     transition: 'all 0.3s ease',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
+//                       borderColor: '#fa8072',
 //                       transform: 'translateY(-5px)',
 //                     },
 //                   }}
@@ -2089,7 +2089,7 @@
 //                     sx={{
 //                       mb: 1,
 //                       fontWeight: 700,
-//                       color: '#ff0090',
+//                       color: '#fa8072',
 //                       fontSize: { xs: '2rem', md: '2.5rem' },
 //                     }}
 //                   >
@@ -2134,7 +2134,177 @@
 //               py: 1.5,
 //               fontSize: '1rem',
 //               fontWeight: 600,
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
+//               color: '#ffffff',
+//               '&:hover': {
+//                 backgroundColor: '#ff1dce',
+//               },
+//             }}
+//           >
+//             Meet Our Expert Team
+//           </Button>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default TeamSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+//   Button,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import Diversity3Icon from '@mui/icons-material/Diversity3';
+// import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import GroupsIcon from '@mui/icons-material/Groups';
+// import { useNavigate } from 'react-router-dom';
+
+// const TeamSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleViewTeam = () => {
+//     navigate('/team');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       backgroundColor: 'transparent',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Box sx={{ textAlign: 'center', mb: 6 }}>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={inView ? { opacity: 1, y: 0 } : {}}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 2,
+//                 color: '#fa8072',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//               }}
+//             >
+//               World-Class AI Team
+//             </Typography>
+            
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#ffffff',
+//                 opacity: 0.9,
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.8,
+//               }}
+//             >
+//               Meet the brilliant minds behind our AI revolution. Our team combines deep technical expertise with visionary thinking to deliver exceptional results.
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         <Grid container spacing={4} sx={{ mb: 6 }}>
+//           {[
+//             { icon: <GroupsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
+//             { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
+//             { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
+//             { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#fa8072' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
+//           ].map((stat, index) => (
+//             <Grid item xs={12} sm={6} md={3} key={index}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 animate={inView ? { opacity: 1, y: 0 } : {}}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//               >
+//                 <Card
+//                   sx={{
+//                     backgroundColor: '#111111',
+//                     border: '1px solid #333333',
+//                     p: 3,
+//                     textAlign: 'center',
+//                     height: '100%',
+//                     transition: 'all 0.3s ease',
+//                     '&:hover': {
+//                       borderColor: '#fa8072',
+//                       transform: 'translateY(-5px)',
+//                     },
+//                   }}
+//                 >
+//                   <Box sx={{ mb: 2 }}>
+//                     {stat.icon}
+//                   </Box>
+                  
+//                   <Typography
+//                     variant="h2"
+//                     sx={{
+//                       mb: 1,
+//                       fontWeight: 700,
+//                       color: '#fa8072',
+//                       fontSize: { xs: '2rem', md: '2.5rem' },
+//                     }}
+//                   >
+//                     {stat.value}
+//                   </Typography>
+                  
+//                   <Typography
+//                     variant="h5"
+//                     sx={{
+//                       mb: 1,
+//                       fontWeight: 600,
+//                       color: '#ffffff',
+//                     }}
+//                   >
+//                     {stat.label}
+//                   </Typography>
+                  
+//                   <Typography
+//                     variant="body2"
+//                     sx={{
+//                       color: '#ffffff',
+//                       opacity: 0.9,
+//                       fontSize: '0.85rem',
+//                     }}
+//                   >
+//                     {stat.description}
+//                   </Typography>
+//                 </Card>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Box sx={{ textAlign: 'center', mt: 4 }}>
+//           <Button
+//             variant="contained"
+//             size="large"
+//             endIcon={<ArrowForwardIcon />}
+//             onClick={handleViewTeam}
+//             sx={{
+//               px: 6,
+//               py: 1.5,
+//               fontSize: '1rem',
+//               fontWeight: 600,
+//               backgroundColor: '#fa8072',
 //               color: '#ffffff',
 //               '&:hover': {
 //                 backgroundColor: '#ff1dce',
@@ -2177,6 +2347,8 @@ const TeamSection = () => {
   });
 
   const navigate = useNavigate();
+  const primaryColor = '#fa8072'; // Telemagenta
+  const secondaryColor = '#fa8072'; // Salmon
 
   const handleViewTeam = () => {
     navigate('/team');
@@ -2198,7 +2370,7 @@ const TeamSection = () => {
               variant="h2"
               sx={{
                 mb: 2,
-                color: '#ff0090',
+                color: primaryColor,
                 fontWeight: 700,
                 fontSize: { xs: '2rem', md: '2.5rem' },
               }}
@@ -2225,10 +2397,34 @@ const TeamSection = () => {
 
         <Grid container spacing={4} sx={{ mb: 6 }}>
           {[
-            { icon: <GroupsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '50+', label: 'AI Experts', description: 'World-class talent driving innovation' },
-            { icon: <RocketLaunchIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '200+', label: 'Projects', description: 'Successful AI implementations' },
-            { icon: <EmojiObjectsIcon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '15+', label: 'Patents', description: 'Proprietary AI technologies' },
-            { icon: <Diversity3Icon sx={{ fontSize: 32, color: '#ff0090' }} />, value: '100%', label: 'Client Satisfaction', description: 'Exceptional delivery rate' },
+            { 
+              icon: <GroupsIcon sx={{ fontSize: 32 }} />, 
+              value: '50+', 
+              label: 'AI Experts', 
+              description: 'World-class talent driving innovation',
+              color: primaryColor
+            },
+            { 
+              icon: <RocketLaunchIcon sx={{ fontSize: 32 }} />, 
+              value: '200+', 
+              label: 'Projects', 
+              description: 'Successful AI implementations',
+              color: secondaryColor
+            },
+            { 
+              icon: <EmojiObjectsIcon sx={{ fontSize: 32 }} />, 
+              value: '15+', 
+              label: 'Patents', 
+              description: 'Proprietary AI technologies',
+              color: primaryColor
+            },
+            { 
+              icon: <Diversity3Icon sx={{ fontSize: 32 }} />, 
+              value: '100%', 
+              label: 'Client Satisfaction', 
+              description: 'Exceptional delivery rate',
+              color: secondaryColor
+            },
           ].map((stat, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <motion.div
@@ -2245,12 +2441,16 @@ const TeamSection = () => {
                     height: '100%',
                     transition: 'all 0.3s ease',
                     '&:hover': {
-                      borderColor: '#ff0090',
+                      borderColor: stat.color,
                       transform: 'translateY(-5px)',
+                      boxShadow: `0 8px 25px ${stat.color}33`,
                     },
                   }}
                 >
-                  <Box sx={{ mb: 2 }}>
+                  <Box sx={{ 
+                    mb: 2,
+                    color: stat.color,
+                  }}>
                     {stat.icon}
                   </Box>
                   
@@ -2259,7 +2459,7 @@ const TeamSection = () => {
                     sx={{
                       mb: 1,
                       fontWeight: 700,
-                      color: '#ff0090',
+                      color: stat.color,
                       fontSize: { xs: '2rem', md: '2.5rem' },
                     }}
                   >
@@ -2271,7 +2471,8 @@ const TeamSection = () => {
                     sx={{
                       mb: 1,
                       fontWeight: 600,
-                      color: '#ffffff',
+                      color: stat.color,
+                      fontSize: '1.1rem',
                     }}
                   >
                     {stat.label}
@@ -2304,11 +2505,14 @@ const TeamSection = () => {
               py: 1.5,
               fontSize: '1rem',
               fontWeight: 600,
-              backgroundColor: '#ff0090',
+              backgroundColor: primaryColor,
               color: '#ffffff',
               '&:hover': {
-                backgroundColor: '#ff1dce',
+                backgroundColor: '#d94b8a',
+                transform: 'translateY(-2px)',
+                boxShadow: `0 8px 25px ${primaryColor}33`,
               },
+              transition: 'all 0.3s ease',
             }}
           >
             Meet Our Expert Team

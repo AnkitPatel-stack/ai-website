@@ -2203,7 +2203,7 @@
 //                   lineHeight: 1.2,
 //                 }}
 //               >
-//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//                 Transform Your Business with <span style={{ color: '#fa8072' }}>AI Solutions</span>
 //               </Typography>
               
 //               <Typography
@@ -2230,7 +2230,7 @@
 //                     py: 1.5,
 //                     fontSize: '1rem',
 //                     fontWeight: 600,
-//                     bgcolor: '#ff0090',
+//                     bgcolor: '#fa8072',
 //                     color: '#FFFFFF',
 //                     '&:hover': {
 //                       bgcolor: '#ff1dce',
@@ -2254,8 +2254,8 @@
 //                     borderColor: '#FFFFFF',
 //                     color: '#FFFFFF',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
-//                       color: '#ff0090',
+//                       borderColor: '#fa8072',
+//                       color: '#fa8072',
 //                     },
 //                   }}
 //                 >
@@ -2337,7 +2337,7 @@
 //                   lineHeight: 1.2,
 //                 }}
 //               >
-//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//                 Transform Your Business with <span style={{ color: '#fa8072' }}>AI Solutions</span>
 //               </Typography>
               
 //               <Typography
@@ -2364,7 +2364,7 @@
 //                     py: 1.5,
 //                     fontSize: '1rem',
 //                     fontWeight: 600,
-//                     bgcolor: '#ff0090',
+//                     bgcolor: '#fa8072',
 //                     color: '#ffffff',
 //                     '&:hover': {
 //                       bgcolor: '#ff1dce',
@@ -2388,8 +2388,8 @@
 //                     borderColor: '#ffffff',
 //                     color: '#ffffff',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
-//                       color: '#ff0090',
+//                       borderColor: '#fa8072',
+//                       color: '#fa8072',
 //                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
 //                     },
 //                   }}
@@ -2471,7 +2471,7 @@
 //                   lineHeight: 1.2,
 //                 }}
 //               >
-//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//                 Transform Your Business with <span style={{ color: '#fa8072' }}>AI Solutions</span>
 //               </Typography>
               
 //               <Typography
@@ -2498,7 +2498,7 @@
 //                     py: 1.5,
 //                     fontSize: '1rem',
 //                     fontWeight: 600,
-//                     bgcolor: '#ff0090',
+//                     bgcolor: '#fa8072',
 //                     color: '#ffffff',
 //                     '&:hover': {
 //                       bgcolor: '#ff1dce',
@@ -2522,8 +2522,8 @@
 //                     borderColor: '#ffffff',
 //                     color: '#ffffff',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
-//                       color: '#ff0090',
+//                       borderColor: '#fa8072',
+//                       color: '#fa8072',
 //                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
 //                     },
 //                   }}
@@ -2606,7 +2606,7 @@
 //                   lineHeight: 1.2,
 //                 }}
 //               >
-//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//                 Transform Your Business with <span style={{ color: '#fa8072' }}>AI Solutions</span>
 //               </Typography>
               
 //               <Typography
@@ -2633,7 +2633,7 @@
 //                     py: 1.5,
 //                     fontSize: '1rem',
 //                     fontWeight: 600,
-//                     backgroundColor: '#ff0090', // PINK button
+//                     backgroundColor: '#fa8072', // PINK button
 //                     color: '#FFFFFF',
 //                     '&:hover': {
 //                       backgroundColor: '#ff1dce',
@@ -2657,8 +2657,8 @@
 //                     borderColor: '#FFFFFF',
 //                     color: '#FFFFFF',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
-//                       color: '#ff0090',
+//                       borderColor: '#fa8072',
+//                       color: '#fa8072',
 //                     },
 //                   }}
 //                 >
@@ -2754,7 +2754,7 @@
 //                   textAlign: { xs: 'center', md: 'left' }
 //                 }}
 //               >
-//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//                 Transform Your Business with <span style={{ color: '#fa8072' }}>AI Solutions</span>
 //               </Typography>
               
 //               <Typography
@@ -2792,7 +2792,7 @@
 //                     fontSize: { xs: '0.9rem', md: '1rem' },
 //                     fontWeight: 600,
 //                     minWidth: { xs: '200px', sm: 'auto' },
-//                     backgroundColor: '#ff0090',
+//                     backgroundColor: '#fa8072',
 //                     color: '#FFFFFF',
 //                     '&:hover': {
 //                       backgroundColor: '#ff1dce',
@@ -2817,8 +2817,8 @@
 //                     borderColor: '#FFFFFF',
 //                     color: '#FFFFFF',
 //                     '&:hover': {
-//                       borderColor: '#ff0090',
-//                       color: '#ff0090',
+//                       borderColor: '#fa8072',
+//                       color: '#fa8072',
 //                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
 //                     },
 //                   }}
@@ -2854,7 +2854,7 @@
 //                   width: '300px',
 //                   height: '300px',
 //                   borderRadius: '50%',
-//                   background: 'conic-gradient(from 0deg, transparent, #ff0090, transparent)',
+//                   background: 'conic-gradient(from 0deg, transparent, #fa8072, transparent)',
 //                   animation: 'rotate 20s linear infinite',
 //                   '@keyframes rotate': {
 //                     '0%': {
@@ -3007,7 +3007,7 @@
 //               left: '50%',
 //               width: '4px',
 //               height: '4px',
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               borderRadius: '50%',
 //               transform: `
 //                 translate(-50%, -50%) 
@@ -3018,11 +3018,11 @@
 //               '@keyframes glow': {
 //                 '0%': {
 //                   opacity: 0.3,
-//                   boxShadow: '0 0 2px #ff0090',
+//                   boxShadow: '0 0 2px #fa8072',
 //                 },
 //                 '100%': {
 //                   opacity: 1,
-//                   boxShadow: '0 0 8px #ff0090, 0 0 12px #ff0090',
+//                   boxShadow: '0 0 8px #fa8072, 0 0 12px #fa8072',
 //                 },
 //               },
 //             }}
@@ -3070,7 +3070,7 @@
 //             variant="h2"
 //             sx={{
 //               mb: 3,
-//               color: '#ff0090',
+//               color: '#fa8072',
 //               fontWeight: 700,
 //               fontSize: { 
 //                 xs: '1.5rem', 
@@ -3112,7 +3112,7 @@
 //             sx={{
 //               width: '100px',
 //               height: '2px',
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               mx: 'auto',
 //               mb: 4,
 //               borderRadius: '1px',
@@ -3130,7 +3130,7 @@
 //               py: 1.5,
 //               fontSize: { xs: '0.95rem', md: '1.1rem' },
 //               fontWeight: 600,
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               color: '#FFFFFF',
 //               mb: 4,
 //               minWidth: { xs: '220px', sm: '250px' },
@@ -3165,7 +3165,7 @@
 //                 top: '50%',
 //                 width: '40px',
 //                 height: '1px',
-//                 backgroundColor: '#ff0090',
+//                 backgroundColor: '#fa8072',
 //                 opacity: 0.5,
 //               },
 //               '&::before': {
@@ -3191,14 +3191,14 @@
 //           display: { xs: 'none', md: 'flex' },
 //           flexDirection: 'column',
 //           alignItems: 'center',
-//           color: '#ff0090',
+//           color: '#fa8072',
 //           zIndex: 2,
 //         }}
 //       >
 //         <Typography
 //           variant="caption"
 //           sx={{
-//             color: '#ff0090',
+//             color: '#fa8072',
 //             fontSize: '0.75rem',
 //             letterSpacing: '2px',
 //             textTransform: 'uppercase',
@@ -3211,7 +3211,7 @@
 //           sx={{
 //             width: '1px',
 //             height: '40px',
-//             backgroundColor: '#ff0090',
+//             backgroundColor: '#fa8072',
 //             animation: 'scrollBounce 2s infinite',
 //             '@keyframes scrollBounce': {
 //               '0%, 100%': {
@@ -3402,7 +3402,7 @@
 //               left: '50%',
 //               width: { xs: '3px', md: '4px' },
 //               height: { xs: '3px', md: '4px' },
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               borderRadius: '50%',
 //               transform: `
 //                 translate(-50%, -50%) 
@@ -3487,7 +3487,7 @@
 //             component="h2"
 //             sx={{
 //               mb: { xs: 2, sm: 2.5, md: 3 },
-//               color: '#ff0090',
+//               color: '#fa8072',
 //               fontWeight: 800,
 //               fontSize: { 
 //                 xs: '1.25rem', 
@@ -3530,7 +3530,7 @@
 //             sx={{
 //               width: { xs: '80px', sm: '100px' },
 //               height: '2px',
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               mb: { xs: 3, sm: 3.5, md: 4 },
 //               borderRadius: '1px',
 //             }}
@@ -3550,7 +3550,7 @@
 //                 md: '1.1rem' 
 //               },
 //               fontWeight: 700,
-//               backgroundColor: '#ff0090',
+//               backgroundColor: '#fa8072',
 //               color: '#FFFFFF',
 //               mb: { xs: 4, sm: 5, md: 6 },
 //               minWidth: { xs: '200px', sm: '240px', md: '280px' },
@@ -3593,7 +3593,7 @@
 //                 top: '50%',
 //                 width: { xs: '30px', sm: '40px', md: '50px' },
 //                 height: '1px',
-//                 backgroundColor: '#ff0090',
+//                 backgroundColor: '#fa8072',
 //                 opacity: 0.6,
 //               },
 //               '&::before': {
@@ -3618,7 +3618,7 @@
 //           display: 'flex',
 //           flexDirection: 'column',
 //           alignItems: 'center',
-//           color: '#ff0090',
+//           color: '#fa8072',
 //           zIndex: 2,
 //           opacity: 0.7,
 //         }}
@@ -3626,7 +3626,7 @@
 //         <Typography
 //           variant="caption"
 //           sx={{
-//             color: '#ff0090',
+//             color: '#fa8072',
 //             fontSize: { xs: '0.625rem', sm: '0.75rem' },
 //             letterSpacing: '1.5px',
 //             textTransform: 'uppercase',
@@ -3641,7 +3641,7 @@
 //           sx={{
 //             width: '1px',
 //             height: { xs: '30px', sm: '40px' },
-//             backgroundColor: '#ff0090',
+//             backgroundColor: '#fa8072',
 //             animation: 'scrollBounce 2s infinite',
 //             '@keyframes scrollBounce': {
 //               '0%, 100%': {
@@ -3666,7 +3666,7 @@
 //           display: 'flex',
 //           flexDirection: 'column',
 //           alignItems: 'center',
-//           color: '#ff0090',
+//           color: '#fa8072',
 //           zIndex: 2,
 //           opacity: 0.7,
 //         }}
@@ -3674,7 +3674,7 @@
 //         <Typography
 //           variant="caption"
 //           sx={{
-//             color: '#ff0090',
+//             color: '#fa8072',
 //             fontSize: { xs: '0.625rem', sm: '0.75rem' },
 //             letterSpacing: '1.5px',
 //             textTransform: 'uppercase',
@@ -3688,7 +3688,7 @@
 //           sx={{
 //             width: '1px',
 //             height: { xs: '30px', sm: '40px' },
-//             backgroundColor: '#ff0090',
+//             backgroundColor: '#fa8072',
 //             animation: 'timBounce 2s infinite 0.5s',
 //             '@keyframes timBounce': {
 //               '0%, 100%': {
@@ -3871,7 +3871,7 @@ const HeroSection = () => {
         {/* Floating Dots */}
         {[...Array(36)].map((_, i) => {
           // Alternate between the two colors
-          const color = i % 2 === 0 ? '#cf3476' : '#fa8072';
+          const color = i % 2 === 0 ? '#fa8072' : '#fa8072';
           return (
             <Box
               key={i}
@@ -3968,7 +3968,7 @@ const HeroSection = () => {
             component="h2"
             sx={{
               mb: { xs: 2, sm: 2.5, md: 3 },
-              color: '#cf3476', // Using #cf3476 for subheading
+              color: '#fa8072', // Using #fa8072 for subheading
               fontWeight: 800,
               fontSize: { 
                 xs: '1.25rem', 
@@ -4012,7 +4012,7 @@ const HeroSection = () => {
             sx={{
               width: { xs: '80px', sm: '100px' },
               height: '2px',
-              background: 'linear-gradient(90deg, transparent, #cf3476, #fa8072, transparent)',
+              background: 'linear-gradient(90deg, transparent, #fa8072, #fa8072, transparent)',
               mb: { xs: 3, sm: 3.5, md: 4 },
               borderRadius: '1px',
             }}
@@ -4032,7 +4032,7 @@ const HeroSection = () => {
                 md: '1.1rem' 
               },
               fontWeight: 700,
-              background: 'linear-gradient(135deg, #cf3476, #fa8072)',
+              background: 'linear-gradient(135deg, #fa8072, #fa8072)',
               color: '#FFFFFF',
               mb: { xs: 4, sm: 5, md: 6 },
               minWidth: { xs: '200px', sm: '240px', md: '280px' },
@@ -4040,7 +4040,7 @@ const HeroSection = () => {
               letterSpacing: '0.5px',
               border: 'none',
               '&:hover': {
-                background: 'linear-gradient(135deg, #fa8072, #cf3476)',
+                background: 'linear-gradient(135deg, #fa8072, #fa8072)',
                 transform: 'translateY(-3px)',
                 boxShadow: '0 10px 25px rgba(207, 52, 118, 0.5)',
               },
@@ -4079,7 +4079,7 @@ const HeroSection = () => {
                 top: '50%',
                 width: { xs: '30px', sm: '40px', md: '50px' },
                 height: '1px',
-                background: 'linear-gradient(90deg, transparent, #cf3476, #fa8072, transparent)',
+                background: 'linear-gradient(90deg, transparent, #fa8072, #fa8072, transparent)',
                 opacity: 0.8,
               },
               '&::before': {
@@ -4127,7 +4127,7 @@ const HeroSection = () => {
           sx={{
             width: '1px',
             height: { xs: '30px', sm: '40px' },
-            background: 'linear-gradient(to bottom, #cf3476, #fa8072)',
+            background: 'linear-gradient(to bottom, #fa8072, #fa8072)',
             animation: 'scrollBounce 2s infinite',
             '@keyframes scrollBounce': {
               '0%, 100%': {
@@ -4159,7 +4159,7 @@ const HeroSection = () => {
         <Typography
           variant="caption"
           sx={{
-            color: '#cf3476', // Using #cf3476 for TIM
+            color: '#fa8072', // Using #fa8072 for TIM
             fontSize: { xs: '0.625rem', sm: '0.75rem' },
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
@@ -4174,7 +4174,7 @@ const HeroSection = () => {
           sx={{
             width: '1px',
             height: { xs: '30px', sm: '40px' },
-            background: 'linear-gradient(to bottom, #fa8072, #cf3476)',
+            background: 'linear-gradient(to bottom, #fa8072, #fa8072)',
             animation: 'timBounce 2s infinite 0.5s',
             '@keyframes timBounce': {
               '0%, 100%': {
