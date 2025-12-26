@@ -1988,20 +1988,1739 @@
 
 // export default HeroSection;
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+// import heroVideo from './herosection.mp4';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         overflow: 'hidden',
+//         pt: { xs: 4, md: 0 },
+//         bgcolor: '#0A0A0F',
+//       }}
+//     >
+//       {/* Simplified Background */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: 0,
+//           left: 0,
+//           width: '100%',
+//           height: '100%',
+//           bgcolor: '#0A0A0F',
+//           opacity: 0.7,
+//           zIndex: 1,
+//         }}
+//       />
+
+//       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#FFFFFF',
+//                   fontWeight: 700,
+//                   fontSize: { xs: '2.5rem', md: '3.5rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Transform Your Business with AI Solutions
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#A0A0A0',
+//                   fontSize: { xs: '1rem', md: '1.25rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     bgcolor: '#8A2BE2',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       bgcolor: '#7A1BD2',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     borderColor: '#FF2D55',
+//                     color: '#FF2D55',
+//                     '&:hover': {
+//                       borderColor: '#E82D4D',
+//                       color: '#E82D4D',
+//                       bgcolor: 'rgba(255, 45, 85, 0.1)',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         background: 'black',
+//         contentVisibility: '-moz-initial'
+//       }}
+//     >
+//       <Container maxWidth="xl">
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#FFFFFF',
+//                   fontWeight: 800,
+//                   fontSize: { xs: '2.8rem', md: '4rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#CCCCCC',
+//                   fontSize: { xs: '1.1rem', md: '1.3rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     bgcolor: '#ff0090',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       bgcolor: '#ff1dce',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     borderColor: '#FFFFFF',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       color: '#ff0090',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         background: '#000000',
+//       }}
+//     >
+//       <Container maxWidth="xl">
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#ffffff',
+//                   fontWeight: 800,
+//                   fontSize: { xs: '2.8rem', md: '4rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#cccccc',
+//                   fontSize: { xs: '1.1rem', md: '1.3rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     bgcolor: '#ff0090',
+//                     color: '#ffffff',
+//                     '&:hover': {
+//                       bgcolor: '#ff1dce',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     borderColor: '#ffffff',
+//                     color: '#ffffff',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       color: '#ff0090',
+//                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         background: '#000000',
+//       }}
+//     >
+//       <Container maxWidth="xl">
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#ffffff',
+//                   fontWeight: 800,
+//                   fontSize: { xs: '2.8rem', md: '4rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#cccccc',
+//                   fontSize: { xs: '1.1rem', md: '1.3rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     bgcolor: '#ff0090',
+//                     color: '#ffffff',
+//                     '&:hover': {
+//                       bgcolor: '#ff1dce',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     borderColor: '#ffffff',
+//                     color: '#ffffff',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       color: '#ff0090',
+//                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+// import SolarSystemBackground from '../components/SolarSystemBackground';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+// <SolarSystemBackground/>
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//     ref={ref}
+//     sx={{
+//       position: 'relative',
+//       minHeight: '100vh',
+//       display: 'flex',
+//       alignItems: 'center',
+//       backgroundColor: 'transparent', // Changed to transparent
+//     }}
+//   >
+//       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#FFFFFF',
+//                   fontWeight: 800,
+//                   fontSize: { xs: '2.8rem', md: '4rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#CCCCCC',
+//                   fontSize: { xs: '1.1rem', md: '1.3rem' },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     backgroundColor: '#ff0090', // PINK button
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       backgroundColor: '#ff1dce',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: 4,
+//                     py: 1.5,
+//                     fontSize: '1rem',
+//                     fontWeight: 600,
+//                     borderColor: '#FFFFFF',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       color: '#ff0090',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         backgroundColor: 'transparent',
+//         paddingTop: { xs: '80px', md: '0' }, // Added padding for mobile
+//       }}
+//     >
+//       <Container 
+//         maxWidth="xl" 
+//         sx={{ 
+//           position: 'relative', 
+//           zIndex: 2,
+//           padding: { xs: '16px', sm: '24px', md: '32px' }
+//         }}
+//       >
+//         <Grid container spacing={4} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 50 }}
+//               animate={inView ? { opacity: 1, y: 0 } : {}}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#FFFFFF',
+//                   fontWeight: 800,
+//                   fontSize: { 
+//                     xs: '2rem', 
+//                     sm: '2.5rem', 
+//                     md: '3rem', 
+//                     lg: '4rem' 
+//                   },
+//                   lineHeight: { xs: 1.3, md: 1.2 },
+//                   textAlign: { xs: 'center', md: 'left' }
+//                 }}
+//               >
+//                 Transform Your Business with <span style={{ color: '#ff0090' }}>AI Solutions</span>
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#CCCCCC',
+//                   fontSize: { 
+//                     xs: '1rem', 
+//                     sm: '1.1rem', 
+//                     md: '1.3rem' 
+//                   },
+//                   lineHeight: 1.6,
+//                   fontWeight: 400,
+//                   textAlign: { xs: 'center', md: 'left' }
+//                 }}
+//               >
+//                 We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
+//               </Typography>
+              
+//               <Box sx={{ 
+//                 display: 'flex', 
+//                 gap: 2, 
+//                 flexWrap: 'wrap',
+//                 justifyContent: { xs: 'center', md: 'flex-start' }
+//               }}>
+//                 <Button
+//                   variant="contained"
+//                   size="large"
+//                   endIcon={<ArrowForwardIcon />}
+//                   onClick={handleGetStarted}
+//                   sx={{
+//                     px: { xs: 3, md: 4 },
+//                     py: 1.5,
+//                     fontSize: { xs: '0.9rem', md: '1rem' },
+//                     fontWeight: 600,
+//                     minWidth: { xs: '200px', sm: 'auto' },
+//                     backgroundColor: '#ff0090',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       backgroundColor: '#ff1dce',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                   }}
+//                 >
+//                   Start Your AI Journey
+//                 </Button>
+                
+//                 <Button
+//                   variant="outlined"
+//                   size="large"
+//                   startIcon={<PlayArrowIcon />}
+//                   onClick={handleViewWork}
+//                   sx={{
+//                     px: { xs: 3, md: 4 },
+//                     py: 1.5,
+//                     fontSize: { xs: '0.9rem', md: '1rem' },
+//                     fontWeight: 600,
+//                     minWidth: { xs: '200px', sm: 'auto' },
+//                     borderColor: '#FFFFFF',
+//                     color: '#FFFFFF',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       color: '#ff0090',
+//                       backgroundColor: 'rgba(255, 0, 144, 0.1)',
+//                     },
+//                   }}
+//                 >
+//                   View Our Work
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+//           <Grid item xs={12} md={6}>
+//             <Box sx={{ 
+//               display: { xs: 'none', md: 'block' },
+//               position: 'relative',
+//               height: '500px',
+//               background: 'radial-gradient(circle at center, rgba(255, 0, 144, 0.2) 0%, transparent 70%)',
+//               animation: 'pulse 4s infinite',
+//               '@keyframes pulse': {
+//                 '0%, 100%': {
+//                   opacity: 0.3,
+//                 },
+//                 '50%': {
+//                   opacity: 0.6,
+//                 },
+//               }
+//             }}>
+//               {/* Optional: Add an AI illustration or 3D visualization here */}
+//               <Box
+//                 sx={{
+//                   position: 'absolute',
+//                   top: '50%',
+//                   left: '50%',
+//                   transform: 'translate(-50%, -50%)',
+//                   width: '300px',
+//                   height: '300px',
+//                   borderRadius: '50%',
+//                   background: 'conic-gradient(from 0deg, transparent, #ff0090, transparent)',
+//                   animation: 'rotate 20s linear infinite',
+//                   '@keyframes rotate': {
+//                     '0%': {
+//                       transform: 'translate(-50%, -50%) rotate(0deg)',
+//                     },
+//                     '100%': {
+//                       transform: 'translate(-50%, -50%) rotate(360deg)',
+//                     },
+//                   },
+//                 }}
+//               />
+//             </Box>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   const handleViewWork = () => {
+//     const servicesSection = document.getElementById('services');
+//     if (servicesSection) {
+//       const yOffset = -80;
+//       const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: y, behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         backgroundColor: 'transparent',
+//         paddingTop: { xs: '80px', md: '0' },
+//         overflow: 'hidden',
+//       }}
+//     >
+//       {/* Background Circle Animation */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: '50%',
+//           left: '50%',
+//           transform: 'translate(-50%, -50%)',
+//           width: { xs: '300px', sm: '400px', md: '600px', lg: '800px' },
+//           height: { xs: '300px', sm: '400px', md: '600px', lg: '800px' },
+//           borderRadius: '50%',
+//           background: 'radial-gradient(circle, rgba(255, 0, 144, 0.15) 0%, transparent 70%)',
+//           animation: 'pulse 6s ease-in-out infinite',
+//           '@keyframes pulse': {
+//             '0%, 100%': {
+//               opacity: 0.3,
+//               transform: 'translate(-50%, -50%) scale(1)',
+//             },
+//             '50%': {
+//               opacity: 0.6,
+//               transform: 'translate(-50%, -50%) scale(1.05)',
+//             },
+//           },
+//           zIndex: 0,
+//         }}
+//       >
+//         {/* Inner Ring */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: '80%',
+//             height: '80%',
+//             borderRadius: '50%',
+//             border: '1px solid rgba(255, 0, 144, 0.3)',
+//             animation: 'rotate 30s linear infinite',
+//             '@keyframes rotate': {
+//               '0%': {
+//                 transform: 'translate(-50%, -50%) rotate(0deg)',
+//               },
+//               '100%': {
+//                 transform: 'translate(-50%, -50%) rotate(360deg)',
+//               },
+//             },
+//           }}
+//         />
+        
+//         {/* Outer Ring */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: '95%',
+//             height: '95%',
+//             borderRadius: '50%',
+//             border: '1px solid rgba(255, 0, 144, 0.2)',
+//             animation: 'rotateReverse 25s linear infinite',
+//             '@keyframes rotateReverse': {
+//               '0%': {
+//                 transform: 'translate(-50%, -50%) rotate(360deg)',
+//               },
+//               '100%': {
+//                 transform: 'translate(-50%, -50%) rotate(0deg)',
+//               },
+//             },
+//           }}
+//         />
+        
+//         {/* Dots around the circle */}
+//         {[...Array(24)].map((_, i) => (
+//           <Box
+//             key={i}
+//             sx={{
+//               position: 'absolute',
+//               top: '50%',
+//               left: '50%',
+//               width: '4px',
+//               height: '4px',
+//               backgroundColor: '#ff0090',
+//               borderRadius: '50%',
+//               transform: `
+//                 translate(-50%, -50%) 
+//                 rotate(${i * 15}deg) 
+//                 translateY(${-1 * (300)}px)
+//               `,
+//               animation: `glow 2s ${i * 0.1}s infinite alternate`,
+//               '@keyframes glow': {
+//                 '0%': {
+//                   opacity: 0.3,
+//                   boxShadow: '0 0 2px #ff0090',
+//                 },
+//                 '100%': {
+//                   opacity: 1,
+//                   boxShadow: '0 0 8px #ff0090, 0 0 12px #ff0090',
+//                 },
+//               },
+//             }}
+//           />
+//         ))}
+//       </Box>
+
+//       <Container 
+//         maxWidth="lg" 
+//         sx={{ 
+//           position: 'relative',
+//           zIndex: 2,
+//           textAlign: 'center',
+//           padding: { xs: '16px', sm: '24px', md: '32px' }
+//         }}
+//       >
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           animate={inView ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.8 }}
+//         >
+//           {/* Main Heading with Guarantee */}
+//           <Typography
+//             variant="h1"
+//             sx={{
+//               mb: 2,
+//               color: '#FFFFFF',
+//               fontWeight: 800,
+//               fontSize: { 
+//                 xs: '2.2rem', 
+//                 sm: '2.8rem', 
+//                 md: '3.5rem', 
+//                 lg: '4.5rem' 
+//               },
+//               lineHeight: { xs: 1.2, md: 1.1 },
+//               textTransform: 'uppercase',
+//               letterSpacing: { xs: '0.5px', md: '1px' },
+//             }}
+//           >
+//             Guaranteed AI Outcomes.
+//           </Typography>
+          
+//           {/* Sub Heading */}
+//           <Typography
+//             variant="h2"
+//             sx={{
+//               mb: 3,
+//               color: '#ff0090',
+//               fontWeight: 700,
+//               fontSize: { 
+//                 xs: '1.5rem', 
+//                 sm: '2rem', 
+//                 md: '2.5rem', 
+//                 lg: '3rem' 
+//               },
+//               lineHeight: 1.2,
+//               textTransform: 'uppercase',
+//               letterSpacing: '0.5px',
+//             }}
+//           >
+//             Delivered by Our Team, or Yours
+//           </Typography>
+          
+//           {/* Description */}
+//           <Typography
+//             variant="h6"
+//             sx={{
+//               mb: 4,
+//               color: '#CCCCCC',
+//               fontSize: { 
+//                 xs: '1rem', 
+//                 sm: '1.1rem', 
+//                 md: '1.3rem' 
+//               },
+//               lineHeight: 1.6,
+//               fontWeight: 400,
+//               maxWidth: '800px',
+//               mx: 'auto',
+//               opacity: 0.9,
+//             }}
+//           >
+//             Your most ambitious AI goals, executed with certainty. We offer flexible partnership models from turnkey projects to dedicated innovation hubs, designed to deliver the results you need.
+//           </Typography>
+          
+//           {/* Divider Line */}
+//           <Box
+//             sx={{
+//               width: '100px',
+//               height: '2px',
+//               backgroundColor: '#ff0090',
+//               mx: 'auto',
+//               mb: 4,
+//               borderRadius: '1px',
+//             }}
+//           />
+          
+//           {/* CTA Button */}
+//           <Button
+//             variant="contained"
+//             size="large"
+//             endIcon={<ArrowForwardIcon />}
+//             onClick={handleGetStarted}
+//             sx={{
+//               px: { xs: 4, md: 6 },
+//               py: 1.5,
+//               fontSize: { xs: '0.95rem', md: '1.1rem' },
+//               fontWeight: 600,
+//               backgroundColor: '#ff0090',
+//               color: '#FFFFFF',
+//               mb: 4,
+//               minWidth: { xs: '220px', sm: '250px' },
+//               '&:hover': {
+//                 backgroundColor: '#ff1dce',
+//                 transform: 'translateY(-3px)',
+//                 boxShadow: '0 10px 20px rgba(255, 0, 144, 0.3)',
+//               },
+//             }}
+//           >
+//             Explore Solutions
+//           </Button>
+          
+//           {/* Bottom Tagline */}
+//           <Typography
+//             variant="h5"
+//             sx={{
+//               color: '#FFFFFF',
+//               fontWeight: 600,
+//               fontSize: { 
+//                 xs: '0.9rem', 
+//                 sm: '1rem', 
+//                 md: '1.2rem' 
+//               },
+//               letterSpacing: '2px',
+//               textTransform: 'uppercase',
+//               opacity: 0.8,
+//               position: 'relative',
+//               '&::before, &::after': {
+//                 content: '""',
+//                 position: 'absolute',
+//                 top: '50%',
+//                 width: '40px',
+//                 height: '1px',
+//                 backgroundColor: '#ff0090',
+//                 opacity: 0.5,
+//               },
+//               '&::before': {
+//                 left: { xs: '20px', md: '50px' },
+//               },
+//               '&::after': {
+//                 right: { xs: '20px', md: '50px' },
+//               },
+//             }}
+//           >
+//             The Outcome Partner for Industry Leaders
+//           </Typography>
+//         </motion.div>
+//       </Container>
+      
+//       {/* Scroll Indicator */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           bottom: '40px',
+//           left: '50%',
+//           transform: 'translateX(-50%)',
+//           display: { xs: 'none', md: 'flex' },
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//           color: '#ff0090',
+//           zIndex: 2,
+//         }}
+//       >
+//         <Typography
+//           variant="caption"
+//           sx={{
+//             color: '#ff0090',
+//             fontSize: '0.75rem',
+//             letterSpacing: '2px',
+//             textTransform: 'uppercase',
+//             mb: 1,
+//           }}
+//         >
+//           Scroll
+//         </Typography>
+//         <Box
+//           sx={{
+//             width: '1px',
+//             height: '40px',
+//             backgroundColor: '#ff0090',
+//             animation: 'scrollBounce 2s infinite',
+//             '@keyframes scrollBounce': {
+//               '0%, 100%': {
+//                 transform: 'translateY(0)',
+//                 opacity: 0.5,
+//               },
+//               '50%': {
+//                 transform: 'translateY(10px)',
+//                 opacity: 1,
+//               },
+//             },
+//           }}
+//         />
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import { useNavigate } from 'react-router-dom';
+
+// const HeroSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleGetStarted = () => {
+//     navigate('/contact');
+//   };
+
+//   return (
+//     <Box
+//       ref={ref}
+//       sx={{
+//         position: 'relative',
+//         minHeight: '100vh',
+//         display: 'flex',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         backgroundColor: 'transparent',
+//         padding: { xs: '20px', sm: '30px', md: '40px' },
+//         overflow: 'hidden',
+//       }}
+//     >
+//       {/* Background Circle - Behind everything */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: '50%',
+//           left: '50%',
+//           transform: 'translate(-50%, -50%)',
+//           width: { 
+//             xs: '250vw', 
+//             sm: '200vw', 
+//             md: '150vw', 
+//             lg: '120vw',
+//             xl: '100vw'
+//           },
+//           height: { 
+//             xs: '250vw', 
+//             sm: '200vw', 
+//             md: '150vw', 
+//             lg: '120vw',
+//             xl: '100vw'
+//           },
+//           borderRadius: '50%',
+//           background: 'radial-gradient(circle, rgba(255, 0, 144, 0.08) 0%, transparent 60%)',
+//           zIndex: 0,
+//           opacity: 0.7,
+//         }}
+//       />
+      
+//       {/* Animated Rings */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           top: '50%',
+//           left: '50%',
+//           transform: 'translate(-50%, -50%)',
+//           width: { 
+//             xs: '180vw', 
+//             sm: '150vw', 
+//             md: '120vw', 
+//             lg: '100vw' 
+//           },
+//           height: { 
+//             xs: '180vw', 
+//             sm: '150vw', 
+//             md: '120vw', 
+//             lg: '100vw' 
+//           },
+//           borderRadius: '50%',
+//           zIndex: 0,
+//         }}
+//       >
+//         {/* Outer Ring */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: '100%',
+//             height: '100%',
+//             borderRadius: '50%',
+//             border: '1px solid rgba(255, 0, 144, 0.15)',
+//             animation: 'rotateOuter 25s linear infinite',
+//             '@keyframes rotateOuter': {
+//               '0%': {
+//                 transform: 'translate(-50%, -50%) rotate(0deg)',
+//               },
+//               '100%': {
+//                 transform: 'translate(-50%, -50%) rotate(360deg)',
+//               },
+//             },
+//           }}
+//         />
+        
+//         {/* Middle Ring */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: '80%',
+//             height: '80%',
+//             borderRadius: '50%',
+//             border: '1px solid rgba(255, 0, 144, 0.2)',
+//             animation: 'rotateMiddle 20s linear infinite reverse',
+//             '@keyframes rotateMiddle': {
+//               '0%': {
+//                 transform: 'translate(-50%, -50%) rotate(360deg)',
+//               },
+//               '100%': {
+//                 transform: 'translate(-50%, -50%) rotate(0deg)',
+//               },
+//             },
+//           }}
+//         />
+        
+//         {/* Inner Ring */}
+//         <Box
+//           sx={{
+//             position: 'absolute',
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//             width: '60%',
+//             height: '60%',
+//             borderRadius: '50%',
+//             border: '1px solid rgba(255, 0, 144, 0.25)',
+//             animation: 'rotateInner 15s linear infinite',
+//             '@keyframes rotateInner': {
+//               '0%': {
+//                 transform: 'translate(-50%, -50%) rotate(0deg)',
+//               },
+//               '100%': {
+//                 transform: 'translate(-50%, -50%) rotate(360deg)',
+//               },
+//             },
+//           }}
+//         />
+        
+//         {/* Floating Dots */}
+//         {[...Array(36)].map((_, i) => (
+//           <Box
+//             key={i}
+//             sx={{
+//               position: 'absolute',
+//               top: '50%',
+//               left: '50%',
+//               width: { xs: '3px', md: '4px' },
+//               height: { xs: '3px', md: '4px' },
+//               backgroundColor: '#ff0090',
+//               borderRadius: '50%',
+//               transform: `
+//                 translate(-50%, -50%) 
+//                 rotate(${i * 10}deg) 
+//                 translateX(${-1 * (45)}vw)
+//               `,
+//               animation: `pulseDot 3s ${i * 0.08}s infinite alternate ease-in-out`,
+//               '@keyframes pulseDot': {
+//                 '0%': {
+//                   opacity: 0.1,
+//                   transform: `
+//                     translate(-50%, -50%) 
+//                     rotate(${i * 10}deg) 
+//                     translateX(${-1 * (45)}vw)
+//                     scale(0.8)
+//                   `,
+//                 },
+//                 '100%': {
+//                   opacity: 0.8,
+//                   transform: `
+//                     translate(-50%, -50%) 
+//                     rotate(${i * 10}deg) 
+//                     translateX(${-1 * (45)}vw)
+//                     scale(1.2)
+//                   `,
+//                 },
+//               },
+//             }}
+//           />
+//         ))}
+//       </Box>
+
+//       {/* Main Content Container */}
+//       <Container 
+//         maxWidth="md" 
+//         sx={{ 
+//           position: 'relative',
+//           zIndex: 2,
+//           textAlign: 'center',
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//         }}
+//       >
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           animate={inView ? { opacity: 1, y: 0 } : {}}
+//           transition={{ duration: 0.8 }}
+//           style={{
+//             width: '100%',
+//             display: 'flex',
+//             flexDirection: 'column',
+//             alignItems: 'center',
+//           }}
+//         >
+//           {/* Main Heading */}
+//           <Typography
+//             component="h1"
+//             sx={{
+//               mb: { xs: 1, sm: 1.5, md: 2 },
+//               color: '#FFFFFF',
+//               fontWeight: 900,
+//               fontSize: { 
+//                 xs: '1.75rem', 
+//                 sm: '2.5rem', 
+//                 md: '3.5rem', 
+//                 lg: '4rem' 
+//               },
+//               lineHeight: { xs: 1.2, sm: 1.15, md: 1.1 },
+//               textTransform: 'uppercase',
+//               letterSpacing: { xs: '0.5px', sm: '1px', md: '1.5px' },
+//               maxWidth: '100%',
+//               wordWrap: 'break-word',
+//             }}
+//           >
+//             GUARANTEED AI OUTCOMES.
+//           </Typography>
+          
+//           {/* Sub Heading */}
+//           <Typography
+//             component="h2"
+//             sx={{
+//               mb: { xs: 2, sm: 2.5, md: 3 },
+//               color: '#ff0090',
+//               fontWeight: 800,
+//               fontSize: { 
+//                 xs: '1.25rem', 
+//                 sm: '1.75rem', 
+//                 md: '2.25rem', 
+//                 lg: '2.75rem' 
+//               },
+//               lineHeight: { xs: 1.3, sm: 1.25, md: 1.2 },
+//               textTransform: 'uppercase',
+//               letterSpacing: { xs: '0.3px', sm: '0.5px', md: '0.8px' },
+//               maxWidth: '100%',
+//             }}
+//           >
+//             DELIVERED BY OUR TEAM, OR YOURS
+//           </Typography>
+          
+//           {/* Description */}
+//           <Typography
+//             variant="h6"
+//             sx={{
+//               mb: { xs: 3, sm: 3.5, md: 4 },
+//               color: '#CCCCCC',
+//               fontSize: { 
+//                 xs: '0.875rem', 
+//                 sm: '1rem', 
+//                 md: '1.125rem' 
+//               },
+//               lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 },
+//               fontWeight: 400,
+//               maxWidth: { xs: '100%', sm: '90%', md: '800px' },
+//               mx: 'auto',
+//               opacity: 0.9,
+//             }}
+//           >
+//             Your most ambitious AI goals, executed with certainty. We offer flexible partnership models from turnkey projects to dedicated innovation hubs, designed to deliver the results you need.
+//           </Typography>
+          
+//           {/* Divider Line */}
+//           <Box
+//             sx={{
+//               width: { xs: '80px', sm: '100px' },
+//               height: '2px',
+//               backgroundColor: '#ff0090',
+//               mb: { xs: 3, sm: 3.5, md: 4 },
+//               borderRadius: '1px',
+//             }}
+//           />
+          
+//           {/* CTA Button with Arrow */}
+//           <Button
+//             variant="contained"
+//             size="large"
+//             onClick={handleGetStarted}
+//             sx={{
+//               px: { xs: 3, sm: 4, md: 5 },
+//               py: { xs: 1.25, sm: 1.5 },
+//               fontSize: { 
+//                 xs: '0.875rem', 
+//                 sm: '0.95rem', 
+//                 md: '1.1rem' 
+//               },
+//               fontWeight: 700,
+//               backgroundColor: '#ff0090',
+//               color: '#FFFFFF',
+//               mb: { xs: 4, sm: 5, md: 6 },
+//               minWidth: { xs: '200px', sm: '240px', md: '280px' },
+//               textTransform: 'uppercase',
+//               letterSpacing: '0.5px',
+//               '&:hover': {
+//                 backgroundColor: '#ff1dce',
+//                 transform: 'translateY(-2px)',
+//                 boxShadow: '0 8px 25px rgba(255, 0, 144, 0.4)',
+//               },
+//               transition: 'all 0.3s ease',
+//               display: 'flex',
+//               alignItems: 'center',
+//               gap: 1,
+//             }}
+//           >
+//             Explore Solutions
+//             <ArrowForwardIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />
+//           </Button>
+          
+//           {/* Bottom Tagline */}
+//           <Typography
+//             component="h3"
+//             sx={{
+//               color: '#FFFFFF',
+//               fontWeight: 700,
+//               fontSize: { 
+//                 xs: '0.75rem', 
+//                 sm: '0.875rem', 
+//                 md: '1rem' 
+//               },
+//               letterSpacing: { xs: '1.5px', sm: '2px', md: '2.5px' },
+//               textTransform: 'uppercase',
+//               opacity: 0.8,
+//               position: 'relative',
+//               padding: { xs: '0 40px', sm: '0 60px', md: '0 80px' },
+//               '&::before, &::after': {
+//                 content: '""',
+//                 position: 'absolute',
+//                 top: '50%',
+//                 width: { xs: '30px', sm: '40px', md: '50px' },
+//                 height: '1px',
+//                 backgroundColor: '#ff0090',
+//                 opacity: 0.6,
+//               },
+//               '&::before': {
+//                 left: 0,
+//               },
+//               '&::after': {
+//                 right: 0,
+//               },
+//             }}
+//           >
+//             THE OUTCOME PARTNER FOR INDUSTRY LEADERS
+//           </Typography>
+//         </motion.div>
+//       </Container>
+      
+//       {/* Scroll Indicator - Bottom Right */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           bottom: { xs: '20px', sm: '30px', md: '40px' },
+//           right: { xs: '20px', sm: '30px', md: '40px' },
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//           color: '#ff0090',
+//           zIndex: 2,
+//           opacity: 0.7,
+//         }}
+//       >
+//         <Typography
+//           variant="caption"
+//           sx={{
+//             color: '#ff0090',
+//             fontSize: { xs: '0.625rem', sm: '0.75rem' },
+//             letterSpacing: '1.5px',
+//             textTransform: 'uppercase',
+//             mb: 1,
+//             writingMode: 'vertical-rl',
+//             transform: 'rotate(180deg)',
+//           }}
+//         >
+//           SCROLL
+//         </Typography>
+//         <Box
+//           sx={{
+//             width: '1px',
+//             height: { xs: '30px', sm: '40px' },
+//             backgroundColor: '#ff0090',
+//             animation: 'scrollBounce 2s infinite',
+//             '@keyframes scrollBounce': {
+//               '0%, 100%': {
+//                 transform: 'translateY(0)',
+//                 opacity: 0.5,
+//               },
+//               '50%': {
+//                 transform: 'translateY(8px)',
+//                 opacity: 1,
+//               },
+//             },
+//           }}
+//         />
+//       </Box>
+      
+//       {/* TIM Indicator - Bottom Left */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           bottom: { xs: '20px', sm: '30px', md: '40px' },
+//           left: { xs: '20px', sm: '30px', md: '40px' },
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'center',
+//           color: '#ff0090',
+//           zIndex: 2,
+//           opacity: 0.7,
+//         }}
+//       >
+//         <Typography
+//           variant="caption"
+//           sx={{
+//             color: '#ff0090',
+//             fontSize: { xs: '0.625rem', sm: '0.75rem' },
+//             letterSpacing: '1.5px',
+//             textTransform: 'uppercase',
+//             mb: 1,
+//             writingMode: 'vertical-rl',
+//           }}
+//         >
+//           TIM
+//         </Typography>
+//         <Box
+//           sx={{
+//             width: '1px',
+//             height: { xs: '30px', sm: '40px' },
+//             backgroundColor: '#ff0090',
+//             animation: 'timBounce 2s infinite 0.5s',
+//             '@keyframes timBounce': {
+//               '0%, 100%': {
+//                 transform: 'translateY(0)',
+//                 opacity: 0.5,
+//               },
+//               '50%': {
+//                 transform: 'translateY(8px)',
+//                 opacity: 1,
+//               },
+//             },
+//           }}
+//         />
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default HeroSection;
+
+
 import React from 'react';
 import {
   Box,
   Container,
   Typography,
   Button,
-  Grid,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useNavigate } from 'react-router-dom';
-import heroVideo from './herosection.mp4';
 
 const HeroSection = () => {
   const { ref, inView } = useInView({
@@ -2015,15 +3734,6 @@ const HeroSection = () => {
     navigate('/contact');
   };
 
-  const handleViewWork = () => {
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      const yOffset = -80;
-      const y = servicesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
   return (
     <Box
       ref={ref}
@@ -2032,106 +3742,498 @@ const HeroSection = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'transparent',
+        padding: { xs: '20px', sm: '30px', md: '40px' },
         overflow: 'hidden',
-        pt: { xs: 4, md: 0 },
-        bgcolor: '#0A0A0F',
       }}
     >
-      {/* Simplified Background */}
+      {/* Background Circle - Behind everything */}
       <Box
         sx={{
           position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          bgcolor: '#0A0A0F',
-          opacity: 0.7,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: { 
+            xs: '250vw', 
+            sm: '200vw', 
+            md: '150vw', 
+            lg: '120vw',
+            xl: '100vw'
+          },
+          height: { 
+            xs: '250vw', 
+            sm: '200vw', 
+            md: '150vw', 
+            lg: '120vw',
+            xl: '100vw'
+          },
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(207, 52, 118, 0.1) 0%, transparent 60%)',
+          zIndex: 0,
+          opacity: 0.8,
+        }}
+      />
+      
+      {/* Animated Rings */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: { 
+            xs: '180vw', 
+            sm: '150vw', 
+            md: '120vw', 
+            lg: '100vw' 
+          },
+          height: { 
+            xs: '180vw', 
+            sm: '150vw', 
+            md: '120vw', 
+            lg: '100vw' 
+          },
+          borderRadius: '50%',
+          zIndex: 0,
+        }}
+      >
+        {/* Outer Ring */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            border: '1px solid rgba(207, 52, 118, 0.3)',
+            animation: 'rotateOuter 25s linear infinite',
+            '@keyframes rotateOuter': {
+              '0%': {
+                transform: 'translate(-50%, -50%) rotate(0deg)',
+              },
+              '100%': {
+                transform: 'translate(-50%, -50%) rotate(360deg)',
+              },
+            },
+          }}
+        />
+        
+        {/* Middle Ring */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80%',
+            height: '80%',
+            borderRadius: '50%',
+            border: '1px solid rgba(250, 128, 114, 0.4)',
+            animation: 'rotateMiddle 20s linear infinite reverse',
+            '@keyframes rotateMiddle': {
+              '0%': {
+                transform: 'translate(-50%, -50%) rotate(360deg)',
+              },
+              '100%': {
+                transform: 'translate(-50%, -50%) rotate(0deg)',
+              },
+            },
+          }}
+        />
+        
+        {/* Inner Ring */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '60%',
+            height: '60%',
+            borderRadius: '50%',
+            border: '1px solid rgba(207, 52, 118, 0.5)',
+            animation: 'rotateInner 15s linear infinite',
+            '@keyframes rotateInner': {
+              '0%': {
+                transform: 'translate(-50%, -50%) rotate(0deg)',
+              },
+              '100%': {
+                transform: 'translate(-50%, -50%) rotate(360deg)',
+              },
+            },
+          }}
+        />
+        
+        {/* Floating Dots */}
+        {[...Array(36)].map((_, i) => {
+          // Alternate between the two colors
+          const color = i % 2 === 0 ? '#cf3476' : '#fa8072';
+          return (
+            <Box
+              key={i}
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: { xs: '3px', md: '4px' },
+                height: { xs: '3px', md: '4px' },
+                backgroundColor: color,
+                borderRadius: '50%',
+                transform: `
+                  translate(-50%, -50%) 
+                  rotate(${i * 10}deg) 
+                  translateX(${-1 * (45)}vw)
+                `,
+                animation: `pulseDot 3s ${i * 0.08}s infinite alternate ease-in-out`,
+                '@keyframes pulseDot': {
+                  '0%': {
+                    opacity: 0.1,
+                    transform: `
+                      translate(-50%, -50%) 
+                      rotate(${i * 10}deg) 
+                      translateX(${-1 * (45)}vw)
+                      scale(0.8)
+                    `,
+                  },
+                  '100%': {
+                    opacity: 0.8,
+                    transform: `
+                      translate(-50%, -50%) 
+                      rotate(${i * 10}deg) 
+                      translateX(${-1 * (45)}vw)
+                      scale(1.2)
+                    `,
+                  },
+                },
+              }}
+            />
+          );
+        })}
+      </Box>
+
+      {/* Main Content Container */}
+      <Container 
+        maxWidth="md" 
+        sx={{ 
+          position: 'relative',
+          zIndex: 2,
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          {/* Main Heading */}
+          <Typography
+            component="h1"
+            sx={{
+              mb: { xs: 1, sm: 1.5, md: 2 },
+              color: '#FFFFFF',
+              fontWeight: 900,
+              fontSize: { 
+                xs: '1.75rem', 
+                sm: '2.5rem', 
+                md: '3.5rem', 
+                lg: '4rem' 
+              },
+              lineHeight: { xs: 1.2, sm: 1.15, md: 1.1 },
+              textTransform: 'uppercase',
+              letterSpacing: { xs: '0.5px', sm: '1px', md: '1.5px' },
+              maxWidth: '100%',
+              wordWrap: 'break-word',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            GUARANTEED AI OUTCOMES.
+          </Typography>
+          
+          {/* Sub Heading */}
+          <Typography
+            component="h2"
+            sx={{
+              mb: { xs: 2, sm: 2.5, md: 3 },
+              color: '#cf3476', // Using #cf3476 for subheading
+              fontWeight: 800,
+              fontSize: { 
+                xs: '1.25rem', 
+                sm: '1.75rem', 
+                md: '2.25rem', 
+                lg: '2.75rem' 
+              },
+              lineHeight: { xs: 1.3, sm: 1.25, md: 1.2 },
+              textTransform: 'uppercase',
+              letterSpacing: { xs: '0.3px', sm: '0.5px', md: '0.8px' },
+              maxWidth: '100%',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            DELIVERED BY OUR TEAM, OR YOURS
+          </Typography>
+          
+          {/* Description */}
+          <Typography
+            variant="h6"
+            sx={{
+              mb: { xs: 3, sm: 3.5, md: 4 },
+              color: '#E0E0E0',
+              fontSize: { 
+                xs: '0.875rem', 
+                sm: '1rem', 
+                md: '1.125rem' 
+              },
+              lineHeight: { xs: 1.5, sm: 1.6, md: 1.7 },
+              fontWeight: 400,
+              maxWidth: { xs: '100%', sm: '90%', md: '800px' },
+              mx: 'auto',
+              opacity: 0.9,
+            }}
+          >
+            Your most ambitious AI goals, executed with certainty. We offer flexible partnership models from turnkey projects to dedicated innovation hubs, designed to deliver the results you need.
+          </Typography>
+          
+          {/* Divider Line */}
+          <Box
+            sx={{
+              width: { xs: '80px', sm: '100px' },
+              height: '2px',
+              background: 'linear-gradient(90deg, transparent, #cf3476, #fa8072, transparent)',
+              mb: { xs: 3, sm: 3.5, md: 4 },
+              borderRadius: '1px',
+            }}
+          />
+          
+          {/* CTA Button with Arrow */}
+          <Button
+            variant="contained"
+            size="large"
+            onClick={handleGetStarted}
+            sx={{
+              px: { xs: 3, sm: 4, md: 5 },
+              py: { xs: 1.25, sm: 1.5 },
+              fontSize: { 
+                xs: '0.875rem', 
+                sm: '0.95rem', 
+                md: '1.1rem' 
+              },
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, #cf3476, #fa8072)',
+              color: '#FFFFFF',
+              mb: { xs: 4, sm: 5, md: 6 },
+              minWidth: { xs: '200px', sm: '240px', md: '280px' },
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              border: 'none',
+              '&:hover': {
+                background: 'linear-gradient(135deg, #fa8072, #cf3476)',
+                transform: 'translateY(-3px)',
+                boxShadow: '0 10px 25px rgba(207, 52, 118, 0.5)',
+              },
+              transition: 'all 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1,
+            }}
+          >
+            Explore Solutions
+            <ArrowForwardIcon sx={{ 
+              fontSize: { xs: '1rem', sm: '1.2rem' },
+              transition: 'transform 0.3s ease',
+            }} />
+          </Button>
+          
+          {/* Bottom Tagline */}
+          <Typography
+            component="h3"
+            sx={{
+              color: '#FFFFFF',
+              fontWeight: 700,
+              fontSize: { 
+                xs: '0.75rem', 
+                sm: '0.875rem', 
+                md: '1rem' 
+              },
+              letterSpacing: { xs: '1.5px', sm: '2px', md: '2.5px' },
+              textTransform: 'uppercase',
+              opacity: 0.8,
+              position: 'relative',
+              padding: { xs: '0 40px', sm: '0 60px', md: '0 80px' },
+              '&::before, &::after': {
+                content: '""',
+                position: 'absolute',
+                top: '50%',
+                width: { xs: '30px', sm: '40px', md: '50px' },
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent, #cf3476, #fa8072, transparent)',
+                opacity: 0.8,
+              },
+              '&::before': {
+                left: 0,
+              },
+              '&::after': {
+                right: 0,
+              },
+            }}
+          >
+            THE OUTCOME PARTNER FOR INDUSTRY LEADERS
+          </Typography>
+        </motion.div>
+      </Container>
+      
+      {/* Scroll Indicator - Bottom Right */}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: { xs: '20px', sm: '30px', md: '40px' },
+          right: { xs: '20px', sm: '30px', md: '40px' },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          zIndex: 2,
+          opacity: 0.8,
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: '#fa8072', // Using salmon color for SCROLL
+            fontSize: { xs: '0.625rem', sm: '0.75rem' },
+            letterSpacing: '1.5px',
+            textTransform: 'uppercase',
+            mb: 1,
+            writingMode: 'vertical-rl',
+            transform: 'rotate(180deg)',
+            fontWeight: 600,
+          }}
+        >
+          SCROLL
+        </Typography>
+        <Box
+          sx={{
+            width: '1px',
+            height: { xs: '30px', sm: '40px' },
+            background: 'linear-gradient(to bottom, #cf3476, #fa8072)',
+            animation: 'scrollBounce 2s infinite',
+            '@keyframes scrollBounce': {
+              '0%, 100%': {
+                transform: 'translateY(0)',
+                opacity: 0.5,
+              },
+              '50%': {
+                transform: 'translateY(10px)',
+                opacity: 1,
+              },
+            },
+          }}
+        />
+      </Box>
+      
+      {/* TIM Indicator - Bottom Left */}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: { xs: '20px', sm: '30px', md: '40px' },
+          left: { xs: '20px', sm: '30px', md: '40px' },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          zIndex: 2,
+          opacity: 0.8,
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: '#cf3476', // Using #cf3476 for TIM
+            fontSize: { xs: '0.625rem', sm: '0.75rem' },
+            letterSpacing: '1.5px',
+            textTransform: 'uppercase',
+            mb: 1,
+            writingMode: 'vertical-rl',
+            fontWeight: 600,
+          }}
+        >
+          TIM
+        </Typography>
+        <Box
+          sx={{
+            width: '1px',
+            height: { xs: '30px', sm: '40px' },
+            background: 'linear-gradient(to bottom, #fa8072, #cf3476)',
+            animation: 'timBounce 2s infinite 0.5s',
+            '@keyframes timBounce': {
+              '0%, 100%': {
+                transform: 'translateY(0)',
+                opacity: 0.5,
+              },
+              '50%': {
+                transform: 'translateY(10px)',
+                opacity: 1,
+              },
+            },
+          }}
+        />
+      </Box>
+      
+      {/* Additional subtle background elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '30%',
+          left: '10%',
+          width: '100px',
+          height: '100px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(250, 128, 114, 0.1) 0%, transparent 70%)',
+          animation: 'float 20s infinite ease-in-out',
+          '@keyframes float': {
+            '0%, 100%': {
+              transform: 'translate(0, 0)',
+            },
+            '50%': {
+              transform: 'translate(50px, -50px)',
+            },
+          },
           zIndex: 1,
         }}
       />
-
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <Typography
-                variant="h1"
-                sx={{
-                  mb: 3,
-                  color: '#FFFFFF',
-                  fontWeight: 700,
-                  fontSize: { xs: '2.5rem', md: '3.5rem' },
-                  lineHeight: 1.2,
-                }}
-              >
-                Transform Your Business with AI Solutions
-              </Typography>
-              
-              <Typography
-                variant="h6"
-                sx={{
-                  mb: 4,
-                  color: '#A0A0A0',
-                  fontSize: { xs: '1rem', md: '1.25rem' },
-                  lineHeight: 1.6,
-                  fontWeight: 400,
-                }}
-              >
-                We deliver practical AI solutions that drive measurable results, efficiency, and growth for forward-thinking companies.
-              </Typography>
-              
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  endIcon={<ArrowForwardIcon />}
-                  onClick={handleGetStarted}
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    bgcolor: '#8A2BE2',
-                    color: '#FFFFFF',
-                    '&:hover': {
-                      bgcolor: '#7A1BD2',
-                    },
-                  }}
-                >
-                  Start Your AI Journey
-                </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  startIcon={<PlayArrowIcon />}
-                  onClick={handleViewWork}
-                  sx={{
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    borderColor: '#FF2D55',
-                    color: '#FF2D55',
-                    '&:hover': {
-                      borderColor: '#E82D4D',
-                      color: '#E82D4D',
-                      bgcolor: 'rgba(255, 45, 85, 0.1)',
-                    },
-                  }}
-                >
-                  View Our Work
-                </Button>
-              </Box>
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Container>
+      
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '20%',
+          right: '15%',
+          width: '150px',
+          height: '150px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(207, 52, 118, 0.1) 0%, transparent 70%)',
+          animation: 'floatReverse 25s infinite ease-in-out',
+          '@keyframes floatReverse': {
+            '0%, 100%': {
+              transform: 'translate(0, 0)',
+            },
+            '50%': {
+              transform: 'translate(-50px, 50px)',
+            },
+          },
+          zIndex: 1,
+        }}
+      />
     </Box>
   );
 };

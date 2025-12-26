@@ -2,42 +2,196 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Custom favicon from your Logo component -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml">
+    <!-- Fallback for older browsers -->
+    <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0A0A0F" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="ZenturaTech AI Solutions - Pioneering the future of artificial intelligence with cutting-edge AI technology"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, AI Solutions, ZenturaTech, Technology">
+    <meta name="author" content="ZenturaTech">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zenturatech.com/">
+    <meta property="og:title" content="ZenturaTech AI Solutions">
+    <meta property="og:description" content="Transform your business with advanced AI solutions from ZenturaTech">
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zenturatech.com/">
+    <meta property="twitter:title" content="ZenturaTech AI Solutions">
+    <meta property="twitter:description" content="Transform your business with advanced AI solutions from ZenturaTech">
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png">
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Inter font for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Your custom theme color -->
+    <meta name="theme-color" content="#0A0A0F">
+    <meta name="msapplication-TileColor" content="#0A0A0F">
+    
+    <title>ZenturaTech AI Solutions</title>
+    
+    <!-- Apple Touch Icon - Use your Logo design -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    
+    <!-- Safari Pinned Tab Icon -->
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#8A2BE2">
+    
+    <!-- Additional meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ZenturaTech">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="%PUBLIC_URL%/mstile-144x144.png">
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
+    
+    <style>
+      /* Custom CSS variables for theme */
+      :root {
+        --primary-color: #8A2BE2;
+        --secondary-color: #FF2D55;
+        --accent-color: #9370DB;
+        --background-color: #0A0A0F;
+        --text-color: #FFFFFF;
+        --text-secondary: #A0A0A0;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: var(--background-color);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary-color);
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+      
+      /* Loading screen styles */
+      .app-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background-color);
+        z-index: 9999;
+      }
+      
+      .loading-logo {
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: -3px;
+        background: linear-gradient(135deg, #8A2BE2 0%, #FF2D55 50%, #9370DB 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+      }
+      
+      .loading-text {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    </style>
+    
+    <!-- Loading script -->
+    <script>
+      window.addEventListener('load', function() {
+        var loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(function() {
+            loading.style.display = 'none';
+          }, 500);
+        }
+      });
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Loading screen -->
+    <div id="loading" class="app-loading">
+      <div class="loading-logo">Z</div>
+      <div class="loading-text">ZenturaTech AI</div>
+    </div>
+    
+    <noscript>
+      <div style="text-align: center; padding: 50px; background-color: var(--background-color); color: var(--text-color);">
+        <h1>JavaScript Required</h1>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+    
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Font Awesome for icons (optional) -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    
+    <!-- Analytics script (optional) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR-ID');
+    </script> -->
   </body>
 </html>

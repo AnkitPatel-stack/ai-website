@@ -1,0 +1,63 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Responsive typography */
+  @media (max-width: 600px) {
+    .responsive-text {
+      font-size: 0.875rem !important;
+    }
+    
+    .section-padding {
+      padding: 3rem 1rem !important;
+    }
+  }
+  
+  /* Touch-friendly buttons on mobile */
+  @media (max-width: 600px) {
+    .MuiButton-root {
+      min-height: 44px !important;
+      min-width: 44px !important;
+    }
+  }
+  
+  /* Improve card responsiveness */
+  @media (max-width: 600px) {
+    .MuiCard-root {
+      margin: 0.5rem !important;
+    }
+  }
+  
+  /* Animation classes */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Star animation for additional effects */
+  .star-pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }

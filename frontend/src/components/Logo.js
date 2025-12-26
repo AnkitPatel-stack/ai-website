@@ -1143,463 +1143,783 @@
 // export { LogoVariations };
 // export default Logo;
 
+// import React from 'react';
+// import { Box, Typography } from '@mui/material';
+
+// const LogoVariations = {
+//   // IMAGE में EXACT Z DESIGN - With crack/cut in middle
+//   ImageExact: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { fontSize: '1.2rem', zSize: '2.5rem', spacing: '0.5px' },
+//       medium: { fontSize: '1.8rem', zSize: '3.5rem', spacing: '1px' },
+//       large: { fontSize: '2.5rem', zSize: '5rem', spacing: '1.5px' }
+//     };
+    
+//     const currentSize = sizes[size];
+    
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//         {/* Special Z with crack/cut design - Purple + Pink combination */}
+//         <Box
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.zSize,
+//             fontWeight: 900,
+//             letterSpacing: '-1px',
+//             lineHeight: 0.7,
+//             marginRight: '8px',
+//             position: 'relative',
+//             display: 'inline-block',
+//             width: currentSize.zSize,
+//             height: currentSize.zSize,
+//             overflow: 'hidden',
+//           }}
+//         >
+//           {/* Z with three sections and diagonal crack/cut */}
+//           <Box
+//             sx={{
+//               position: 'relative',
+//               width: '100%',
+//               height: '100%',
+//               display: 'flex',
+//               alignItems: 'center',
+//               justifyContent: 'center',
+//             }}
+//           >
+//             {/* Top section - Dark Purple */}
+//             <Box
+//               sx={{
+//                 position: 'absolute',
+//                 top: 0,
+//                 left: 0,
+//                 width: '100%',
+//                 height: '33%',
+//                 background: '#8A2BE2', // Dark Purple
+//                 clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//                 fontSize: currentSize.zSize,
+//                 fontWeight: 900,
+//                 color: 'transparent',
+//                 WebkitTextStroke: '1px #8A2BE2',
+//                 zIndex: 3,
+//               }}
+//             >
+//               Z
+//             </Box>
+            
+//             {/* Middle section - Pink with crack */}
+//             <Box
+//               sx={{
+//                 position: 'absolute',
+//                 top: '33%',
+//                 left: 0,
+//                 width: '100%',
+//                 height: '34%',
+//                 background: '#FF2D55', // Pink
+//                 clipPath: 'polygon(0 0, 100% 0, 80% 100%, 20% 100%)', // Diagonal cut effect
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//                 fontSize: currentSize.zSize,
+//                 fontWeight: 900,
+//                 color: 'transparent',
+//                 WebkitTextStroke: '1px #FF2D55',
+//                 zIndex: 2,
+//                 transform: 'translateY(-1px)',
+//               }}
+//             >
+//               Z
+//             </Box>
+            
+//             {/* Bottom section - Light Purple */}
+//             <Box
+//               sx={{
+//                 position: 'absolute',
+//                 top: '67%',
+//                 left: 0,
+//                 width: '100%',
+//                 height: '33%',
+//                 background: '#9370DB', // Light Purple
+//                 clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0 100%)',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 justifyContent: 'center',
+//                 fontSize: currentSize.zSize,
+//                 fontWeight: 900,
+//                 color: 'transparent',
+//                 WebkitTextStroke: '1px #9370DB',
+//                 zIndex: 1,
+//                 transform: 'translateY(-2px)',
+//               }}
+//             >
+//               Z
+//             </Box>
+            
+//             {/* Main Z text for visibility - Purple + Pink gradient */}
+//             <Box
+//               component="span"
+//               sx={{
+//                 background: 'linear-gradient(180deg, #8A2BE2 33%, #FF2D55 34%, #FF2D55 66%, #9370DB 67%)',
+//                 WebkitBackgroundClip: 'text',
+//                 WebkitTextFillColor: 'transparent',
+//                 backgroundClip: 'text',
+//                 display: 'block',
+//                 fontSize: currentSize.zSize,
+//                 fontWeight: 900,
+//                 position: 'relative',
+//                 zIndex: 4,
+//                 textShadow: 'none',
+//                 // Crack line in middle
+//                 '&::before': {
+//                   content: '""',
+//                   position: 'absolute',
+//                   top: '33%',
+//                   left: '20%',
+//                   right: '20%',
+//                   height: '1px',
+//                   background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
+//                   transform: 'rotate(-45deg)',
+//                   zIndex: 5,
+//                 }
+//               }}
+//             >
+//               Z
+//             </Box>
+//           </Box>
+          
+//           {/* Diagonal crack line overlay */}
+//           <Box
+//             sx={{
+//               position: 'absolute',
+//               top: '33%',
+//               left: '10%',
+//               right: '10%',
+//               height: '34%',
+//               background: 'linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.2) 50%, transparent 55%)',
+//               pointerEvents: 'none',
+//               zIndex: 6,
+//               transform: 'skewX(-15deg)',
+//             }}
+//           />
+//         </Box>
+        
+//         {/* Rest of text in pure white */}
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.fontSize,
+//             fontWeight: 500,
+//             letterSpacing: currentSize.spacing,
+//             color: '#FFFFFF',
+//             lineHeight: 1,
+//           }}
+//         >
+//           enturatech
+//         </Typography>
+//       </Box>
+//     );
+//   },
+
+//   // Simplified version - Cleaner but same style
+//   ImageClean: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { fontSize: '1.2rem', zSize: '2rem', spacing: '0.5px' },
+//       medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
+//       large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
+//     };
+    
+//     const currentSize = sizes[size];
+    
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//         {/* Z with diagonal cut effect - Purple + Pink */}
+//         <Box
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.zSize,
+//             fontWeight: 900,
+//             letterSpacing: '-1px',
+//             lineHeight: 0.7,
+//             marginRight: '6px',
+//             position: 'relative',
+//           }}
+//         >
+//           {/* Purple + Pink gradient with diagonal cut */}
+//           <Box
+//             component="span"
+//             sx={{
+//               background: 'linear-gradient(135deg, #8A2BE2 30%, #FF2D55 50%, #9370DB 70%)',
+//               WebkitBackgroundClip: 'text',
+//               WebkitTextFillColor: 'transparent',
+//               backgroundClip: 'text',
+//               display: 'block',
+//               position: 'relative',
+//               // Diagonal cut effect using text shadow
+//               textShadow: `
+//                 1px 0px 0px rgba(138, 43, 226, 0.8),
+//                 0px 1px 0px rgba(138, 43, 226, 0.8),
+//                 -1px -1px 0px rgba(255, 45, 85, 0.8),
+//                 1px 1px 0px rgba(147, 112, 219, 0.8)
+//               `,
+//               // Crack line effect
+//               '&::after': {
+//                 content: '""',
+//                 position: 'absolute',
+//                 top: '30%',
+//                 left: '15%',
+//                 right: '15%',
+//                 height: '2px',
+//                 background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
+//                 transform: 'rotate(-45deg)',
+//                 opacity: 0.8,
+//               }
+//             }}
+//           >
+//             Z
+//           </Box>
+//         </Box>
+        
+//         {/* Text in white */}
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.fontSize,
+//             fontWeight: 500,
+//             letterSpacing: currentSize.spacing,
+//             color: '#FFFFFF',
+//             lineHeight: 1,
+//           }}
+//         >
+//           enturatech
+//         </Typography>
+//       </Box>
+//     );
+//   },
+
+//   // Stacked version (Z above, text below)
+//   ImageStacked: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { zSize: '2.5rem', textSize: '0.8rem', spacing: '1px' },
+//       medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
+//       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
+//     };
+    
+//     const currentSize = sizes[size];
+    
+//     return (
+//       <Box 
+//         sx={{ 
+//           display: 'flex', 
+//           flexDirection: 'column', 
+//           alignItems: 'center',
+//           ...sx 
+//         }}
+//       >
+//         {/* Z with diagonal crack */}
+//         <Box
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.zSize,
+//             fontWeight: 900,
+//             letterSpacing: '-2px',
+//             lineHeight: 0.7,
+//             position: 'relative',
+//             marginBottom: '4px',
+//           }}
+//         >
+//           <Box
+//             component="span"
+//             sx={{
+//               background: 'linear-gradient(180deg, #8A2BE2 33%, #FF2D55 34%, #FF2D55 66%, #9370DB 67%)',
+//               WebkitBackgroundClip: 'text',
+//               WebkitTextFillColor: 'transparent',
+//               backgroundClip: 'text',
+//               display: 'block',
+//               position: 'relative',
+//               // Crack effect
+//               '&::before': {
+//                 content: '""',
+//                 position: 'absolute',
+//                 top: '33%',
+//                 left: '0',
+//                 right: '0',
+//                 height: '2px',
+//                 background: 'linear-gradient(90deg, transparent, #FFFFFF, transparent)',
+//                 transform: 'rotate(-45deg)',
+//                 opacity: 0.7,
+//                 mixBlendMode: 'overlay',
+//               }
+//             }}
+//           >
+//             Z
+//           </Box>
+//         </Box>
+        
+//         {/* Text below */}
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: currentSize.textSize,
+//             fontWeight: 400,
+//             letterSpacing: currentSize.spacing,
+//             color: '#FFFFFF',
+//             lineHeight: 1,
+//             textTransform: 'uppercase',
+//           }}
+//         >
+//           enturatech
+//         </Typography>
+//       </Box>
+//     );
+//   },
+
+//   Classic: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { fontSize: '1.2rem', spacing: '0.5px' },
+//       medium: { fontSize: '1.8rem', spacing: '1px' },
+//       large: { fontSize: '2.5rem', spacing: '1.5px' }
+//     };
+    
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: sizes[size].fontSize,
+//             fontWeight: 500,
+//             letterSpacing: sizes[size].spacing,
+//             lineHeight: 1,
+//           }}
+//         >
+//           <Box
+//             component="span"
+//             sx={{
+//               background: 'linear-gradient(135deg, #8A2BE2 30%, #FF2D55 50%, #9370DB 70%)',
+//               WebkitBackgroundClip: 'text',
+//               WebkitTextFillColor: 'transparent',
+//               backgroundClip: 'text',
+//               display: 'inline-block',
+//               marginRight: '1px',
+//               fontWeight: 700,
+//             }}
+//           >
+//             Z
+//           </Box>
+//           <Box component="span" sx={{ color: '#FFFFFF' }}>
+//             enturatech
+//           </Box>
+//         </Typography>
+//       </Box>
+//     );
+//   },
+
+//   PremiumTech: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { fontSize: '1.2rem', spacing: '0.5px' },
+//       medium: { fontSize: '1.8rem', spacing: '1px' },
+//       large: { fontSize: '2.5rem', spacing: '1.5px' }
+//     };
+    
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: sizes[size].fontSize,
+//             fontWeight: 500,
+//             letterSpacing: sizes[size].spacing,
+//             lineHeight: 1,
+//           }}
+//         >
+//           <Box
+//             component="span"
+//             sx={{
+//               background: 'linear-gradient(135deg, #007AFF 30%, #32D74B 50%, #64D2FF 70%)',
+//               WebkitBackgroundClip: 'text',
+//               WebkitTextFillColor: 'transparent',
+//               backgroundClip: 'text',
+//               display: 'inline-block',
+//               marginRight: '1px',
+//             }}
+//           >
+//             Z
+//           </Box>
+//           <Box component="span" sx={{ color: '#FFFFFF' }}>
+//             enturatech
+//           </Box>
+//         </Typography>
+//       </Box>
+//     );
+//   },
+
+//   MinimalProfessional: ({ size = 'medium', sx = {} }) => {
+//     const sizes = {
+//       small: { fontSize: '1.2rem', spacing: '0.5px' },
+//       medium: { fontSize: '1.8rem', spacing: '1px' },
+//       large: { fontSize: '2.5rem', spacing: '1.5px' }
+//     };
+    
+//     return (
+//       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//         <Typography
+//           sx={{
+//             fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//             fontSize: sizes[size].fontSize,
+//             fontWeight: 500,
+//             letterSpacing: sizes[size].spacing,
+//             lineHeight: 1,
+//           }}
+//         >
+//           <Box
+//             component="span"
+//             sx={{
+//               background: 'linear-gradient(135deg, #30D158 30%, #00FF88 50%, #64D2FF 70%)',
+//               WebkitBackgroundClip: 'text',
+//               WebkitTextFillColor: 'transparent',
+//               backgroundClip: 'text',
+//               display: 'inline-block',
+//               marginRight: '1px',
+//             }}
+//           >
+//             Z
+//           </Box>
+//           <Box component="span" sx={{ color: '#FFFFFF' }}>
+//             enturatech
+//           </Box>
+//         </Typography>
+//       </Box>
+//     );
+//   }
+// };
+
+// // Default export (ImageClean variation - Best balance)
+// const Logo = ({ variant = 'ImageClean', size = 'medium', sx = {} }) => {
+//   const Component = LogoVariations[variant];
+//   return <Component size={size} sx={sx} />;
+// };
+
+// // Named exports for each variation
+// export { LogoVariations };
+// export default Logo;
+
+
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const LogoVariations = {
-  // IMAGE में EXACT Z DESIGN - With crack/cut in middle
-  ImageExact: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { fontSize: '1.2rem', zSize: '2.5rem', spacing: '0.5px' },
-      medium: { fontSize: '1.8rem', zSize: '3.5rem', spacing: '1px' },
-      large: { fontSize: '2.5rem', zSize: '5rem', spacing: '1.5px' }
-    };
-    
-    const currentSize = sizes[size];
-    
-    return (
-      <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
-        {/* Special Z with crack/cut design - Purple + Pink combination */}
-        <Box
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.zSize,
-            fontWeight: 900,
-            letterSpacing: '-1px',
-            lineHeight: 0.7,
-            marginRight: '8px',
-            position: 'relative',
-            display: 'inline-block',
-            width: currentSize.zSize,
-            height: currentSize.zSize,
-            overflow: 'hidden',
-          }}
-        >
-          {/* Z with three sections and diagonal crack/cut */}
-          <Box
-            sx={{
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            {/* Top section - Dark Purple */}
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '33%',
-                background: '#8A2BE2', // Dark Purple
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: currentSize.zSize,
-                fontWeight: 900,
-                color: 'transparent',
-                WebkitTextStroke: '1px #8A2BE2',
-                zIndex: 3,
-              }}
-            >
-              Z
-            </Box>
-            
-            {/* Middle section - Pink with crack */}
-            <Box
-              sx={{
-                position: 'absolute',
-                top: '33%',
-                left: 0,
-                width: '100%',
-                height: '34%',
-                background: '#FF2D55', // Pink
-                clipPath: 'polygon(0 0, 100% 0, 80% 100%, 20% 100%)', // Diagonal cut effect
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: currentSize.zSize,
-                fontWeight: 900,
-                color: 'transparent',
-                WebkitTextStroke: '1px #FF2D55',
-                zIndex: 2,
-                transform: 'translateY(-1px)',
-              }}
-            >
-              Z
-            </Box>
-            
-            {/* Bottom section - Light Purple */}
-            <Box
-              sx={{
-                position: 'absolute',
-                top: '67%',
-                left: 0,
-                width: '100%',
-                height: '33%',
-                background: '#9370DB', // Light Purple
-                clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: currentSize.zSize,
-                fontWeight: 900,
-                color: 'transparent',
-                WebkitTextStroke: '1px #9370DB',
-                zIndex: 1,
-                transform: 'translateY(-2px)',
-              }}
-            >
-              Z
-            </Box>
-            
-            {/* Main Z text for visibility - Purple + Pink gradient */}
-            <Box
-              component="span"
-              sx={{
-                background: 'linear-gradient(180deg, #8A2BE2 33%, #FF2D55 34%, #FF2D55 66%, #9370DB 67%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                display: 'block',
-                fontSize: currentSize.zSize,
-                fontWeight: 900,
-                position: 'relative',
-                zIndex: 4,
-                textShadow: 'none',
-                // Crack line in middle
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: '33%',
-                  left: '20%',
-                  right: '20%',
-                  height: '1px',
-                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-                  transform: 'rotate(-45deg)',
-                  zIndex: 5,
-                }
-              }}
-            >
-              Z
-            </Box>
-          </Box>
-          
-          {/* Diagonal crack line overlay */}
-          <Box
-            sx={{
-              position: 'absolute',
-              top: '33%',
-              left: '10%',
-              right: '10%',
-              height: '34%',
-              background: 'linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.2) 50%, transparent 55%)',
-              pointerEvents: 'none',
-              zIndex: 6,
-              transform: 'skewX(-15deg)',
-            }}
-          />
-        </Box>
-        
-        {/* Rest of text in pure white */}
-        <Typography
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.fontSize,
-            fontWeight: 500,
-            letterSpacing: currentSize.spacing,
-            color: '#FFFFFF',
-            lineHeight: 1,
-          }}
-        >
-          enturatech
-        </Typography>
-      </Box>
-    );
-  },
-
-  // Simplified version - Cleaner but same style
-  ImageClean: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { fontSize: '1.2rem', zSize: '2rem', spacing: '0.5px' },
-      medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
-      large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
-    };
-    
-    const currentSize = sizes[size];
-    
-    return (
-      <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
-        {/* Z with diagonal cut effect - Purple + Pink */}
-        <Box
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.zSize,
-            fontWeight: 900,
-            letterSpacing: '-1px',
-            lineHeight: 0.7,
-            marginRight: '6px',
-            position: 'relative',
-          }}
-        >
-          {/* Purple + Pink gradient with diagonal cut */}
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(135deg, #8A2BE2 30%, #FF2D55 50%, #9370DB 70%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'block',
-              position: 'relative',
-              // Diagonal cut effect using text shadow
-              textShadow: `
-                1px 0px 0px rgba(138, 43, 226, 0.8),
-                0px 1px 0px rgba(138, 43, 226, 0.8),
-                -1px -1px 0px rgba(255, 45, 85, 0.8),
-                1px 1px 0px rgba(147, 112, 219, 0.8)
-              `,
-              // Crack line effect
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                top: '30%',
-                left: '15%',
-                right: '15%',
-                height: '2px',
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
-                transform: 'rotate(-45deg)',
-                opacity: 0.8,
-              }
-            }}
-          >
-            Z
-          </Box>
-        </Box>
-        
-        {/* Text in white */}
-        <Typography
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.fontSize,
-            fontWeight: 500,
-            letterSpacing: currentSize.spacing,
-            color: '#FFFFFF',
-            lineHeight: 1,
-          }}
-        >
-          enturatech
-        </Typography>
-      </Box>
-    );
-  },
-
-  // Stacked version (Z above, text below)
-  ImageStacked: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { zSize: '2.5rem', textSize: '0.8rem', spacing: '1px' },
-      medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
-      large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
-    };
-    
-    const currentSize = sizes[size];
-    
-    return (
-      <Box 
-        sx={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          alignItems: 'center',
-          ...sx 
+// Individual logo components
+const MainLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { fontSize: '1.2rem', zSize: '2rem', spacing: '0.5px' },
+    medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
+    large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
+  };
+  
+  const currentSize = sizes[size];
+  
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          letterSpacing: '-1px',
+          lineHeight: 0.7,
+          marginRight: '6px',
         }}
       >
-        {/* Z with diagonal crack */}
         <Box
+          component="span"
           sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.zSize,
-            fontWeight: 900,
-            letterSpacing: '-2px',
-            lineHeight: 0.7,
-            position: 'relative',
-            marginBottom: '4px',
+            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            display: 'block',
           }}
         >
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(180deg, #8A2BE2 33%, #FF2D55 34%, #FF2D55 66%, #9370DB 67%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'block',
-              position: 'relative',
-              // Crack effect
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: '33%',
-                left: '0',
-                right: '0',
-                height: '2px',
-                background: 'linear-gradient(90deg, transparent, #FFFFFF, transparent)',
-                transform: 'rotate(-45deg)',
-                opacity: 0.7,
-                mixBlendMode: 'overlay',
-              }
-            }}
-          >
-            Z
-          </Box>
+          Z
         </Box>
-        
-        {/* Text below */}
-        <Typography
+      </Box>
+      
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.fontSize,
+          fontWeight: 500,
+          letterSpacing: currentSize.spacing,
+          color: '#FFFFFF',
+          lineHeight: 1,
+        }}
+      >
+        enturatech
+      </Typography>
+    </Box>
+  );
+};
+
+const SimpleLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
+    medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
+    large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+  };
+  
+  const currentSize = sizes[size];
+  
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          letterSpacing: '-1px',
+          lineHeight: 0.7,
+          marginRight: '4px',
+        }}
+      >
+        <Box
+          component="span"
           sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: currentSize.textSize,
-            fontWeight: 400,
-            letterSpacing: currentSize.spacing,
-            color: '#FFFFFF',
-            lineHeight: 1,
-            textTransform: 'uppercase',
+            color: '#ff0090',
+            display: 'block',
           }}
         >
+          Z
+        </Box>
+      </Box>
+      
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.fontSize,
+          fontWeight: 500,
+          letterSpacing: currentSize.spacing,
+          color: '#FFFFFF',
+          lineHeight: 1,
+        }}
+      >
+        enturatech
+      </Typography>
+    </Box>
+  );
+};
+
+const PinkLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
+    medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
+    large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+  };
+  
+  const currentSize = sizes[size];
+  
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          letterSpacing: '-1px',
+          lineHeight: 0.7,
+          marginRight: '4px',
+        }}
+      >
+        <Box
+          component="span"
+          sx={{
+            color: '#ff0090',
+            display: 'block',
+          }}
+        >
+          Z
+        </Box>
+      </Box>
+      
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.fontSize,
+          fontWeight: 500,
+          letterSpacing: currentSize.spacing,
+          color: '#FFFFFF',
+          lineHeight: 1,
+        }}
+      >
+        enturatech
+      </Typography>
+    </Box>
+  );
+};
+
+const StackedLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { zSize: '2.5rem', textSize: '0.8rem', spacing: '1px' },
+    medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
+    large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
+  };
+  
+  const currentSize = sizes[size];
+  
+  return (
+    <Box 
+      sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center',
+        ...sx 
+      }}
+    >
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          letterSpacing: '-2px',
+          lineHeight: 0.7,
+          marginBottom: '4px',
+        }}
+      >
+        <Box
+          component="span"
+          sx={{
+            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            display: 'block',
+          }}
+        >
+          Z
+        </Box>
+      </Box>
+      
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.textSize,
+          fontWeight: 400,
+          letterSpacing: currentSize.spacing,
+          color: '#FFFFFF',
+          lineHeight: 1,
+          textTransform: 'uppercase',
+        }}
+      >
+        enturatech
+      </Typography>
+    </Box>
+  );
+};
+
+const MinimalLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { zSize: '1.5rem' },
+    medium: { zSize: '2.5rem' },
+    large: { zSize: '4rem' }
+  };
+  
+  const currentSize = sizes[size];
+  
+  return (
+    <Box sx={{ ...sx }}>
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          letterSpacing: '-2px',
+          lineHeight: 0.7,
+        }}
+      >
+        <Box
+          component="span"
+          sx={{
+            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            display: 'block',
+          }}
+        >
+          Z
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+const ClassicLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { fontSize: '1.2rem', spacing: '0.5px' },
+    medium: { fontSize: '1.8rem', spacing: '1px' },
+    large: { fontSize: '2.5rem', spacing: '1.5px' }
+  };
+  
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: sizes[size].fontSize,
+          fontWeight: 500,
+          letterSpacing: sizes[size].spacing,
+          lineHeight: 1,
+        }}
+      >
+        <Box
+          component="span"
+          sx={{
+            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            display: 'inline-block',
+            marginRight: '1px',
+            fontWeight: 700,
+          }}
+        >
+          Z
+        </Box>
+        <Box component="span" sx={{ color: '#FFFFFF' }}>
           enturatech
-        </Typography>
-      </Box>
-    );
-  },
+        </Box>
+      </Typography>
+    </Box>
+  );
+};
 
-  Classic: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { fontSize: '1.2rem', spacing: '0.5px' },
-      medium: { fontSize: '1.8rem', spacing: '1px' },
-      large: { fontSize: '2.5rem', spacing: '1.5px' }
-    };
-    
-    return (
-      <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
-        <Typography
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: sizes[size].fontSize,
-            fontWeight: 500,
-            letterSpacing: sizes[size].spacing,
-            lineHeight: 1,
-          }}
-        >
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(135deg, #8A2BE2 30%, #FF2D55 50%, #9370DB 70%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline-block',
-              marginRight: '1px',
-              fontWeight: 700,
-            }}
-          >
-            Z
-          </Box>
-          <Box component="span" sx={{ color: '#FFFFFF' }}>
-            enturatech
-          </Box>
-        </Typography>
-      </Box>
-    );
-  },
-
-  PremiumTech: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { fontSize: '1.2rem', spacing: '0.5px' },
-      medium: { fontSize: '1.8rem', spacing: '1px' },
-      large: { fontSize: '2.5rem', spacing: '1.5px' }
-    };
-    
-    return (
-      <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
-        <Typography
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: sizes[size].fontSize,
-            fontWeight: 500,
-            letterSpacing: sizes[size].spacing,
-            lineHeight: 1,
-          }}
-        >
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(135deg, #007AFF 30%, #32D74B 50%, #64D2FF 70%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline-block',
-              marginRight: '1px',
-            }}
-          >
-            Z
-          </Box>
-          <Box component="span" sx={{ color: '#FFFFFF' }}>
-            enturatech
-          </Box>
-        </Typography>
-      </Box>
-    );
-  },
-
-  MinimalProfessional: ({ size = 'medium', sx = {} }) => {
-    const sizes = {
-      small: { fontSize: '1.2rem', spacing: '0.5px' },
-      medium: { fontSize: '1.8rem', spacing: '1px' },
-      large: { fontSize: '2.5rem', spacing: '1.5px' }
-    };
-    
-    return (
-      <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
-        <Typography
-          sx={{
-            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-            fontSize: sizes[size].fontSize,
-            fontWeight: 500,
-            letterSpacing: sizes[size].spacing,
-            lineHeight: 1,
-          }}
-        >
-          <Box
-            component="span"
-            sx={{
-              background: 'linear-gradient(135deg, #30D158 30%, #00FF88 50%, #64D2FF 70%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline-block',
-              marginRight: '1px',
-            }}
-          >
-            Z
-          </Box>
-          <Box component="span" sx={{ color: '#FFFFFF' }}>
-            enturatech
-          </Box>
-        </Typography>
-      </Box>
-    );
+// Main Logo component
+const Logo = ({ variant = 'MainLogo', size = 'medium', sx = {} }) => {
+  switch (variant) {
+    case 'Simple':
+      return <SimpleLogo size={size} sx={sx} />;
+    case 'Pink':
+      return <PinkLogo size={size} sx={sx} />;
+    case 'Stacked':
+      return <StackedLogo size={size} sx={sx} />;
+    case 'Minimal':
+      return <MinimalLogo size={size} sx={sx} />;
+    case 'Classic':
+      return <ClassicLogo size={size} sx={sx} />;
+    case 'MainLogo':
+    default:
+      return <MainLogo size={size} sx={sx} />;
   }
 };
 
-// Default export (ImageClean variation - Best balance)
-const Logo = ({ variant = 'ImageClean', size = 'medium', sx = {} }) => {
-  const Component = LogoVariations[variant];
-  return <Component size={size} sx={sx} />;
+// Export named components
+export {
+  MainLogo,
+  SimpleLogo as Simple,
+  PinkLogo as Pink,
+  StackedLogo as Stacked,
+  MinimalLogo as Minimal,
+  ClassicLogo as Classic
 };
 
-// Named exports for each variation
-export { LogoVariations };
+// Default export
 export default Logo;

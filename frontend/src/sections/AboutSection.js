@@ -2017,6 +2017,333 @@
 // export default AboutSection;
 
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+// import TimelineIcon from '@mui/icons-material/Timeline';
+// import GroupsIcon from '@mui/icons-material/Groups';
+// import { useNavigate } from 'react-router-dom';
+
+// const AboutSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/about');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       bgcolor: '#0A0A0F',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Grid container spacing={6} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, x: -50 }}
+//               animate={inView ? { opacity: 1, x: 0 } : {}}
+//               transition={{ duration: 0.6 }}
+//             >
+//               <Typography
+//                 variant="h2"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#ff0090',
+//                   fontWeight: 700,
+//                   fontSize: { xs: '2rem', md: '2.5rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Leading in Practical AI Solutions
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#A0A0A0',
+//                   lineHeight: 1.8,
+//                   fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 }}
+//               >
+//                 We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.
+//               </Typography>
+              
+//               <Button
+//                 variant="outlined"
+//                 size="large"
+//                 endIcon={<ArrowForwardIcon />}
+//                 onClick={handleLearnMore}
+//                 sx={{
+//                   px: 4,
+//                   py: 1.5,
+//                   borderColor: '#ff0090',
+//                   color: '#ff0090',
+//                   fontWeight: 600,
+//                   '&:hover': {
+//                     borderColor: '#7A1BD2',
+//                     color: '#ff0090',
+//                     bgcolor: 'rgba(138, 43, 226, 0.1)',
+//                   },
+//                 }}
+//               >
+//                 Learn More About Us
+//               </Button>
+//             </motion.div>
+//           </Grid>
+          
+//           <Grid item xs={12} md={6}>
+//             <Grid container spacing={2}>
+//               {[
+//                 { label: 'Projects Delivered', value: '150+', icon: <RocketLaunchIcon />, color: '#ff1dce' },
+//                 { label: 'AI Models Deployed', value: '500+', icon: <AutoAwesomeIcon />, color: '#ff1dce' },
+//                 { label: 'Client Satisfaction', value: '98%', icon: <TimelineIcon />, color: '#ff1dce' },
+//                 { label: 'Team Members', value: '50+', icon: <GroupsIcon />, color: '#8A2BE2' },
+//               ].map((stat, index) => (
+//                 <Grid item xs={6} key={index}>
+//                   <motion.div
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={inView ? { opacity: 1, y: 0 } : {}}
+//                     transition={{ delay: 0.5 + index * 0.1 }}
+//                   >
+//                     <Card
+//                       sx={{
+//                         bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                         border: '1px solid rgba(255, 255, 255, 0.1)',
+//                         transition: 'all 0.3s ease',
+//                         height: '100%',
+//                         '&:hover': {
+//                           borderColor: stat.color,
+//                         },
+//                       }}
+//                     >
+//                       <CardContent sx={{ textAlign: 'center', p: 2 }}>
+//                         <Box sx={{ 
+//                           color: stat.color, 
+//                           mb: 1,
+//                           display: 'flex',
+//                           justifyContent: 'center'
+//                         }}>
+//                           {stat.icon}
+//                         </Box>
+//                         <Typography
+//                           variant="h3"
+//                           sx={{
+//                             color: stat.color,
+//                             fontWeight: 700,
+//                             fontSize: '1.8rem',
+//                             mb: 0.5,
+//                           }}
+//                         >
+//                           {stat.value}
+//                         </Typography>
+//                         <Typography
+//                           variant="body2"
+//                           sx={{ 
+//                             color: '#A0A0A0',
+//                             fontSize: '0.85rem',
+//                             fontWeight: 500
+//                           }}
+//                         >
+//                           {stat.label}
+//                         </Typography>
+//                       </CardContent>
+//                     </Card>
+//                   </motion.div>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default AboutSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+// import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+// import TimelineIcon from '@mui/icons-material/Timeline';
+// import GroupsIcon from '@mui/icons-material/Groups';
+// import { useNavigate } from 'react-router-dom';
+
+// const AboutSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/about');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{ 
+//       py: { xs: 8, md: 12 }, 
+//       backgroundColor: '#000000',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Grid container spacing={6} alignItems="center">
+//           <Grid item xs={12} md={6}>
+//             <motion.div
+//               initial={{ opacity: 0, x: -50 }}
+//               animate={inView ? { opacity: 1, x: 0 } : {}}
+//               transition={{ duration: 0.6 }}
+//             >
+//               <Typography
+//                 variant="h2"
+//                 sx={{
+//                   mb: 3,
+//                   color: '#ff0090',
+//                   fontWeight: 700,
+//                   fontSize: { xs: '2rem', md: '2.5rem' },
+//                   lineHeight: 1.2,
+//                 }}
+//               >
+//                 Leading in Practical AI Solutions
+//               </Typography>
+              
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 4,
+//                   color: '#ffffff',
+//                   lineHeight: 1.8,
+//                   fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                   opacity: 0.9,
+//                 }}
+//               >
+//                 We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.
+//               </Typography>
+              
+//               <Button
+//                 variant="outlined"
+//                 size="large"
+//                 endIcon={<ArrowForwardIcon />}
+//                 onClick={handleLearnMore}
+//                 sx={{
+//                   px: 4,
+//                   py: 1.5,
+//                   borderColor: '#ff0090',
+//                   color: '#ff0090',
+//                   fontWeight: 600,
+//                   '&:hover': {
+//                     borderColor: '#ff1dce',
+//                     color: '#ff1dce',
+//                     backgroundColor: 'rgba(255, 0, 144, 0.1)',
+//                   },
+//                 }}
+//               >
+//                 Learn More About Us
+//               </Button>
+//             </motion.div>
+//           </Grid>
+          
+//           <Grid item xs={12} md={6}>
+//             <Grid container spacing={2}>
+//               {[
+//                 { label: 'Projects Delivered', value: '150+', icon: <RocketLaunchIcon /> },
+//                 { label: 'AI Models Deployed', value: '500+', icon: <AutoAwesomeIcon /> },
+//                 { label: 'Client Satisfaction', value: '98%', icon: <TimelineIcon /> },
+//                 { label: 'Team Members', value: '50+', icon: <GroupsIcon /> },
+//               ].map((stat, index) => (
+//                 <Grid item xs={6} key={index}>
+//                   <motion.div
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={inView ? { opacity: 1, y: 0 } : {}}
+//                     transition={{ delay: 0.5 + index * 0.1 }}
+//                   >
+//                     <Card
+//                       sx={{
+//                         backgroundColor: '#111111',
+//                         border: '1px solid #333333',
+//                         transition: 'all 0.3s ease',
+//                         height: '100%',
+//                         '&:hover': {
+//                           borderColor: '#ff0090',
+//                           transform: 'translateY(-5px)',
+//                         },
+//                       }}
+//                     >
+//                       <CardContent sx={{ textAlign: 'center', p: 2 }}>
+//                         <Box sx={{ 
+//                           color: '#ff0090', 
+//                           mb: 1,
+//                           display: 'flex',
+//                           justifyContent: 'center'
+//                         }}>
+//                           {stat.icon}
+//                         </Box>
+//                         <Typography
+//                           variant="h3"
+//                           sx={{
+//                             color: '#ff0090',
+//                             fontWeight: 700,
+//                             fontSize: '1.8rem',
+//                             mb: 0.5,
+//                           }}
+//                         >
+//                           {stat.value}
+//                         </Typography>
+//                         <Typography
+//                           variant="body2"
+//                           sx={{ 
+//                             color: '#ffffff',
+//                             fontSize: '0.85rem',
+//                             fontWeight: 500,
+//                             opacity: 0.9,
+//                           }}
+//                         >
+//                           {stat.label}
+//                         </Typography>
+//                       </CardContent>
+//                     </Card>
+//                   </motion.div>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Grid>
+//         </Grid>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default AboutSection;
+
 import React from 'react';
 import {
   Box,
@@ -2051,7 +2378,7 @@ const AboutSection = () => {
   return (
     <Box ref={ref} sx={{ 
       py: { xs: 8, md: 12 }, 
-      bgcolor: '#0A0A0F',
+      backgroundColor: 'transparent',
     }}>
       <Container maxWidth="xl">
         <Grid container spacing={6} alignItems="center">
@@ -2065,7 +2392,7 @@ const AboutSection = () => {
                 variant="h2"
                 sx={{
                   mb: 3,
-                  color: '#8A2BE2',
+                  color: '#ff0090',
                   fontWeight: 700,
                   fontSize: { xs: '2rem', md: '2.5rem' },
                   lineHeight: 1.2,
@@ -2078,9 +2405,10 @@ const AboutSection = () => {
                 variant="h6"
                 sx={{
                   mb: 4,
-                  color: '#A0A0A0',
+                  color: '#ffffff',
                   lineHeight: 1.8,
                   fontSize: { xs: '0.9rem', md: '1.1rem' },
+                  opacity: 0.9,
                 }}
               >
                 We specialize in delivering measurable AI solutions that transform how businesses operate, focusing on real-world applications and tangible results.
@@ -2094,13 +2422,13 @@ const AboutSection = () => {
                 sx={{
                   px: 4,
                   py: 1.5,
-                  borderColor: '#8A2BE2',
-                  color: '#8A2BE2',
+                  borderColor: '#ff0090',
+                  color: '#ff0090',
                   fontWeight: 600,
                   '&:hover': {
-                    borderColor: '#7A1BD2',
-                    color: '#7A1BD2',
-                    bgcolor: 'rgba(138, 43, 226, 0.1)',
+                    borderColor: '#ff1dce',
+                    color: '#ff1dce',
+                    backgroundColor: 'rgba(255, 0, 144, 0.1)',
                   },
                 }}
               >
@@ -2112,10 +2440,10 @@ const AboutSection = () => {
           <Grid item xs={12} md={6}>
             <Grid container spacing={2}>
               {[
-                { label: 'Projects Delivered', value: '150+', icon: <RocketLaunchIcon />, color: '#8A2BE2' },
-                { label: 'AI Models Deployed', value: '500+', icon: <AutoAwesomeIcon />, color: '#FF2D55' },
-                { label: 'Client Satisfaction', value: '98%', icon: <TimelineIcon />, color: '#9370DB' },
-                { label: 'Team Members', value: '50+', icon: <GroupsIcon />, color: '#8A2BE2' },
+                { label: 'Projects Delivered', value: '150+', icon: <RocketLaunchIcon /> },
+                { label: 'AI Models Deployed', value: '500+', icon: <AutoAwesomeIcon /> },
+                { label: 'Client Satisfaction', value: '98%', icon: <TimelineIcon /> },
+                { label: 'Team Members', value: '50+', icon: <GroupsIcon /> },
               ].map((stat, index) => (
                 <Grid item xs={6} key={index}>
                   <motion.div
@@ -2125,18 +2453,19 @@ const AboutSection = () => {
                   >
                     <Card
                       sx={{
-                        bgcolor: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        backgroundColor: '#111111',
+                        border: '1px solid #333333',
                         transition: 'all 0.3s ease',
                         height: '100%',
                         '&:hover': {
-                          borderColor: stat.color,
+                          borderColor: '#ff0090',
+                          transform: 'translateY(-5px)',
                         },
                       }}
                     >
                       <CardContent sx={{ textAlign: 'center', p: 2 }}>
                         <Box sx={{ 
-                          color: stat.color, 
+                          color: '#ff0090', 
                           mb: 1,
                           display: 'flex',
                           justifyContent: 'center'
@@ -2146,7 +2475,7 @@ const AboutSection = () => {
                         <Typography
                           variant="h3"
                           sx={{
-                            color: stat.color,
+                            color: '#ff0090',
                             fontWeight: 700,
                             fontSize: '1.8rem',
                             mb: 0.5,
@@ -2157,9 +2486,10 @@ const AboutSection = () => {
                         <Typography
                           variant="body2"
                           sx={{ 
-                            color: '#A0A0A0',
+                            color: '#ffffff',
                             fontSize: '0.85rem',
-                            fontWeight: 500
+                            fontWeight: 500,
+                            opacity: 0.9,
                           }}
                         >
                           {stat.label}

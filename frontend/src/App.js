@@ -222,6 +222,7 @@ import AdminLogin from './admin/AdminLogin';
 // Auth Context
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './services/ProtectedRoute';
+import StarsBackground from './components/StarsBackground';
 
 function App() {
   const location = useLocation();
@@ -248,6 +249,8 @@ function App() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
+            <StarsBackground/>
+          
             <Routes location={location}>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />

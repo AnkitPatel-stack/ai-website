@@ -846,6 +846,637 @@
 // export default ServicesSection;
 
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+//   Button,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import StrategyIcon from '@mui/icons-material/BarChart';
+// import MLIcon from '@mui/icons-material/DeviceHub';
+// import NLPIcon from '@mui/icons-material/Chat';
+// import VisionIcon from '@mui/icons-material/Visibility';
+// import IntegrationIcon from '@mui/icons-material/Sync';
+// import SupportIcon from '@mui/icons-material/School';
+// import { useNavigate } from 'react-router-dom';
+
+// const ServicesSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/services');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{
+//       py: { xs: 8, md: 12 },
+//       bgcolor: '#121218',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Box sx={{ textAlign: 'center', mb: 6 }}>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={inView ? { opacity: 1, y: 0 } : {}}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 2,
+//                 color: '#FFFFFF',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//                 lineHeight: 1.2,
+//               }}
+//             >
+//               Our AI-Powered Services
+//             </Typography>
+
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#A0A0A0',
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.7,
+//               }}
+//             >
+//               Transform your business with cutting-edge artificial intelligence solutions tailored to your needs
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         <Grid container spacing={3}>
+//           {[
+//             {
+//               title: 'AI Strategy & Consulting',
+//               description: 'Develop comprehensive AI roadmaps aligned with your business objectives.',
+//               icon: <StrategyIcon />,
+//               color: '#8A2BE2',
+//             },
+//             {
+//               title: 'Machine Learning Development',
+//               description: 'Custom ML models built and deployed for specific use cases.',
+//               icon: <MLIcon />,
+//               color: '#FF2D55',
+//             },
+//             {
+//               title: 'Natural Language Processing',
+//               description: 'Advanced NLP solutions for text analysis and language understanding.',
+//               icon: <NLPIcon />,
+//               color: '#9370DB',
+//             },
+//             {
+//               title: 'Computer Vision',
+//               description: 'Image and video analysis for automation and insights.',
+//               icon: <VisionIcon />,
+//               color: '#8A2BE2',
+//             },
+//             {
+//               title: 'AI Integration',
+//               description: 'Seamlessly integrate AI capabilities into existing systems.',
+//               icon: <IntegrationIcon />,
+//               color: '#FF2D55',
+//             },
+//             {
+//               title: 'AI Training & Support',
+//               description: 'Comprehensive training and ongoing support for teams.',
+//               icon: <SupportIcon />,
+//               color: '#9370DB',
+//             },
+//           ].map((service, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={index}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 animate={inView ? { opacity: 1, y: 0 } : {}}
+//                 transition={{ delay: index * 0.1, duration: 0.5 }}
+//               >
+//                 <Card
+//                   sx={{
+//                     bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                     border: '1px solid rgba(255, 255, 255, 0.1)',
+//                     height: '100%',
+//                     transition: 'all 0.3s ease',
+//                     '&:hover': {
+//                       borderColor: service.color,
+//                     },
+//                   }}
+//                 >
+//                   <CardContent sx={{ p: 3 }}>
+//                     <Box
+//                       sx={{
+//                         display: 'inline-flex',
+//                         alignItems: 'center',
+//                         justifyContent: 'center',
+//                         width: 60,
+//                         height: 60,
+//                         borderRadius: '15%',
+//                         bgcolor: service.color,
+//                         mb: 3,
+//                       }}
+//                     >
+//                       {React.cloneElement(service.icon, {
+//                         sx: {
+//                           fontSize: 28,
+//                           color: '#FFFFFF',
+//                         }
+//                       })}
+//                     </Box>
+
+//                     <Typography
+//                       variant="h5"
+//                       sx={{
+//                         mb: 2,
+//                         fontWeight: 600,
+//                         color: '#FFFFFF',
+//                         fontSize: '1.2rem',
+//                       }}
+//                     >
+//                       {service.title}
+//                     </Typography>
+
+//                     <Typography
+//                       variant="body1"
+//                       sx={{
+//                         lineHeight: 1.6,
+//                         color: '#A0A0A0',
+//                         fontSize: '0.9rem',
+//                       }}
+//                     >
+//                       {service.description}
+//                     </Typography>
+//                   </CardContent>
+//                 </Card>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Box sx={{ textAlign: 'center', mt: 6 }}>
+//           <Button
+//             variant="contained"
+//             size="large"
+//             endIcon={<ArrowForwardIcon />}
+//             onClick={handleLearnMore}
+//             sx={{
+//               px: 6,
+//               py: 1.5,
+//               fontSize: '1rem',
+//               fontWeight: 600,
+//               bgcolor: '#8A2BE2',
+//               color: '#FFFFFF',
+//               '&:hover': {
+//                 bgcolor: '#7A1BD2',
+//               },
+//             }}
+//           >
+//             Discover All AI Solutions
+//           </Button>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default ServicesSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+//   Button,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import StrategyIcon from '@mui/icons-material/BarChart';
+// import MLIcon from '@mui/icons-material/DeviceHub';
+// import NLPIcon from '@mui/icons-material/Chat';
+// import VisionIcon from '@mui/icons-material/Visibility';
+// import IntegrationIcon from '@mui/icons-material/Sync';
+// import SupportIcon from '@mui/icons-material/School';
+// import { useNavigate } from 'react-router-dom';
+
+// const ServicesSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/services');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{
+//       py: { xs: 8, md: 12 },
+//       background: 'transparent',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Box sx={{ textAlign: 'center', mb: 6 }}>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={inView ? { opacity: 1, y: 0 } : {}}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 2,
+//                 color: '#FFFFFF',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//                 lineHeight: 1.2,
+//                 textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+//               }}
+//             >
+//               Our AI-Powered Services
+//             </Typography>
+
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#FFFFFF',
+//                 opacity: 0.9,
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.7,
+//               }}
+//             >
+//               Transform your business with cutting-edge artificial intelligence solutions tailored to your needs
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         <Grid container spacing={3}>
+//           {[
+//             {
+//               title: 'AI Strategy & Consulting',
+//               description: 'Develop comprehensive AI roadmaps aligned with your business objectives.',
+//               icon: <StrategyIcon />,
+//             },
+//             {
+//               title: 'Machine Learning Development',
+//               description: 'Custom ML models built and deployed for specific use cases.',
+//               icon: <MLIcon />,
+//             },
+//             {
+//               title: 'Natural Language Processing',
+//               description: 'Advanced NLP solutions for text analysis and language understanding.',
+//               icon: <NLPIcon />,
+//             },
+//             {
+//               title: 'Computer Vision',
+//               description: 'Image and video analysis for automation and insights.',
+//               icon: <VisionIcon />,
+//             },
+//             {
+//               title: 'AI Integration',
+//               description: 'Seamlessly integrate AI capabilities into existing systems.',
+//               icon: <IntegrationIcon />,
+//             },
+//             {
+//               title: 'AI Training & Support',
+//               description: 'Comprehensive training and ongoing support for teams.',
+//               icon: <SupportIcon />,
+//             },
+//           ].map((service, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={index}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 animate={inView ? { opacity: 1, y: 0 } : {}}
+//                 transition={{ delay: index * 0.1, duration: 0.5 }}
+//               >
+//                 <Card
+//                   sx={{
+//                     bgcolor: 'rgba(0, 0, 0, 0.7)',
+//                     border: '1px solid rgba(255, 255, 255, 0.1)',
+//                     height: '100%',
+//                     transition: 'all 0.3s ease',
+//                     backdropFilter: 'blur(10px)',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       transform: 'translateY(-5px)',
+//                     },
+//                   }}
+//                 >
+//                   <CardContent sx={{ p: 3 }}>
+//                     <Box
+//                       sx={{
+//                         display: 'inline-flex',
+//                         alignItems: 'center',
+//                         justifyContent: 'center',
+//                         width: 60,
+//                         height: 60,
+//                         borderRadius: '15%',
+//                         bgcolor: '#ff0090',
+//                         mb: 3,
+//                         transition: 'all 0.3s ease',
+//                         '&:hover': {
+//                           bgcolor: '#ff1dce',
+//                           transform: 'scale(1.1)',
+//                         },
+//                       }}
+//                     >
+//                       {React.cloneElement(service.icon, {
+//                         sx: {
+//                           fontSize: 28,
+//                           color: '#FFFFFF',
+//                         }
+//                       })}
+//                     </Box>
+
+//                     <Typography
+//                       variant="h5"
+//                       sx={{
+//                         mb: 2,
+//                         fontWeight: 600,
+//                         color: '#FFFFFF',
+//                         fontSize: '1.2rem',
+//                       }}
+//                     >
+//                       {service.title}
+//                     </Typography>
+
+//                     <Typography
+//                       variant="body1"
+//                       sx={{
+//                         lineHeight: 1.6,
+//                         color: '#FFFFFF',
+//                         opacity: 0.8,
+//                         fontSize: '0.9rem',
+//                       }}
+//                     >
+//                       {service.description}
+//                     </Typography>
+//                   </CardContent>
+//                 </Card>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Box sx={{ textAlign: 'center', mt: 6 }}>
+//           <Button
+//             variant="contained"
+//             size="large"
+//             endIcon={<ArrowForwardIcon />}
+//             onClick={handleLearnMore}
+//             sx={{
+//               px: 6,
+//               py: 1.5,
+//               fontSize: '1rem',
+//               fontWeight: 600,
+//               bgcolor: '#ff0090',
+//               color: '#FFFFFF',
+//               '&:hover': {
+//                 bgcolor: '#ff1dce',
+//                 boxShadow: '0 0 20px rgba(255, 0, 144, 0.4)',
+//               },
+//             }}
+//           >
+//             Discover All AI Solutions
+//           </Button>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default ServicesSection;
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+//   Button,
+// } from '@mui/material';
+// import { motion } from 'framer-motion';
+// import { useInView } from 'react-intersection-observer';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import StrategyIcon from '@mui/icons-material/BarChart';
+// import MLIcon from '@mui/icons-material/DeviceHub';
+// import NLPIcon from '@mui/icons-material/Chat';
+// import VisionIcon from '@mui/icons-material/Visibility';
+// import IntegrationIcon from '@mui/icons-material/Sync';
+// import SupportIcon from '@mui/icons-material/School';
+// import { useNavigate } from 'react-router-dom';
+
+// const ServicesSection = () => {
+//   const { ref, inView } = useInView({
+//     triggerOnce: true,
+//     threshold: 0.1,
+//   });
+
+//   const navigate = useNavigate();
+
+//   const handleLearnMore = () => {
+//     navigate('/services');
+//   };
+
+//   return (
+//     <Box ref={ref} sx={{
+//       py: { xs: 8, md: 12 },
+//       backgroundColor: '#000000',
+//     }}>
+//       <Container maxWidth="xl">
+//         <Box sx={{ textAlign: 'center', mb: 6 }}>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={inView ? { opacity: 1, y: 0 } : {}}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 mb: 2,
+//                 color: '#ffffff',
+//                 fontWeight: 700,
+//                 fontSize: { xs: '2rem', md: '2.5rem' },
+//                 lineHeight: 1.2,
+//               }}
+//             >
+//               Our AI-Powered Services
+//             </Typography>
+
+//             <Typography
+//               variant="h6"
+//               sx={{
+//                 mb: 4,
+//                 color: '#ffffff',
+//                 opacity: 0.9,
+//                 maxWidth: 700,
+//                 mx: 'auto',
+//                 fontSize: { xs: '0.9rem', md: '1.1rem' },
+//                 lineHeight: 1.7,
+//               }}
+//             >
+//               Transform your business with cutting-edge artificial intelligence solutions tailored to your needs
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         <Grid container spacing={3}>
+//           {[
+//             {
+//               title: 'AI Strategy & Consulting',
+//               description: 'Develop comprehensive AI roadmaps aligned with your business objectives.',
+//               icon: <StrategyIcon />,
+//             },
+//             {
+//               title: 'Machine Learning Development',
+//               description: 'Custom ML models built and deployed for specific use cases.',
+//               icon: <MLIcon />,
+//             },
+//             {
+//               title: 'Natural Language Processing',
+//               description: 'Advanced NLP solutions for text analysis and language understanding.',
+//               icon: <NLPIcon />,
+//             },
+//             {
+//               title: 'Computer Vision',
+//               description: 'Image and video analysis for automation and insights.',
+//               icon: <VisionIcon />,
+//             },
+//             {
+//               title: 'AI Integration',
+//               description: 'Seamlessly integrate AI capabilities into existing systems.',
+//               icon: <IntegrationIcon />,
+//             },
+//             {
+//               title: 'AI Training & Support',
+//               description: 'Comprehensive training and ongoing support for teams.',
+//               icon: <SupportIcon />,
+//             },
+//           ].map((service, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={index}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 animate={inView ? { opacity: 1, y: 0 } : {}}
+//                 transition={{ delay: index * 0.1, duration: 0.5 }}
+//               >
+//                 <Card
+//                   sx={{
+//                     backgroundColor: '#111111',
+//                     border: '1px solid #333333',
+//                     height: '100%',
+//                     transition: 'all 0.3s ease',
+//                     '&:hover': {
+//                       borderColor: '#ff0090',
+//                       transform: 'translateY(-5px)',
+//                     },
+//                   }}
+//                 >
+//                   <CardContent sx={{ p: 3 }}>
+//                     <Box
+//                       sx={{
+//                         display: 'inline-flex',
+//                         alignItems: 'center',
+//                         justifyContent: 'center',
+//                         width: 60,
+//                         height: 60,
+//                         borderRadius: '15%',
+//                         backgroundColor: '#ff0090',
+//                         mb: 3,
+//                         transition: 'all 0.3s ease',
+//                         '&:hover': {
+//                           backgroundColor: '#ff1dce',
+//                           transform: 'scale(1.1)',
+//                         },
+//                       }}
+//                     >
+//                       {React.cloneElement(service.icon, {
+//                         sx: {
+//                           fontSize: 28,
+//                           color: '#ffffff',
+//                         }
+//                       })}
+//                     </Box>
+
+//                     <Typography
+//                       variant="h5"
+//                       sx={{
+//                         mb: 2,
+//                         fontWeight: 600,
+//                         color: '#ffffff',
+//                         fontSize: '1.2rem',
+//                       }}
+//                     >
+//                       {service.title}
+//                     </Typography>
+
+//                     <Typography
+//                       variant="body1"
+//                       sx={{
+//                         lineHeight: 1.6,
+//                         color: '#ffffff',
+//                         opacity: 0.9,
+//                         fontSize: '0.9rem',
+//                       }}
+//                     >
+//                       {service.description}
+//                     </Typography>
+//                   </CardContent>
+//                 </Card>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Box sx={{ textAlign: 'center', mt: 6 }}>
+//           <Button
+//             variant="contained"
+//             size="large"
+//             endIcon={<ArrowForwardIcon />}
+//             onClick={handleLearnMore}
+//             sx={{
+//               px: 6,
+//               py: 1.5,
+//               fontSize: '1rem',
+//               fontWeight: 600,
+//               backgroundColor: '#ff0090',
+//               color: '#ffffff',
+//               '&:hover': {
+//                 backgroundColor: '#ff1dce',
+//               },
+//             }}
+//           >
+//             Discover All AI Solutions
+//           </Button>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default ServicesSection;
+
 import React from 'react';
 import {
   Box,
@@ -882,7 +1513,7 @@ const ServicesSection = () => {
   return (
     <Box ref={ref} sx={{
       py: { xs: 8, md: 12 },
-      bgcolor: '#121218',
+      backgroundColor: 'transparent',
     }}>
       <Container maxWidth="xl">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -895,7 +1526,7 @@ const ServicesSection = () => {
               variant="h2"
               sx={{
                 mb: 2,
-                color: '#FFFFFF',
+                color: '#ffffff',
                 fontWeight: 700,
                 fontSize: { xs: '2rem', md: '2.5rem' },
                 lineHeight: 1.2,
@@ -908,7 +1539,8 @@ const ServicesSection = () => {
               variant="h6"
               sx={{
                 mb: 4,
-                color: '#A0A0A0',
+                color: '#ffffff',
+                opacity: 0.9,
                 maxWidth: 700,
                 mx: 'auto',
                 fontSize: { xs: '0.9rem', md: '1.1rem' },
@@ -926,37 +1558,31 @@ const ServicesSection = () => {
               title: 'AI Strategy & Consulting',
               description: 'Develop comprehensive AI roadmaps aligned with your business objectives.',
               icon: <StrategyIcon />,
-              color: '#8A2BE2',
             },
             {
               title: 'Machine Learning Development',
               description: 'Custom ML models built and deployed for specific use cases.',
               icon: <MLIcon />,
-              color: '#FF2D55',
             },
             {
               title: 'Natural Language Processing',
               description: 'Advanced NLP solutions for text analysis and language understanding.',
               icon: <NLPIcon />,
-              color: '#9370DB',
             },
             {
               title: 'Computer Vision',
               description: 'Image and video analysis for automation and insights.',
               icon: <VisionIcon />,
-              color: '#8A2BE2',
             },
             {
               title: 'AI Integration',
               description: 'Seamlessly integrate AI capabilities into existing systems.',
               icon: <IntegrationIcon />,
-              color: '#FF2D55',
             },
             {
               title: 'AI Training & Support',
               description: 'Comprehensive training and ongoing support for teams.',
               icon: <SupportIcon />,
-              color: '#9370DB',
             },
           ].map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -967,12 +1593,13 @@ const ServicesSection = () => {
               >
                 <Card
                   sx={{
-                    bgcolor: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backgroundColor: '#111111',
+                    border: '1px solid #333333',
                     height: '100%',
                     transition: 'all 0.3s ease',
                     '&:hover': {
-                      borderColor: service.color,
+                      borderColor: '#ff0090',
+                      transform: 'translateY(-5px)',
                     },
                   }}
                 >
@@ -985,14 +1612,19 @@ const ServicesSection = () => {
                         width: 60,
                         height: 60,
                         borderRadius: '15%',
-                        bgcolor: service.color,
+                        backgroundColor: '#ff0090',
                         mb: 3,
+                        transition: 'all 0.3s ease',
+                        '&:hover': {
+                          backgroundColor: '#ff1dce',
+                          transform: 'scale(1.1)',
+                        },
                       }}
                     >
                       {React.cloneElement(service.icon, {
                         sx: {
                           fontSize: 28,
-                          color: '#FFFFFF',
+                          color: '#ffffff',
                         }
                       })}
                     </Box>
@@ -1002,7 +1634,7 @@ const ServicesSection = () => {
                       sx={{
                         mb: 2,
                         fontWeight: 600,
-                        color: '#FFFFFF',
+                        color: '#ffffff',
                         fontSize: '1.2rem',
                       }}
                     >
@@ -1013,7 +1645,8 @@ const ServicesSection = () => {
                       variant="body1"
                       sx={{
                         lineHeight: 1.6,
-                        color: '#A0A0A0',
+                        color: '#ffffff',
+                        opacity: 0.9,
                         fontSize: '0.9rem',
                       }}
                     >
@@ -1037,10 +1670,10 @@ const ServicesSection = () => {
               py: 1.5,
               fontSize: '1rem',
               fontWeight: 600,
-              bgcolor: '#8A2BE2',
-              color: '#FFFFFF',
+              backgroundColor: '#ff0090',
+              color: '#ffffff',
               '&:hover': {
-                bgcolor: '#7A1BD2',
+                backgroundColor: '#ff1dce',
               },
             }}
           >

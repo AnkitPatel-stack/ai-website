@@ -1605,6 +1605,715 @@
 
 // export default Footer;
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Grid,
+//   Typography,
+//   Link,
+//   IconButton,
+//   Divider,
+//   Button,
+//   TextField,
+// } from '@mui/material';
+// import {
+//   LinkedIn as LinkedInIcon,
+//   Twitter as TwitterIcon,
+//   GitHub as GitHubIcon,
+//   Email as EmailIcon,
+//   SmartToy as SmartToyIcon,
+//   Bolt as BoltIcon,
+//   Timeline as TimelineIcon,
+//   Security as SecurityIcon,
+// } from '@mui/icons-material';
+// import { motion } from 'framer-motion';
+// import Logo from './Logo';
+
+// const Footer = () => {
+//   const currentYear = new Date().getFullYear();
+
+//   const footerLinks = {
+//     'Solutions': [
+//       { label: 'AI Strategy', href: '/services#ai-strategy' },
+//       { label: 'Machine Learning', href: '/services#ml-development' },
+//       { label: 'NLP Solutions', href: '/services#nlp-solutions' },
+//       { label: 'Computer Vision', href: '/services#computer-vision' },
+//     ],
+//     'Resources': [
+//       { label: 'AI Research', href: '/research' },
+//       { label: 'Case Studies', href: '/case-studies' },
+//       { label: 'Documentation', href: '/docs' },
+//       { label: 'AI Tools', href: '/tools' },
+//     ],
+//     'Company': [
+//       { label: 'About Us', href: '/about' },
+//       { label: 'Our Team', href: '/team' },
+//       { label: 'Careers', href: '/careers' },
+//       { label: 'Contact', href: '/contact' },
+//     ],
+//     'Legal': [
+//       { label: 'Privacy Policy', href: '/privacy' },
+//       { label: 'Terms of Service', href: '/terms' },
+//       { label: 'Cookie Policy', href: '/cookies' },
+//       { label: 'Security', href: '/security' },
+//     ],
+//   };
+
+//   const socialLinks = [
+//     { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://linkedin.com', color: '#8A2BE2' },
+//     { icon: <TwitterIcon />, label: 'Twitter', href: 'https://twitter.com', color: '#FF2D55' },
+//     { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com', color: '#9370DB' },
+//     { icon: <EmailIcon />, label: 'Email', href: 'mailto:contact@zenturatech.com', color: '#8A2BE2' },
+//   ];
+
+//   const aiFeatures = [
+//     { icon: <SmartToyIcon />, label: 'AI Models', value: '500+' },
+//     { icon: <BoltIcon />, label: 'Processing', value: '99.9%' },
+//     { icon: <TimelineIcon />, label: 'Networks', value: '200+' },
+//     { icon: <SecurityIcon />, label: 'Security', value: '100%' },
+//   ];
+
+//   return (
+//     <Box
+//       component="footer"
+//       sx={{
+//         bgcolor: '#0A0A0F',
+//         position: 'relative',
+//         pt: 8,
+//         pb: 6,
+//         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+//       }}
+//     >
+//       <Container maxWidth="xl">
+//         {/* Logo and Company Info Section */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6 }}
+//         >
+//           <Box sx={{ textAlign: 'center', mb: 6 }}>
+//             {/* Logo - Use ImageExact variant for consistency */}
+//             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+//               <Logo variant="ImageClean" size="large" />
+//             </Box>
+            
+//             <Typography variant="body1" sx={{ 
+//               mb: 4, 
+//               lineHeight: 1.8, 
+//               color: '#A0A0A0',
+//               maxWidth: '600px',
+//               mx: 'auto',
+//               fontSize: '1rem',
+//             }}>
+//               Pioneering the future of artificial intelligence. We build intelligent solutions 
+//               that transform businesses through cutting-edge AI technology.
+//             </Typography>
+            
+//             {/* Social Links */}
+//             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 6 }}>
+//               {socialLinks.map((social, index) => (
+//                 <motion.div
+//                   key={social.label}
+//                   initial={{ opacity: 0, scale: 0 }}
+//                   animate={{ opacity: 1, scale: 1 }}
+//                   transition={{ duration: 0.3, delay: index * 0.1 }}
+//                   whileHover={{ scale: 1.1 }}
+//                 >
+//                   <IconButton
+//                     href={social.href}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     sx={{
+//                       bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                       border: '1px solid rgba(255, 255, 255, 0.1)',
+//                       color: '#FFFFFF',
+//                       '&:hover': {
+//                         bgcolor: social.color,
+//                         borderColor: social.color,
+//                       },
+//                     }}
+//                   >
+//                     {social.icon}
+//                   </IconButton>
+//                 </motion.div>
+//               ))}
+//             </Box>
+//           </Box>
+//         </motion.div>
+
+//         {/* Main Footer Content */}
+//         <Grid container spacing={4}>
+//           {/* Contact Info */}
+//           <Grid item xs={12} md={4}>
+//             <motion.div
+//               initial={{ opacity: 0, x: -20 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.5 }}
+//             >
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 3,
+//                   fontWeight: 600,
+//                   color: '#FFFFFF',
+//                   fontSize: '1.1rem',
+//                   letterSpacing: '0.5px',
+//                 }}
+//               >
+//                 Contact Information
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+//                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+//                   <EmailIcon sx={{ color: '#FF2D55', fontSize: 20 }} />
+//                   <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//                     contact@zenturatech.com
+//                   </Typography>
+//                 </Box>
+                
+//                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+//                   <SmartToyIcon sx={{ color: '#8A2BE2', fontSize: 20 }} />
+//                   <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//                     San Francisco, California
+//                   </Typography>
+//                 </Box>
+//               </Box>
+
+//               {/* Newsletter Subscription */}
+//               <Box sx={{ mt: 4 }}>
+//                 <Typography
+//                   variant="h6"
+//                   sx={{
+//                     mb: 2,
+//                     fontWeight: 600,
+//                     color: '#FFFFFF',
+//                     fontSize: '1.1rem',
+//                     letterSpacing: '0.5px',
+//                   }}
+//                 >
+//                   AI Insights Newsletter
+//                 </Typography>
+//                 <Typography variant="body2" sx={{ mb: 3, color: '#A0A0A0', fontSize: '0.9rem' }}>
+//                   Get the latest AI research and trends.
+//                 </Typography>
+//                 <Box component="form">
+//                   <TextField
+//                     fullWidth
+//                     placeholder="Your email address"
+//                     variant="outlined"
+//                     size="small"
+//                     sx={{
+//                       mb: 2,
+//                       '& .MuiOutlinedInput-root': {
+//                         bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                         borderColor: 'rgba(255,255,255,0.1)',
+//                         color: '#FFFFFF',
+//                         '&:hover': {
+//                           borderColor: '#8A2BE2',
+//                         },
+//                         '&.Mui-focused': {
+//                           borderColor: '#8A2BE2',
+//                         }
+//                       },
+//                       '& .MuiOutlinedInput-input': {
+//                         color: '#FFFFFF',
+//                         fontSize: '0.9rem',
+//                         padding: '10px 14px',
+//                       }
+//                     }}
+//                   />
+//                   <motion.div
+//                     whileHover={{ scale: 1.02 }}
+//                     whileTap={{ scale: 0.98 }}
+//                   >
+//                     <Button
+//                       fullWidth
+//                       variant="contained"
+//                       sx={{
+//                         bgcolor: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//                         background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//                         color: '#FFFFFF',
+//                         fontWeight: 600,
+//                         py: 1,
+//                         fontSize: '0.9rem',
+//                         '&:hover': {
+//                           background: 'linear-gradient(135deg, #7A1BD2 0%, #E82D4D 100%)',
+//                         }
+//                       }}
+//                     >
+//                       Subscribe
+//                     </Button>
+//                   </motion.div>
+//                 </Box>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+
+//           {/* Footer Links Sections */}
+//           {Object.entries(footerLinks).map(([category, links], index) => (
+//             <Grid item xs={6} sm={3} md={2} key={category}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//               >
+//                 <Typography
+//                   variant="h6"
+//                   sx={{
+//                     mb: 3,
+//                     fontWeight: 600,
+//                     color: '#FFFFFF',
+//                     fontSize: '1rem',
+//                     letterSpacing: '0.5px',
+//                   }}
+//                 >
+//                   {category}
+//                 </Typography>
+//                 <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+//                   {links.map((link) => (
+//                     <motion.li
+//                       key={link.label}
+//                       whileHover={{ x: 5 }}
+//                       style={{ marginBottom: '12px' }}
+//                     >
+//                       <Link
+//                         href={link.href}
+//                         sx={{
+//                           color: '#A0A0A0',
+//                           textDecoration: 'none',
+//                           transition: 'all 0.3s ease',
+//                           fontSize: '0.9rem',
+//                           '&:hover': {
+//                             color: '#FF2D55',
+//                           },
+//                         }}
+//                       >
+//                         {link.label}
+//                       </Link>
+//                     </motion.li>
+//                   ))}
+//                 </Box>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Divider sx={{ 
+//           my: 6, 
+//           borderColor: 'rgba(255, 255, 255, 0.1)',
+//           borderWidth: '1px',
+//         }} />
+
+//         {/* Copyright Section */}
+//         <Box sx={{ 
+//           display: 'flex', 
+//           flexDirection: { xs: 'column', md: 'row' }, 
+//           justifyContent: 'space-between', 
+//           alignItems: 'center',
+//           gap: 3,
+//         }}>
+//           <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//             © {currentYear} ZenturaTech AI Solutions. All rights reserved.
+//           </Typography>
+          
+//           <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+//             <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//               Privacy Policy
+//             </Typography>
+//             <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//               Terms of Service
+//             </Typography>
+//             <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//               Cookie Policy
+//             </Typography>
+//           </Box>
+//         </Box>
+
+//         {/* AI Badge - Minimal */}
+//         <Box sx={{ 
+//           display: 'flex', 
+//           justifyContent: 'center', 
+//           mt: 4,
+//           alignItems: 'center',
+//           gap: 1,
+//         }}>
+//           <Box
+//             sx={{
+//               width: 8,
+//               height: 8,
+//               borderRadius: '50%',
+//               bgcolor: '#FF2D55',
+//               animation: 'pulse 2s infinite',
+//               '@keyframes pulse': {
+//                 '0%, 100%': { opacity: 0.5 },
+//                 '50%': { opacity: 1 }
+//               }
+//             }}
+//           />
+//           <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//             Powered by Advanced AI
+//           </Typography>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default Footer;
+
+
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Grid,
+//   Typography,
+//   Link,
+//   IconButton,
+//   Divider,
+//   Button,
+//   TextField,
+// } from '@mui/material';
+// import {
+//   LinkedIn as LinkedInIcon,
+//   Twitter as TwitterIcon,
+//   GitHub as GitHubIcon,
+//   Email as EmailIcon,
+// } from '@mui/icons-material';
+// import { motion } from 'framer-motion';
+// import Logo from './Logo';
+
+// const Footer = () => {
+//   const currentYear = new Date().getFullYear();
+
+//   const footerLinks = {
+//     'Solutions': [
+//       { label: 'AI Strategy', href: '/services#ai-strategy' },
+//       { label: 'Machine Learning', href: '/services#ml-development' },
+//       { label: 'NLP Solutions', href: '/services#nlp-solutions' },
+//       { label: 'Computer Vision', href: '/services#computer-vision' },
+//     ],
+//     'Resources': [
+//       { label: 'AI Research', href: '/research' },
+//       { label: 'Case Studies', href: '/case-studies' },
+//       { label: 'Documentation', href: '/docs' },
+//       { label: 'AI Tools', href: '/tools' },
+//     ],
+//     'Company': [
+//       { label: 'About Us', href: '/about' },
+//       { label: 'Our Team', href: '/team' },
+//       { label: 'Careers', href: '/careers' },
+//       { label: 'Contact', href: '/contact' },
+//     ],
+//     'Legal': [
+//       { label: 'Privacy Policy', href: '/privacy' },
+//       { label: 'Terms of Service', href: '/terms' },
+//       { label: 'Cookie Policy', href: '/cookies' },
+//       { label: 'Security', href: '/security' },
+//     ],
+//   };
+
+//   const socialLinks = [
+//     { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://linkedin.com', color: '#8A2BE2' },
+//     { icon: <TwitterIcon />, label: 'Twitter', href: 'https://twitter.com', color: '#8A2BE2' },
+//     { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com', color: '#8A2BE2' },
+//     { icon: <EmailIcon />, label: 'Email', href: 'mailto:contact@zenturatech.com', color: '#8A2BE2' },
+//   ];
+
+//   return (
+//     <Box
+//       component="footer"
+//       sx={{
+//         bgcolor: '#0A0A0F',
+//         position: 'relative',
+//         pt: 8,
+//         pb: 6,
+//         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+//       }}
+//     >
+//       <Container maxWidth="xl">
+//         {/* Logo and Company Info Section */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6 }}
+//         >
+//           <Box sx={{ textAlign: 'center', mb: 6 }}>
+//             {/* Logo */}
+//             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+//               <Logo variant="Classic" size="large" />
+//             </Box>
+            
+//             <Typography variant="body1" sx={{ 
+//               mb: 4, 
+//               lineHeight: 1.8, 
+//               color: '#A0A0A0',
+//               maxWidth: '600px',
+//               mx: 'auto',
+//               fontSize: '1rem',
+//             }}>
+//               Pioneering the future of artificial intelligence. We build intelligent solutions 
+//               that transform businesses through cutting-edge AI technology.
+//             </Typography>
+            
+//             {/* Social Links */}
+//             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 6 }}>
+//               {socialLinks.map((social, index) => (
+//                 <motion.div
+//                   key={social.label}
+//                   initial={{ opacity: 0, scale: 0 }}
+//                   animate={{ opacity: 1, scale: 1 }}
+//                   transition={{ duration: 0.3, delay: index * 0.1 }}
+//                   whileHover={{ scale: 1.1 }}
+//                 >
+//                   <IconButton
+//                     href={social.href}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     sx={{
+//                       bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                       border: '1px solid rgba(255, 255, 255, 0.1)',
+//                       color: '#FFFFFF',
+//                       '&:hover': {
+//                         bgcolor: '#8A2BE2',
+//                         borderColor: '#8A2BE2',
+//                       },
+//                     }}
+//                   >
+//                     {social.icon}
+//                   </IconButton>
+//                 </motion.div>
+//               ))}
+//             </Box>
+//           </Box>
+//         </motion.div>
+
+//         {/* Main Footer Content */}
+//         <Grid container spacing={4}>
+//           {/* Contact Info */}
+//           <Grid item xs={12} md={4}>
+//             <motion.div
+//               initial={{ opacity: 0, x: -20 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.5 }}
+//             >
+//               <Typography
+//                 variant="h6"
+//                 sx={{
+//                   mb: 3,
+//                   fontWeight: 600,
+//                   color: '#FFFFFF',
+//                   fontSize: '1.1rem',
+//                   letterSpacing: '0.5px',
+//                 }}
+//               >
+//                 Contact Information
+//               </Typography>
+              
+//               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+//                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+//                   <EmailIcon sx={{ color: '#8A2BE2', fontSize: 20 }} />
+//                   <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//                     contact@zenturatech.com
+//                   </Typography>
+//                 </Box>
+                
+//                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+//                   <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//                     San Francisco, California
+//                   </Typography>
+//                 </Box>
+//               </Box>
+
+//               {/* Newsletter Subscription */}
+//               <Box sx={{ mt: 4 }}>
+//                 <Typography
+//                   variant="h6"
+//                   sx={{
+//                     mb: 2,
+//                     fontWeight: 600,
+//                     color: '#FFFFFF',
+//                     fontSize: '1.1rem',
+//                     letterSpacing: '0.5px',
+//                   }}
+//                 >
+//                   AI Insights Newsletter
+//                 </Typography>
+//                 <Typography variant="body2" sx={{ mb: 3, color: '#A0A0A0', fontSize: '0.9rem' }}>
+//                   Get the latest AI research and trends.
+//                 </Typography>
+//                 <Box component="form">
+//                   <TextField
+//                     fullWidth
+//                     placeholder="Your email address"
+//                     variant="outlined"
+//                     size="small"
+//                     sx={{
+//                       mb: 2,
+//                       '& .MuiOutlinedInput-root': {
+//                         bgcolor: 'rgba(255, 255, 255, 0.05)',
+//                         borderColor: 'rgba(255,255,255,0.1)',
+//                         color: '#FFFFFF',
+//                         '&:hover': {
+//                           borderColor: '#8A2BE2',
+//                         },
+//                         '&.Mui-focused': {
+//                           borderColor: '#8A2BE2',
+//                         }
+//                       },
+//                       '& .MuiOutlinedInput-input': {
+//                         color: '#FFFFFF',
+//                         fontSize: '0.9rem',
+//                         padding: '10px 14px',
+//                       }
+//                     }}
+//                   />
+//                   <motion.div
+//                     whileHover={{ scale: 1.02 }}
+//                     whileTap={{ scale: 0.98 }}
+//                   >
+//                     <Button
+//                       fullWidth
+//                       variant="contained"
+//                       sx={{
+//                         bgcolor: '#8A2BE2',
+//                         color: '#FFFFFF',
+//                         fontWeight: 600,
+//                         py: 1,
+//                         fontSize: '0.9rem',
+//                         '&:hover': {
+//                           bgcolor: '#7A1BD2',
+//                         }
+//                       }}
+//                     >
+//                       Subscribe
+//                     </Button>
+//                   </motion.div>
+//                 </Box>
+//               </Box>
+//             </motion.div>
+//           </Grid>
+
+//           {/* Footer Links Sections */}
+//           {Object.entries(footerLinks).map(([category, links], index) => (
+//             <Grid item xs={6} sm={3} md={2} key={category}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//               >
+//                 <Typography
+//                   variant="h6"
+//                   sx={{
+//                     mb: 3,
+//                     fontWeight: 600,
+//                     color: '#FFFFFF',
+//                     fontSize: '1rem',
+//                     letterSpacing: '0.5px',
+//                   }}
+//                 >
+//                   {category}
+//                 </Typography>
+//                 <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+//                   {links.map((link) => (
+//                     <motion.li
+//                       key={link.label}
+//                       whileHover={{ x: 5 }}
+//                       style={{ marginBottom: '12px' }}
+//                     >
+//                       <Link
+//                         href={link.href}
+//                         sx={{
+//                           color: '#A0A0A0',
+//                           textDecoration: 'none',
+//                           transition: 'all 0.3s ease',
+//                           fontSize: '0.9rem',
+//                           '&:hover': {
+//                             color: '#8A2BE2',
+//                           },
+//                         }}
+//                       >
+//                         {link.label}
+//                       </Link>
+//                     </motion.li>
+//                   ))}
+//                 </Box>
+//               </motion.div>
+//             </Grid>
+//           ))}
+//         </Grid>
+
+//         <Divider sx={{ 
+//           my: 6, 
+//           borderColor: 'rgba(255, 255, 255, 0.1)',
+//           borderWidth: '1px',
+//         }} />
+
+//         {/* Copyright Section */}
+//         <Box sx={{ 
+//           display: 'flex', 
+//           flexDirection: { xs: 'column', md: 'row' }, 
+//           justifyContent: 'space-between', 
+//           alignItems: 'center',
+//           gap: 3,
+//         }}>
+//           <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+//             © {currentYear} ZenturaTech AI Solutions. All rights reserved.
+//           </Typography>
+          
+//           <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+//             <Link href="/privacy" sx={{ textDecoration: 'none' }}>
+//               <Typography variant="caption" sx={{ color: '#A0A0A0', '&:hover': { color: '#8A2BE2' } }}>
+//                 Privacy Policy
+//               </Typography>
+//             </Link>
+//             <Link href="/terms" sx={{ textDecoration: 'none' }}>
+//               <Typography variant="caption" sx={{ color: '#A0A0A0', '&:hover': { color: '#8A2BE2' } }}>
+//                 Terms of Service
+//               </Typography>
+//             </Link>
+//             <Link href="/cookies" sx={{ textDecoration: 'none' }}>
+//               <Typography variant="caption" sx={{ color: '#A0A0A0', '&:hover': { color: '#8A2BE2' } }}>
+//                 Cookie Policy
+//               </Typography>
+//             </Link>
+//           </Box>
+//         </Box>
+
+//         {/* AI Badge - Minimal */}
+//         <Box sx={{ 
+//           display: 'flex', 
+//           justifyContent: 'center', 
+//           mt: 4,
+//           alignItems: 'center',
+//           gap: 1,
+//         }}>
+//           <Box
+//             sx={{
+//               width: 8,
+//               height: 8,
+//               borderRadius: '50%',
+//               bgcolor: '#8A2BE2',
+//               animation: 'pulse 2s infinite',
+//               '@keyframes pulse': {
+//                 '0%, 100%': { opacity: 0.5 },
+//                 '50%': { opacity: 1 }
+//               }
+//             }}
+//           />
+//           <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//             Powered by Advanced AI
+//           </Typography>
+//         </Box>
+//       </Container>
+//     </Box>
+//   );
+// };
+
+// export default Footer;
+
+
 import React from 'react';
 import {
   Box,
@@ -1622,10 +2331,6 @@ import {
   Twitter as TwitterIcon,
   GitHub as GitHubIcon,
   Email as EmailIcon,
-  SmartToy as SmartToyIcon,
-  Bolt as BoltIcon,
-  Timeline as TimelineIcon,
-  Security as SecurityIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
@@ -1661,24 +2366,17 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://linkedin.com', color: '#8A2BE2' },
-    { icon: <TwitterIcon />, label: 'Twitter', href: 'https://twitter.com', color: '#FF2D55' },
-    { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com', color: '#9370DB' },
-    { icon: <EmailIcon />, label: 'Email', href: 'mailto:contact@zenturatech.com', color: '#8A2BE2' },
-  ];
-
-  const aiFeatures = [
-    { icon: <SmartToyIcon />, label: 'AI Models', value: '500+' },
-    { icon: <BoltIcon />, label: 'Processing', value: '99.9%' },
-    { icon: <TimelineIcon />, label: 'Networks', value: '200+' },
-    { icon: <SecurityIcon />, label: 'Security', value: '100%' },
+    { icon: <LinkedInIcon />, label: 'LinkedIn', href: 'https://linkedin.com' },
+    { icon: <TwitterIcon />, label: 'Twitter', href: 'https://twitter.com' },
+    { icon: <GitHubIcon />, label: 'GitHub', href: 'https://github.com' },
+    { icon: <EmailIcon />, label: 'Email', href: 'mailto:contact@zenturatech.com' },
   ];
 
   return (
     <Box
       component="footer"
       sx={{
-        bgcolor: '#0A0A0F',
+        bgcolor: '#000000',
         position: 'relative',
         pt: 8,
         pb: 6,
@@ -1693,15 +2391,15 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <Box sx={{ textAlign: 'center', mb: 6 }}>
-            {/* Logo - Use ImageExact variant for consistency */}
+            {/* Logo */}
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
-              <Logo variant="ImageClean" size="large" />
+              <Logo variant="Classic" size="large" />
             </Box>
             
             <Typography variant="body1" sx={{ 
               mb: 4, 
               lineHeight: 1.8, 
-              color: '#A0A0A0',
+              color: 'rgba(255, 255, 255, 0.7)',
               maxWidth: '600px',
               mx: 'auto',
               fontSize: '1rem',
@@ -1729,8 +2427,8 @@ const Footer = () => {
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       color: '#FFFFFF',
                       '&:hover': {
-                        bgcolor: social.color,
-                        borderColor: social.color,
+                        bgcolor: 'rgba(255, 255, 255, 0.1)',
+                        borderColor: 'rgba(255, 255, 255, 0.3)',
                       },
                     }}
                   >
@@ -1766,18 +2464,15 @@ const Footer = () => {
               
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <EmailIcon sx={{ color: '#FF2D55', fontSize: 20 }} />
-                  <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+                  <EmailIcon sx={{ color: '#FFFFFF', fontSize: 20, opacity: 0.7 }} />
+                  <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                     contact@zenturatech.com
                   </Typography>
                 </Box>
                 
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <SmartToyIcon sx={{ color: '#8A2BE2', fontSize: 20 }} />
-                  <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
-                    San Francisco, California
-                  </Typography>
-                </Box>
+                <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                  San Francisco, California
+                </Typography>
               </Box>
 
               {/* Newsletter Subscription */}
@@ -1794,7 +2489,7 @@ const Footer = () => {
                 >
                   AI Insights Newsletter
                 </Typography>
-                <Typography variant="body2" sx={{ mb: 3, color: '#A0A0A0', fontSize: '0.9rem' }}>
+                <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>
                   Get the latest AI research and trends.
                 </Typography>
                 <Box component="form">
@@ -1810,10 +2505,10 @@ const Footer = () => {
                         borderColor: 'rgba(255,255,255,0.1)',
                         color: '#FFFFFF',
                         '&:hover': {
-                          borderColor: '#8A2BE2',
+                          borderColor: 'rgba(255, 255, 255, 0.3)',
                         },
                         '&.Mui-focused': {
-                          borderColor: '#8A2BE2',
+                          borderColor: 'rgba(255, 255, 255, 0.3)',
                         }
                       },
                       '& .MuiOutlinedInput-input': {
@@ -1831,14 +2526,13 @@ const Footer = () => {
                       fullWidth
                       variant="contained"
                       sx={{
-                        bgcolor: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
-                        background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
-                        color: '#FFFFFF',
+                        bgcolor: '#FFFFFF',
+                        color: '#000000',
                         fontWeight: 600,
                         py: 1,
                         fontSize: '0.9rem',
                         '&:hover': {
-                          background: 'linear-gradient(135deg, #7A1BD2 0%, #E82D4D 100%)',
+                          bgcolor: 'rgba(255, 255, 255, 0.9)',
                         }
                       }}
                     >
@@ -1880,12 +2574,12 @@ const Footer = () => {
                       <Link
                         href={link.href}
                         sx={{
-                          color: '#A0A0A0',
+                          color: 'rgba(255, 255, 255, 0.7)',
                           textDecoration: 'none',
                           transition: 'all 0.3s ease',
                           fontSize: '0.9rem',
                           '&:hover': {
-                            color: '#FF2D55',
+                            color: '#FFFFFF',
                           },
                         }}
                       >
@@ -1913,20 +2607,26 @@ const Footer = () => {
           alignItems: 'center',
           gap: 3,
         }}>
-          <Typography variant="body2" sx={{ color: '#A0A0A0' }}>
+          <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
             © {currentYear} ZenturaTech AI Solutions. All rights reserved.
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
-              Privacy Policy
-            </Typography>
-            <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
-              Terms of Service
-            </Typography>
-            <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
-              Cookie Policy
-            </Typography>
+            <Link href="/privacy" sx={{ textDecoration: 'none' }}>
+              <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', '&:hover': { color: '#FFFFFF' } }}>
+                Privacy Policy
+              </Typography>
+            </Link>
+            <Link href="/terms" sx={{ textDecoration: 'none' }}>
+              <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', '&:hover': { color: '#FFFFFF' } }}>
+                Terms of Service
+              </Typography>
+            </Link>
+            <Link href="/cookies" sx={{ textDecoration: 'none' }}>
+              <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)', '&:hover': { color: '#FFFFFF' } }}>
+                Cookie Policy
+              </Typography>
+            </Link>
           </Box>
         </Box>
 
@@ -1938,20 +2638,7 @@ const Footer = () => {
           alignItems: 'center',
           gap: 1,
         }}>
-          <Box
-            sx={{
-              width: 8,
-              height: 8,
-              borderRadius: '50%',
-              bgcolor: '#FF2D55',
-              animation: 'pulse 2s infinite',
-              '@keyframes pulse': {
-                '0%, 100%': { opacity: 0.5 },
-                '50%': { opacity: 1 }
-              }
-            }}
-          />
-          <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+          <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
             Powered by Advanced AI
           </Typography>
         </Box>
