@@ -123,7 +123,7 @@
 //               Z
 //             </Box>
 //           </Typography>
-          
+
 //           {/* Optional: Small AI indicator dot */}
 //           <Box
 //             sx={{
@@ -185,7 +185,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -226,7 +226,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -267,7 +267,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -308,7 +308,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -365,7 +365,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -407,9 +407,9 @@
 //       medium: { zSize: '4rem', textSize: '1.2rem', spacing: '1.5px' },
 //       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -443,7 +443,7 @@
 //             Z
 //           </Box>
 //         </Typography>
-        
+
 //         {/* Lowercase text below - pure white */}
 //         <Typography
 //           sx={{
@@ -468,7 +468,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -509,7 +509,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -550,7 +550,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -592,9 +592,9 @@
 //       medium: { zSize: '4rem', textSize: '1.2rem', spacing: '1.5px' },
 //       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -628,7 +628,7 @@
 //             Z
 //           </Box>
 //         </Typography>
-        
+
 //         {/* Lowercase text below - pure white */}
 //         <Typography
 //           sx={{
@@ -653,9 +653,9 @@
 //       medium: { zSize: '4rem', textSize: '1.2rem', spacing: '1.5px' },
 //       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -689,7 +689,7 @@
 //             Z
 //           </Box>
 //         </Typography>
-        
+
 //         {/* Lowercase text below - pure white */}
 //         <Typography
 //           sx={{
@@ -714,9 +714,9 @@
 //       medium: { zSize: '4rem', textSize: '1.2rem', spacing: '1.5px' },
 //       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -750,7 +750,7 @@
 //             Z
 //           </Box>
 //         </Typography>
-        
+
 //         {/* Lowercase text below - pure white */}
 //         <Typography
 //           sx={{
@@ -791,7 +791,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -845,9 +845,9 @@
 //       medium: { fontSize: '1.8rem', zSize: '3.5rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', zSize: '5rem', spacing: '1.5px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         {/* Special Z with angular design */}
@@ -883,7 +883,7 @@
 //           >
 //             Z
 //           </Box>
-          
+
 //           {/* Overlay for angular cuts effect */}
 //           <Box
 //             sx={{
@@ -901,7 +901,7 @@
 //             }}
 //           />
 //         </Box>
-        
+
 //         {/* Rest of text in pure white */}
 //         <Typography
 //           sx={{
@@ -926,9 +926,9 @@
 //       medium: { zSize: '4rem', textSize: '1.2rem', spacing: '1.5px' },
 //       large: { zSize: '5.5rem', textSize: '1.6rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -970,7 +970,7 @@
 //           >
 //             Z
 //           </Box>
-          
+
 //           {/* Angular cut overlay for 3D effect */}
 //           <Box
 //             sx={{
@@ -989,7 +989,7 @@
 //             }}
 //           />
 //         </Box>
-        
+
 //         {/* Text below - pure white, slightly spaced */}
 //         <Typography
 //           sx={{
@@ -1015,7 +1015,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1056,7 +1056,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1097,7 +1097,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1154,9 +1154,9 @@
 //       medium: { fontSize: '1.8rem', zSize: '3.5rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', zSize: '5rem', spacing: '1.5px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         {/* Special Z with crack/cut design - Purple + Pink combination */}
@@ -1208,7 +1208,7 @@
 //             >
 //               Z
 //             </Box>
-            
+
 //             {/* Middle section - Pink with crack */}
 //             <Box
 //               sx={{
@@ -1232,7 +1232,7 @@
 //             >
 //               Z
 //             </Box>
-            
+
 //             {/* Bottom section - Light Purple */}
 //             <Box
 //               sx={{
@@ -1256,7 +1256,7 @@
 //             >
 //               Z
 //             </Box>
-            
+
 //             {/* Main Z text for visibility - Purple + Pink gradient */}
 //             <Box
 //               component="span"
@@ -1288,7 +1288,7 @@
 //               Z
 //             </Box>
 //           </Box>
-          
+
 //           {/* Diagonal crack line overlay */}
 //           <Box
 //             sx={{
@@ -1304,7 +1304,7 @@
 //             }}
 //           />
 //         </Box>
-        
+
 //         {/* Rest of text in pure white */}
 //         <Typography
 //           sx={{
@@ -1329,9 +1329,9 @@
 //       medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         {/* Z with diagonal cut effect - Purple + Pink */}
@@ -1380,7 +1380,7 @@
 //             Z
 //           </Box>
 //         </Box>
-        
+
 //         {/* Text in white */}
 //         <Typography
 //           sx={{
@@ -1405,9 +1405,9 @@
 //       medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
 //       large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
 //     };
-    
+
 //     const currentSize = sizes[size];
-    
+
 //     return (
 //       <Box 
 //         sx={{ 
@@ -1456,7 +1456,7 @@
 //             Z
 //           </Box>
 //         </Box>
-        
+
 //         {/* Text below */}
 //         <Typography
 //           sx={{
@@ -1481,7 +1481,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1521,7 +1521,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1560,7 +1560,7 @@
 //       medium: { fontSize: '1.8rem', spacing: '1px' },
 //       large: { fontSize: '2.5rem', spacing: '1.5px' }
 //     };
-    
+
 //     return (
 //       <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
 //         <Typography
@@ -1605,19 +1605,339 @@
 // export default Logo;
 
 
+// import React from 'react';
+// import { Box, Typography } from '@mui/material';
+
+// // Individual logo components
+// const MainLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { fontSize: '1.2rem', zSize: '2rem', spacing: '0.5px' },
+//     medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
+//     large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
+//   };
+
+//   const currentSize = sizes[size];
+
+//   return (
+//     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//       <Box
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.zSize,
+//           fontWeight: 900,
+//           letterSpacing: '-1px',
+//           lineHeight: 0.7,
+//           marginRight: '6px',
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent',
+//             backgroundClip: 'text',
+//             display: 'block',
+//           }}
+//         >
+//           Z
+//         </Box>
+//       </Box>
+
+//       <Typography
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.fontSize,
+//           fontWeight: 500,
+//           letterSpacing: currentSize.spacing,
+//           color: '#FFFFFF',
+//           lineHeight: 1,
+//         }}
+//       >
+//         enturatech
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// const SimpleLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
+//     medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
+//     large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+//   };
+
+//   const currentSize = sizes[size];
+
+//   return (
+//     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//       <Box
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.zSize,
+//           fontWeight: 900,
+//           letterSpacing: '-1px',
+//           lineHeight: 0.7,
+//           marginRight: '4px',
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             color: '#fa8072',
+//             display: 'block',
+//           }}
+//         >
+//           Z
+//         </Box>
+//       </Box>
+
+//       <Typography
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.fontSize,
+//           fontWeight: 500,
+//           letterSpacing: currentSize.spacing,
+//           color: '#FFFFFF',
+//           lineHeight: 1,
+//         }}
+//       >
+//         enturatech
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// const PinkLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
+//     medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
+//     large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+//   };
+
+//   const currentSize = sizes[size];
+
+//   return (
+//     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//       <Box
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.zSize,
+//           fontWeight: 900,
+//           letterSpacing: '-1px',
+//           lineHeight: 0.7,
+//           marginRight: '4px',
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             color: '#fa8072',
+//             display: 'block',
+//           }}
+//         >
+//           Z
+//         </Box>
+//       </Box>
+
+//       <Typography
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.fontSize,
+//           fontWeight: 500,
+//           letterSpacing: currentSize.spacing,
+//           color: '#FFFFFF',
+//           lineHeight: 1,
+//         }}
+//       >
+//         enturatech
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// const StackedLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { zSize: '2.5rem', textSize: '0.8rem', spacing: '1px' },
+//     medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
+//     large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
+//   };
+
+//   const currentSize = sizes[size];
+
+//   return (
+//     <Box 
+//       sx={{ 
+//         display: 'flex', 
+//         flexDirection: 'column', 
+//         alignItems: 'center',
+//         ...sx 
+//       }}
+//     >
+//       <Box
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.zSize,
+//           fontWeight: 900,
+//           letterSpacing: '-2px',
+//           lineHeight: 0.7,
+//           marginBottom: '4px',
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent',
+//             backgroundClip: 'text',
+//             display: 'block',
+//           }}
+//         >
+//           Z
+//         </Box>
+//       </Box>
+
+//       <Typography
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.textSize,
+//           fontWeight: 400,
+//           letterSpacing: currentSize.spacing,
+//           color: '#FFFFFF',
+//           lineHeight: 1,
+//           textTransform: 'uppercase',
+//         }}
+//       >
+//         enturatech
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// const MinimalLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { zSize: '1.5rem' },
+//     medium: { zSize: '2.5rem' },
+//     large: { zSize: '4rem' }
+//   };
+
+//   const currentSize = sizes[size];
+
+//   return (
+//     <Box sx={{ ...sx }}>
+//       <Box
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: currentSize.zSize,
+//           fontWeight: 900,
+//           letterSpacing: '-2px',
+//           lineHeight: 0.7,
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent',
+//             backgroundClip: 'text',
+//             display: 'block',
+//           }}
+//         >
+//           Z
+//         </Box>
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// const ClassicLogo = ({ size = 'medium', sx = {} }) => {
+//   const sizes = {
+//     small: { fontSize: '1.2rem', spacing: '0.5px' },
+//     medium: { fontSize: '1.8rem', spacing: '1px' },
+//     large: { fontSize: '2.5rem', spacing: '1.5px' }
+//   };
+
+//   return (
+//     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
+//       <Typography
+//         sx={{
+//           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+//           fontSize: sizes[size].fontSize,
+//           fontWeight: 500,
+//           letterSpacing: sizes[size].spacing,
+//           lineHeight: 1,
+//         }}
+//       >
+//         <Box
+//           component="span"
+//           sx={{
+//             background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+//             WebkitBackgroundClip: 'text',
+//             WebkitTextFillColor: 'transparent',
+//             backgroundClip: 'text',
+//             display: 'inline-block',
+//             marginRight: '1px',
+//             fontWeight: 700,
+//           }}
+//         >
+//           Z
+//         </Box>
+//         <Box component="span" sx={{ color: '#FFFFFF' }}>
+//           enturatech
+//         </Box>
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// // Main Logo component
+// const Logo = ({ variant = 'MainLogo', size = 'medium', sx = {} }) => {
+//   switch (variant) {
+//     case 'Simple':
+//       return <SimpleLogo size={size} sx={sx} />;
+//     case 'Pink':
+//       return <PinkLogo size={size} sx={sx} />;
+//     case 'Stacked':
+//       return <StackedLogo size={size} sx={sx} />;
+//     case 'Minimal':
+//       return <MinimalLogo size={size} sx={sx} />;
+//     case 'Classic':
+//       return <ClassicLogo size={size} sx={sx} />;
+//     case 'MainLogo':
+//     default:
+//       return <MainLogo size={size} sx={sx} />;
+//   }
+// };
+
+// // Export named components
+// export {
+//   MainLogo,
+//   SimpleLogo as Simple,
+//   PinkLogo as Pink,
+//   StackedLogo as Stacked,
+//   MinimalLogo as Minimal,
+//   ClassicLogo as Classic
+// };
+
+// // Default export
+// export default Logo;
+
+
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
 // Individual logo components
 const MainLogo = ({ size = 'medium', sx = {} }) => {
   const sizes = {
-    small: { fontSize: '1.2rem', zSize: '2rem', spacing: '0.5px' },
-    medium: { fontSize: '1.8rem', zSize: '2.8rem', spacing: '1px' },
-    large: { fontSize: '2.5rem', zSize: '4rem', spacing: '1.5px' }
+    small: { fontSize: '1.2rem', zSize: '2rem' },
+    medium: { fontSize: '1.8rem', zSize: '2.8rem' },
+    large: { fontSize: '2.5rem', zSize: '4rem' }
   };
-  
+
   const currentSize = sizes[size];
-  
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
       <Box
@@ -1625,33 +1945,45 @@ const MainLogo = ({ size = 'medium', sx = {} }) => {
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.zSize,
           fontWeight: 900,
-          letterSpacing: '-1px',
           lineHeight: 0.7,
-          marginRight: '6px',
+          marginRight: '2px', // Reduced from 6px
         }}
       >
         <Box
           component="span"
           sx={{
-            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             display: 'block',
+            textShadow: '0 2px 4px rgba(207, 52, 118, 0.3)',
           }}
         >
           Z
         </Box>
       </Box>
-      
+
       <Typography
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.fontSize,
-          fontWeight: 500,
-          letterSpacing: currentSize.spacing,
+          fontWeight: 700, // Increased from 500
           color: '#FFFFFF',
           lineHeight: 1,
+          letterSpacing: '0.5px',
+          textTransform: 'Lowercase',
+          position: 'relative',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            left: '-1px',
+            bottom: '2px',
+            width: '1px',
+            height: '60%',
+            background: 'linear-gradient(to bottom, #cf3476, #fa8072)',
+            opacity: 0.7,
+          }
         }}
       >
         enturatech
@@ -1662,13 +1994,13 @@ const MainLogo = ({ size = 'medium', sx = {} }) => {
 
 const SimpleLogo = ({ size = 'medium', sx = {} }) => {
   const sizes = {
-    small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
-    medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
-    large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+    small: { fontSize: '1.2rem', zSize: '1.8rem' },
+    medium: { fontSize: '1.8rem', zSize: '2.5rem' },
+    large: { fontSize: '2.5rem', zSize: '3.5rem' }
   };
-  
+
   const currentSize = sizes[size];
-  
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
       <Box
@@ -1676,30 +2008,32 @@ const SimpleLogo = ({ size = 'medium', sx = {} }) => {
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.zSize,
           fontWeight: 900,
-          letterSpacing: '-1px',
           lineHeight: 0.7,
-          marginRight: '4px',
+          marginRight: '1px', // Reduced from 4px
         }}
       >
         <Box
           component="span"
           sx={{
-            color: '#fa8072',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
             display: 'block',
           }}
         >
           Z
         </Box>
       </Box>
-      
+
       <Typography
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.fontSize,
-          fontWeight: 500,
-          letterSpacing: currentSize.spacing,
+          fontWeight: 600,
           color: '#FFFFFF',
           lineHeight: 1,
+          letterSpacing: '0.3px',
         }}
       >
         enturatech
@@ -1710,13 +2044,13 @@ const SimpleLogo = ({ size = 'medium', sx = {} }) => {
 
 const PinkLogo = ({ size = 'medium', sx = {} }) => {
   const sizes = {
-    small: { fontSize: '1.2rem', zSize: '1.8rem', spacing: '0.5px' },
-    medium: { fontSize: '1.8rem', zSize: '2.5rem', spacing: '1px' },
-    large: { fontSize: '2.5rem', zSize: '3.5rem', spacing: '1.5px' }
+    small: { fontSize: '1.2rem', zSize: '1.8rem' },
+    medium: { fontSize: '1.8rem', zSize: '2.5rem' },
+    large: { fontSize: '2.5rem', zSize: '3.5rem' }
   };
-  
+
   const currentSize = sizes[size];
-  
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
       <Box
@@ -1724,30 +2058,46 @@ const PinkLogo = ({ size = 'medium', sx = {} }) => {
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.zSize,
           fontWeight: 900,
-          letterSpacing: '-1px',
           lineHeight: 0.7,
-          marginRight: '4px',
+          marginRight: '1px', // Reduced from 4px
+          position: 'relative',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            right: '-1px',
+            top: '20%',
+            width: '1px',
+            height: '60%',
+            background: '#fa8072',
+            opacity: 0.5,
+          }
         }}
       >
         <Box
           component="span"
           sx={{
-            color: '#fa8072',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
             display: 'block',
+            padding: '0 1px',
           }}
         >
           Z
         </Box>
       </Box>
-      
+
       <Typography
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.fontSize,
-          fontWeight: 500,
-          letterSpacing: currentSize.spacing,
+          fontWeight: 600,
+          letterSpacing: '0.3px',
           color: '#FFFFFF',
           lineHeight: 1,
+          position: 'relative',
+          paddingLeft: '2px',
         }}
       >
         enturatech
@@ -1758,20 +2108,20 @@ const PinkLogo = ({ size = 'medium', sx = {} }) => {
 
 const StackedLogo = ({ size = 'medium', sx = {} }) => {
   const sizes = {
-    small: { zSize: '2.5rem', textSize: '0.8rem', spacing: '1px' },
-    medium: { zSize: '3.5rem', textSize: '1.1rem', spacing: '1.5px' },
-    large: { zSize: '5rem', textSize: '1.5rem', spacing: '2px' }
+    small: { zSize: '2.5rem', textSize: '0.8rem' },
+    medium: { zSize: '3.5rem', textSize: '1.1rem' },
+    large: { zSize: '5rem', textSize: '1.5rem' }
   };
-  
+
   const currentSize = sizes[size];
-  
+
   return (
-    <Box 
-      sx={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
-        ...sx 
+        ...sx
       }}
     >
       <Box
@@ -1781,32 +2131,48 @@ const StackedLogo = ({ size = 'medium', sx = {} }) => {
           fontWeight: 900,
           letterSpacing: '-2px',
           lineHeight: 0.7,
-          marginBottom: '4px',
+          marginBottom: '2px', // Reduced from 4px
         }}
       >
         <Box
           component="span"
           sx={{
-            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             display: 'block',
+            textShadow: '0 3px 6px rgba(207, 52, 118, 0.4)',
           }}
         >
           Z
         </Box>
       </Box>
-      
+
       <Typography
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: currentSize.textSize,
-          fontWeight: 400,
-          letterSpacing: currentSize.spacing,
+          fontWeight: 600,
+          letterSpacing: '1px',
           color: '#FFFFFF',
           lineHeight: 1,
           textTransform: 'uppercase',
+          position: 'relative',
+          '&::before, &::after': {
+            content: '""',
+            position: 'absolute',
+            top: '50%',
+            width: '8px',
+            height: '1px',
+            background: 'linear-gradient(90deg, transparent, #cf3476, transparent)',
+          },
+          '&::before': {
+            left: '-12px',
+          },
+          '&::after': {
+            right: '-12px',
+          }
         }}
       >
         enturatech
@@ -1821,11 +2187,11 @@ const MinimalLogo = ({ size = 'medium', sx = {} }) => {
     medium: { zSize: '2.5rem' },
     large: { zSize: '4rem' }
   };
-  
+
   const currentSize = sizes[size];
-  
+
   return (
-    <Box sx={{ ...sx }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
       <Box
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
@@ -1833,16 +2199,33 @@ const MinimalLogo = ({ size = 'medium', sx = {} }) => {
           fontWeight: 900,
           letterSpacing: '-2px',
           lineHeight: 0.7,
+          marginRight: '2px',
+          position: 'relative',
+          '&::after': {
+            content: '"ENTURATECH"',
+            position: 'absolute',
+            left: 'calc(100% + 2px)',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+            fontSize: currentSize.zSize * 0.4,
+            fontWeight: 700,
+            color: '#FFFFFF',
+            letterSpacing: '0.8px',
+            textTransform: 'uppercase',
+            whiteSpace: 'nowrap',
+          }
         }}
       >
         <Box
           component="span"
           sx={{
-            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             display: 'block',
+            textShadow: '0 2px 4px rgba(207, 52, 118, 0.3)',
           }}
         >
           Z
@@ -1854,37 +2237,44 @@ const MinimalLogo = ({ size = 'medium', sx = {} }) => {
 
 const ClassicLogo = ({ size = 'medium', sx = {} }) => {
   const sizes = {
-    small: { fontSize: '1.2rem', spacing: '0.5px' },
-    medium: { fontSize: '1.8rem', spacing: '1px' },
-    large: { fontSize: '2.5rem', spacing: '1.5px' }
+    small: { fontSize: '1.2rem' },
+    medium: { fontSize: '1.8rem' },
+    large: { fontSize: '2.5rem' }
   };
-  
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', ...sx }}>
       <Typography
         sx={{
           fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
           fontSize: sizes[size].fontSize,
-          fontWeight: 500,
-          letterSpacing: sizes[size].spacing,
+          fontWeight: 600,
           lineHeight: 1,
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <Box
           component="span"
           sx={{
-            background: 'linear-gradient(135deg, #8A2BE2 0%, #FF2D55 100%)',
+            background: 'linear-gradient(135deg, #cf3476 0%, #fa8072 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
             display: 'inline-block',
             marginRight: '1px',
-            fontWeight: 700,
+            fontWeight: 900,
+            fontSize: sizes[size].fontSize * 1.2,
+            lineHeight: 0.7,
           }}
         >
           Z
         </Box>
-        <Box component="span" sx={{ color: '#FFFFFF' }}>
+        <Box component="span" sx={{
+          color: '#FFFFFF',
+          marginLeft: '0px', // Removed spacing
+          letterSpacing: '0.3px',
+        }}>
           enturatech
         </Box>
       </Typography>
@@ -1892,8 +2282,101 @@ const ClassicLogo = ({ size = 'medium', sx = {} }) => {
   );
 };
 
+// Modern Attractive Logo
+const ModernLogo = ({ size = 'medium', sx = {} }) => {
+  const sizes = {
+    small: { fontSize: '1.1rem', zSize: '1.6rem', glowsize: '3px' },
+    medium: { fontSize: '1.6rem', zSize: '2.4rem', glowsize: '5px' },
+    large: { fontSize: '2.2rem', zSize: '3.5rem', glowsize: '8px' }
+  };
+
+  const currentSize = sizes[size];
+
+  return (
+    <Box sx={{
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative',
+      ...sx
+    }}>
+      {/* Glow effect behind Z */}
+      <Box
+        sx={{
+          position: 'absolute',
+          left: '-4px',
+          top: '-4px',
+          width: currentSize.zSize,
+          height: currentSize.zSize,
+          background: 'radial-gradient(circle, rgba(207, 52, 118, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(4px)',
+          zIndex: 0,
+        }}
+      />
+
+      {/* Z with gradient border effect */}
+      <Box
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.zSize,
+          fontWeight: 900,
+          lineHeight: 0.7,
+          marginRight: '0px', // No spacing
+          position: 'relative',
+          zIndex: 1,
+          padding: '2px',
+          background: 'linear-gradient(45deg, #cf3476, #fa8072)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          textShadow: `0 0 ${currentSize.glowsize} rgba(207, 52, 118, 0.5)`,
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: '-2px',
+            background: 'linear-gradient(45deg, #cf3476, #fa8072, #cf3476)',
+            borderRadius: '4px',
+            zIndex: -1,
+            opacity: 0.3,
+            filter: 'blur(2px)',
+          }
+        }}
+      >
+        Z
+      </Box>
+
+      <Typography
+        sx={{
+          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+          fontSize: currentSize.fontSize,
+          fontWeight: 700,
+          color: '#FFFFFF',
+          lineHeight: 1,
+          letterSpacing: '0.8px',
+          textTransform: 'uppercase',
+          position: 'relative',
+          paddingLeft: '2px',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            left: '0',
+            bottom: '0',
+            width: '100%',
+            height: '2px',
+            background: 'linear-gradient(90deg, #cf3476, #fa8072)',
+            borderRadius: '1px',
+            opacity: 0.7,
+          }
+        }}
+      >
+        enturatech
+      </Typography>
+    </Box>
+  );
+};
+
 // Main Logo component
-const Logo = ({ variant = 'MainLogo', size = 'medium', sx = {} }) => {
+const Logo = ({ variant = 'Modern', size = 'medium', sx = {} }) => {
   switch (variant) {
     case 'Simple':
       return <SimpleLogo size={size} sx={sx} />;
@@ -1906,14 +2389,17 @@ const Logo = ({ variant = 'MainLogo', size = 'medium', sx = {} }) => {
     case 'Classic':
       return <ClassicLogo size={size} sx={sx} />;
     case 'MainLogo':
-    default:
       return <MainLogo size={size} sx={sx} />;
+    case 'Modern':
+    default:
+      return <ModernLogo size={size} sx={sx} />;
   }
 };
 
 // Export named components
 export {
   MainLogo,
+  ModernLogo as Modern,
   SimpleLogo as Simple,
   PinkLogo as Pink,
   StackedLogo as Stacked,

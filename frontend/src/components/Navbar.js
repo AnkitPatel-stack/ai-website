@@ -6241,6 +6241,548 @@
 // export default Navbar;
 
 
+// import React, { useState, useEffect } from 'react';
+// import {
+//   AppBar,
+//   Toolbar,
+//   Container,
+//   Button,
+//   Box,
+//   IconButton,
+//   Drawer,
+//   List,
+//   ListItem,
+//   ListItemText,
+//   Typography,
+//   Avatar,
+//   Menu,
+//   MenuItem,
+// } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import CloseIcon from '@mui/icons-material/Close';
+// import DashboardIcon from '@mui/icons-material/Dashboard';
+// import LogoutIcon from '@mui/icons-material/Logout';
+// import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { useAuth } from '../contexts/AuthContext';
+// import Logo from '../components/Logo';
+
+// const Navbar = () => {
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [anchorEl, setAnchorEl] = useState(null);
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   const { user, logout, isAuthenticated } = useAuth();
+
+//   const navItems = [
+//     { label: 'Home', path: '/', section: 'hero' },
+//     { label: 'About', path: '/about', section: 'about' },
+//     { label: 'Services', path: '/services', section: 'services' },
+//     { label: 'Team', path: '/team', section: 'team' },
+//     { label: 'Contact', path: '/contact', section: 'contact' },
+//   ];
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 10);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   const handleDrawerToggle = () => {
+//     setMobileOpen(!mobileOpen);
+//   };
+
+//   const handleMenuOpen = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+
+//   const handleMenuClose = () => {
+//     setAnchorEl(null);
+//   };
+
+//   const handleLogout = () => {
+//     logout();
+//     handleMenuClose();
+//     navigate('/');
+//   };
+
+//   const handleNavClick = (path, section = null) => {
+//     if (section && location.pathname === '/') {
+//       const element = document.getElementById(section);
+//       if (element) {
+//         const yOffset = -70;
+//         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//         window.scrollTo({ top: y, behavior: 'smooth' });
+//       }
+//     } else if (section) {
+//       navigate(`/#${section}`);
+//       setTimeout(() => {
+//         const element = document.getElementById(section);
+//         if (element) {
+//           const yOffset = -70;
+//           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//         }
+//       }, 100);
+//     } else {
+//       navigate(path);
+//     }
+//     setMobileOpen(false);
+//   };
+
+//   const handleAdminLogin = () => {
+//     navigate('/admin/login');
+//     setMobileOpen(false);
+//   };
+
+//   const drawer = (
+//     <Box sx={{ 
+//       width: 320, 
+//       height: '100%', 
+//       bgcolor: '#0A0A0F',
+//       position: 'relative',
+//       overflow: 'hidden'
+//     }}>
+//       <Box sx={{ 
+//         p: 3, 
+//         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+//       }}>
+//         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+//           <Logo variant="MainLogo" size="medium" />
+//           <IconButton onClick={handleDrawerToggle} sx={{ 
+//             color: '#8A2BE2',
+//             '&:hover': { bgcolor: 'rgba(138, 43, 226, 0.1)' }
+//           }}>
+//             <CloseIcon />
+//           </IconButton>
+//         </Box>
+//       </Box>
+      
+//       <List sx={{ p: 3 }}>
+//         {navItems.map((item, index) => (
+//           <motion.div
+//             key={item.label}
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.3, delay: index * 0.05 }}
+//           >
+//             <ListItem
+//               component="button"
+//               onClick={() => handleNavClick(item.path, item.section)}
+//               sx={{
+//                 py: 2,
+//                 borderRadius: 1,
+//                 mb: 1,
+//                 bgcolor: (location.pathname === item.path || 
+//                          (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                          ? 'rgba(138, 43, 226, 0.1)' : 'transparent',
+//                 border: '1px solid',
+//                 borderColor: (location.pathname === item.path || 
+//                             (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                             ? '#8A2BE2' : 'rgba(255,255,255,0.1)',
+//                 transition: 'all 0.3s ease',
+//                 '&:hover': {
+//                   borderColor: '#8A2BE2',
+//                   bgcolor: 'rgba(138, 43, 226, 0.05)',
+//                 },
+//               }}
+//             >
+//               <ListItemText 
+//                 primary={item.label} 
+//                 primaryTypographyProps={{
+//                   fontWeight: 500,
+//                   fontSize: '1rem',
+//                   color: (location.pathname === item.path || 
+//                          (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                          ? '#FFFFFF' : '#A0A0A0'
+//                 }}
+//               />
+//             </ListItem>
+//           </motion.div>
+//         ))}
+        
+//         {/* Admin Login Option */}
+//         {!isAuthenticated && (
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.3, delay: navItems.length * 0.05 }}
+//           >
+//             <ListItem
+//               component="button"
+//               onClick={handleAdminLogin}
+//               sx={{
+//                 py: 2,
+//                 borderRadius: 1,
+//                 mb: 1,
+//                 bgcolor: 'rgba(138, 43, 226, 0.1)',
+//                 border: '1px solid #8A2BE2',
+//                 transition: 'all 0.3s ease',
+//                 '&:hover': {
+//                   bgcolor: 'rgba(138, 43, 226, 0.2)',
+//                 },
+//               }}
+//             >
+//               <ListItemText 
+//                 primary="Admin Login" 
+//                 primaryTypographyProps={{
+//                   fontWeight: 500,
+//                   color: '#8A2BE2'
+//                 }}
+//               />
+//             </ListItem>
+//           </motion.div>
+//         )}
+
+//         {isAuthenticated && user?.role === 'admin' && (
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.3, delay: navItems.length * 0.05 }}
+//           >
+//             <ListItem
+//               component="button"
+//               onClick={() => handleNavClick('/admin')}
+//               sx={{
+//                 py: 2,
+//                 borderRadius: 1,
+//                 mb: 1,
+//                 bgcolor: 'rgba(138, 43, 226, 0.1)',
+//                 border: '1px solid #8A2BE2',
+//                 transition: 'all 0.3s ease',
+//                 '&:hover': {
+//                   bgcolor: 'rgba(138, 43, 226, 0.2)',
+//                 },
+//               }}
+//             >
+//               <ListItemText 
+//                 primary="Admin Dashboard" 
+//                 primaryTypographyProps={{
+//                   fontWeight: 500,
+//                   color: '#8A2BE2'
+//                 }}
+//               />
+//             </ListItem>
+//           </motion.div>
+//         )}
+//       </List>
+      
+//       {/* Mobile Drawer Buttons */}
+//       {!isAuthenticated && (
+//         <Box sx={{ p: 3 }}>
+//           <Button
+//             fullWidth
+//             variant="contained"
+//             onClick={handleAdminLogin}
+//             sx={{
+//               bgcolor: '#8A2BE2',
+//               color: '#FFFFFF',
+//               fontWeight: 500,
+//               py: 1.5,
+//               '&:hover': {
+//                 bgcolor: '#7A1BD2',
+//               }
+//             }}
+//           >
+//             Admin Login
+//           </Button>
+//         </Box>
+//       )}
+      
+//       {/* User Info in Drawer */}
+//       {isAuthenticated && (
+//         <Box sx={{ p: 3, mt: 'auto' }}>
+//           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, gap: 2 }}>
+//             <Avatar
+//               sx={{
+//                 width: 40,
+//                 height: 40,
+//                 bgcolor: '#8A2BE2',
+//                 color: '#FFFFFF',
+//                 fontWeight: 600,
+//               }}
+//             >
+//               {user?.name?.charAt(0) || 'U'}
+//             </Avatar>
+//             <Box>
+//               <Typography variant="body1" sx={{ color: '#FFFFFF', fontWeight: 500 }}>
+//                 {user?.name || 'User'}
+//               </Typography>
+//               <Typography variant="caption" sx={{ color: '#A0A0A0' }}>
+//                 {user?.email}
+//               </Typography>
+//             </Box>
+//           </Box>
+//           <Button
+//             fullWidth
+//             variant="outlined"
+//             startIcon={<LogoutIcon />}
+//             onClick={handleLogout}
+//             sx={{
+//               borderColor: '#8A2BE2',
+//               color: '#8A2BE2',
+//               fontWeight: 500,
+//               py: 1,
+//               '&:hover': {
+//                 borderColor: '#7A1BD2',
+//                 color: '#7A1BD2',
+//                 bgcolor: 'rgba(138, 43, 226, 0.1)',
+//               }
+//             }}
+//           >
+//             Logout
+//           </Button>
+//         </Box>
+//       )}
+//     </Box>
+//   );
+
+//   return (
+//     <>
+//       <AppBar
+//         position="fixed"
+//         sx={{
+//           bgcolor: scrolled ? '#0A0A0F' : 'rgba(10, 10, 15, 0.95)',
+//           transition: 'all 0.3s ease',
+//           boxShadow: scrolled ? '0 2px 10px rgba(0, 0, 0, 0.2)' : 'none',
+//           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+//           zIndex: 9999,
+//         }}
+//       >
+//         <Container maxWidth="xl">
+//           <Toolbar disableGutters sx={{ 
+//             py: 1,
+//             minHeight: '70px',
+//           }}>
+//             {/* Logo */}
+//             <Box
+//               component={RouterLink}
+//               to="/"
+//               sx={{
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 textDecoration: 'none',
+//                 mr: 4,
+//               }}
+//             >
+//               <Logo variant="MainLogo" size="medium" />
+//             </Box>
+
+//             {/* Desktop Navigation */}
+//             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 1, ml: 4 }}>
+//               {navItems.map((item, index) => (
+//                 <Button
+//                   key={item.label}
+//                   onClick={() => handleNavClick(item.path, item.section)}
+//                   sx={{
+//                     color: (location.pathname === item.path || 
+//                            (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                            ? '#FFFFFF' : '#A0A0A0',
+//                     position: 'relative',
+//                     px: 2.5,
+//                     fontWeight: 500,
+//                     fontSize: '0.95rem',
+//                     letterSpacing: '0.3px',
+//                     transition: 'all 0.3s ease',
+//                     '&::after': {
+//                       content: '""',
+//                       position: 'absolute',
+//                       bottom: 0,
+//                       left: '50%',
+//                       transform: 'translateX(-50%)',
+//                       width: (location.pathname === item.path || 
+//                              (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
+//                              ? '60%' : '0%',
+//                       height: '2px',
+//                       bgcolor: '#8A2BE2',
+//                       borderRadius: '1px',
+//                       transition: 'width 0.3s ease',
+//                     },
+//                     '&:hover': {
+//                       color: '#FFFFFF',
+//                       '&::after': {
+//                         width: '60%',
+//                         bgcolor: '#8A2BE2',
+//                       }
+//                     }
+//                   }}
+//                 >
+//                   {item.label}
+//                 </Button>
+//               ))}
+//             </Box>
+
+//             {/* Right Section */}
+//             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, ml: 'auto' }}>
+//               {isAuthenticated ? (
+//                 <>
+//                   <IconButton onClick={handleMenuOpen} size="small" sx={{
+//                     border: '1px solid rgba(138, 43, 226, 0.3)',
+//                     '&:hover': {
+//                       borderColor: '#8A2BE2',
+//                     }
+//                   }}>
+//                     <Avatar
+//                       sx={{
+//                         width: 32,
+//                         height: 32,
+//                         bgcolor: '#8A2BE2',
+//                         color: '#FFFFFF',
+//                         fontWeight: 600,
+//                       }}
+//                     >
+//                       {user?.name?.charAt(0) || 'U'}
+//                     </Avatar>
+//                   </IconButton>
+//                   <Menu
+//                     anchorEl={anchorEl}
+//                     open={Boolean(anchorEl)}
+//                     onClose={handleMenuClose}
+//                     PaperProps={{
+//                       sx: {
+//                         mt: 1.5,
+//                         minWidth: 200,
+//                         bgcolor: '#0A0A0F',
+//                         border: '1px solid rgba(255, 255, 255, 0.1)',
+//                         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+//                         '& .MuiMenuItem-root': {
+//                           color: '#FFFFFF',
+//                           py: 1,
+//                           fontSize: '0.9rem',
+//                           '&:hover': {
+//                             bgcolor: 'rgba(138, 43, 226, 0.1)',
+//                           }
+//                         }
+//                       },
+//                     }}
+//                   >
+//                     <MenuItem disabled sx={{ opacity: 0.7, py: 1 }}>
+//                       <Typography variant="body2" sx={{ color: '#A0A0A0', fontSize: '0.8rem' }}>
+//                         {user?.email}
+//                       </Typography>
+//                     </MenuItem>
+//                     {user?.role === 'admin' && (
+//                       <MenuItem onClick={() => handleNavClick('/admin')}>
+//                         <DashboardIcon sx={{ mr: 2, fontSize: 18, color: '#8A2BE2' }} />
+//                         <Typography sx={{ color: '#8A2BE2' }}>Admin Dashboard</Typography>
+//                       </MenuItem>
+//                     )}
+//                     <MenuItem onClick={handleLogout} sx={{ color: '#8A2BE2' }}>
+//                       <LogoutIcon sx={{ mr: 2, fontSize: 18 }} />
+//                       Logout
+//                     </MenuItem>
+//                   </Menu>
+//                 </>
+//               ) : (
+//                 <>
+//                   {/* Admin Login Button */}
+//                   <Button
+//                     variant="outlined"
+//                     onClick={handleAdminLogin}
+//                     sx={{ 
+//                       display: { xs: 'none', md: 'flex' },
+//                       borderColor: '#8A2BE2',
+//                       color: '#8A2BE2',
+//                       fontWeight: 500,
+//                       fontSize: '0.9rem',
+//                       px: 2.5,
+//                       py: 0.6,
+//                       '&:hover': {
+//                         borderColor: '#7A1BD2',
+//                         color: '#7A1BD2',
+//                         bgcolor: 'rgba(138, 43, 226, 0.1)',
+//                       }
+//                     }}
+//                   >
+//                     Admin Login
+//                   </Button>
+
+//                   {/* Contact Button */}
+//                   <Button
+//                     variant="contained"
+//                     onClick={() => navigate('/contact')}
+//                     sx={{ 
+//                       display: { xs: 'none', md: 'flex' },
+//                       bgcolor: '#8A2BE2',
+//                       color: '#FFFFFF',
+//                       fontWeight: 500,
+//                       fontSize: '0.9rem',
+//                       px: 2.5,
+//                       py: 0.6,
+//                       '&:hover': {
+//                         bgcolor: '#7A1BD2',
+//                       }
+//                     }}
+//                   >
+//                     Contact Us
+//                   </Button>
+//                 </>
+//               )}
+
+//               {/* Mobile Menu Button */}
+//               <IconButton
+//                 onClick={handleDrawerToggle}
+//                 sx={{ 
+//                   display: { md: 'none' }, 
+//                   color: '#FFFFFF',
+//                   '&:hover': {
+//                     bgcolor: 'rgba(255, 255, 255, 0.1)',
+//                   }
+//                 }}
+//               >
+//                 <MenuIcon />
+//               </IconButton>
+//             </Box>
+//           </Toolbar>
+//         </Container>
+//       </AppBar>
+
+//       {/* Mobile Drawer */}
+//       <AnimatePresence>
+//         {mobileOpen && (
+//           <motion.div
+//             initial={{ x: '100%' }}
+//             animate={{ x: 0 }}
+//             exit={{ x: '100%' }}
+//             transition={{ type: 'spring', damping: 25 }}
+//             style={{
+//               position: 'fixed',
+//               top: 0,
+//               right: 0,
+//               bottom: 0,
+//               zIndex: 1300,
+//             }}
+//           >
+//             <Drawer
+//               variant="temporary"
+//               anchor="right"
+//               open={mobileOpen}
+//               onClose={handleDrawerToggle}
+//               ModalProps={{ keepMounted: true }}
+//               sx={{
+//                 display: { xs: 'block', md: 'none' },
+//                 '& .MuiDrawer-paper': { 
+//                   boxSizing: 'border-box', 
+//                   width: 320,
+//                   border: 'none'
+//                 },
+//               }}
+//             >
+//               {drawer}
+//             </Drawer>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState, useEffect } from 'react';
 import {
   AppBar,
@@ -6274,6 +6816,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout, isAuthenticated } = useAuth();
+
+  // Color constants
+  const telemagenta = '#cf3476';
+  const salmon = '#fa8072';
+  const telemagentaHover = '#d94b8a';
+  const salmonHover = '#fb9488';
 
   const navItems = [
     { label: 'Home', path: '/', section: 'hero' },
@@ -6353,8 +6901,8 @@ const Navbar = () => {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Logo variant="MainLogo" size="medium" />
           <IconButton onClick={handleDrawerToggle} sx={{ 
-            color: '#8A2BE2',
-            '&:hover': { bgcolor: 'rgba(138, 43, 226, 0.1)' }
+            color: telemagenta,
+            '&:hover': { bgcolor: `rgba(207, 52, 118, 0.1)` }
           }}>
             <CloseIcon />
           </IconButton>
@@ -6378,15 +6926,15 @@ const Navbar = () => {
                 mb: 1,
                 bgcolor: (location.pathname === item.path || 
                          (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                         ? 'rgba(138, 43, 226, 0.1)' : 'transparent',
+                         ? `rgba(207, 52, 118, 0.1)` : 'transparent',
                 border: '1px solid',
                 borderColor: (location.pathname === item.path || 
                             (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
-                            ? '#8A2BE2' : 'rgba(255,255,255,0.1)',
+                            ? telemagenta : 'rgba(255,255,255,0.1)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  borderColor: '#8A2BE2',
-                  bgcolor: 'rgba(138, 43, 226, 0.05)',
+                  borderColor: salmon,
+                  bgcolor: `rgba(250, 128, 114, 0.05)`,
                 },
               }}
             >
@@ -6418,11 +6966,12 @@ const Navbar = () => {
                 py: 2,
                 borderRadius: 1,
                 mb: 1,
-                bgcolor: 'rgba(138, 43, 226, 0.1)',
-                border: '1px solid #8A2BE2',
+                bgcolor: `rgba(207, 52, 118, 0.1)`,
+                border: `1px solid ${telemagenta}`,
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  bgcolor: 'rgba(138, 43, 226, 0.2)',
+                  bgcolor: `rgba(207, 52, 118, 0.2)`,
+                  borderColor: telemagentaHover,
                 },
               }}
             >
@@ -6430,7 +6979,7 @@ const Navbar = () => {
                 primary="Admin Login" 
                 primaryTypographyProps={{
                   fontWeight: 500,
-                  color: '#8A2BE2'
+                  color: telemagenta
                 }}
               />
             </ListItem>
@@ -6450,11 +6999,12 @@ const Navbar = () => {
                 py: 2,
                 borderRadius: 1,
                 mb: 1,
-                bgcolor: 'rgba(138, 43, 226, 0.1)',
-                border: '1px solid #8A2BE2',
+                bgcolor: `rgba(207, 52, 118, 0.1)`,
+                border: `1px solid ${telemagenta}`,
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  bgcolor: 'rgba(138, 43, 226, 0.2)',
+                  bgcolor: `rgba(207, 52, 118, 0.2)`,
+                  borderColor: telemagentaHover,
                 },
               }}
             >
@@ -6462,7 +7012,7 @@ const Navbar = () => {
                 primary="Admin Dashboard" 
                 primaryTypographyProps={{
                   fontWeight: 500,
-                  color: '#8A2BE2'
+                  color: telemagenta
                 }}
               />
             </ListItem>
@@ -6473,21 +7023,40 @@ const Navbar = () => {
       {/* Mobile Drawer Buttons */}
       {!isAuthenticated && (
         <Box sx={{ p: 3 }}>
-          <Button
+          {/* <Button
             fullWidth
             variant="contained"
             onClick={handleAdminLogin}
             sx={{
-              bgcolor: '#8A2BE2',
+              bgcolor: telemagenta,
               color: '#FFFFFF',
               fontWeight: 500,
               py: 1.5,
               '&:hover': {
-                bgcolor: '#7A1BD2',
+                bgcolor: telemagentaHover,
               }
             }}
           >
             Admin Login
+          </Button> */}
+          <Button
+            fullWidth
+            variant="outlined"
+            onClick={() => navigate('/contact')}
+            sx={{
+              mt: 2,
+              borderColor: salmon,
+              color: salmon,
+              fontWeight: 500,
+              py: 1.5,
+              '&:hover': {
+                borderColor: salmonHover,
+                color: salmonHover,
+                bgcolor: `rgba(250, 128, 114, 0.1)`,
+              }
+            }}
+          >
+            Contact Us
           </Button>
         </Box>
       )}
@@ -6500,7 +7069,7 @@ const Navbar = () => {
               sx={{
                 width: 40,
                 height: 40,
-                bgcolor: '#8A2BE2',
+                bgcolor: telemagenta,
                 color: '#FFFFFF',
                 fontWeight: 600,
               }}
@@ -6522,14 +7091,14 @@ const Navbar = () => {
             startIcon={<LogoutIcon />}
             onClick={handleLogout}
             sx={{
-              borderColor: '#8A2BE2',
-              color: '#8A2BE2',
+              borderColor: salmon,
+              color: salmon,
               fontWeight: 500,
               py: 1,
               '&:hover': {
-                borderColor: '#7A1BD2',
-                color: '#7A1BD2',
-                bgcolor: 'rgba(138, 43, 226, 0.1)',
+                borderColor: salmonHover,
+                color: salmonHover,
+                bgcolor: `rgba(250, 128, 114, 0.1)`,
               }
             }}
           >
@@ -6597,7 +7166,7 @@ const Navbar = () => {
                              (location.pathname === '/' && window.location.hash === `#${item.section}`)) 
                              ? '60%' : '0%',
                       height: '2px',
-                      bgcolor: '#8A2BE2',
+                      bgcolor: telemagenta,
                       borderRadius: '1px',
                       transition: 'width 0.3s ease',
                     },
@@ -6605,7 +7174,7 @@ const Navbar = () => {
                       color: '#FFFFFF',
                       '&::after': {
                         width: '60%',
-                        bgcolor: '#8A2BE2',
+                        bgcolor: salmon,
                       }
                     }
                   }}
@@ -6620,16 +7189,16 @@ const Navbar = () => {
               {isAuthenticated ? (
                 <>
                   <IconButton onClick={handleMenuOpen} size="small" sx={{
-                    border: '1px solid rgba(138, 43, 226, 0.3)',
+                    border: `1px solid ${telemagenta}33`,
                     '&:hover': {
-                      borderColor: '#8A2BE2',
+                      borderColor: telemagenta,
                     }
                   }}>
                     <Avatar
                       sx={{
                         width: 32,
                         height: 32,
-                        bgcolor: '#8A2BE2',
+                        bgcolor: telemagenta,
                         color: '#FFFFFF',
                         fontWeight: 600,
                       }}
@@ -6653,7 +7222,7 @@ const Navbar = () => {
                           py: 1,
                           fontSize: '0.9rem',
                           '&:hover': {
-                            bgcolor: 'rgba(138, 43, 226, 0.1)',
+                            bgcolor: `rgba(207, 52, 118, 0.1)`,
                           }
                         }
                       },
@@ -6666,11 +7235,11 @@ const Navbar = () => {
                     </MenuItem>
                     {user?.role === 'admin' && (
                       <MenuItem onClick={() => handleNavClick('/admin')}>
-                        <DashboardIcon sx={{ mr: 2, fontSize: 18, color: '#8A2BE2' }} />
-                        <Typography sx={{ color: '#8A2BE2' }}>Admin Dashboard</Typography>
+                        <DashboardIcon sx={{ mr: 2, fontSize: 18, color: telemagenta }} />
+                        <Typography sx={{ color: telemagenta }}>Admin Dashboard</Typography>
                       </MenuItem>
                     )}
-                    <MenuItem onClick={handleLogout} sx={{ color: '#8A2BE2' }}>
+                    <MenuItem onClick={handleLogout} sx={{ color: salmon }}>
                       <LogoutIcon sx={{ mr: 2, fontSize: 18 }} />
                       Logout
                     </MenuItem>
@@ -6679,26 +7248,26 @@ const Navbar = () => {
               ) : (
                 <>
                   {/* Admin Login Button */}
-                  <Button
+                  {/* <Button
                     variant="outlined"
                     onClick={handleAdminLogin}
                     sx={{ 
                       display: { xs: 'none', md: 'flex' },
-                      borderColor: '#8A2BE2',
-                      color: '#8A2BE2',
+                      borderColor: telemagenta,
+                      color: telemagenta,
                       fontWeight: 500,
                       fontSize: '0.9rem',
                       px: 2.5,
                       py: 0.6,
                       '&:hover': {
-                        borderColor: '#7A1BD2',
-                        color: '#7A1BD2',
-                        bgcolor: 'rgba(138, 43, 226, 0.1)',
+                        borderColor: telemagentaHover,
+                        color: telemagentaHover,
+                        bgcolor: `rgba(207, 52, 118, 0.1)`,
                       }
                     }}
                   >
                     Admin Login
-                  </Button>
+                  </Button> */}
 
                   {/* Contact Button */}
                   <Button
@@ -6706,14 +7275,14 @@ const Navbar = () => {
                     onClick={() => navigate('/contact')}
                     sx={{ 
                       display: { xs: 'none', md: 'flex' },
-                      bgcolor: '#8A2BE2',
+                      bgcolor: salmon,
                       color: '#FFFFFF',
                       fontWeight: 500,
                       fontSize: '0.9rem',
                       px: 2.5,
                       py: 0.6,
                       '&:hover': {
-                        bgcolor: '#7A1BD2',
+                        bgcolor: salmonHover,
                       }
                     }}
                   >
@@ -6729,7 +7298,7 @@ const Navbar = () => {
                   display: { md: 'none' }, 
                   color: '#FFFFFF',
                   '&:hover': {
-                    bgcolor: 'rgba(255, 255, 255, 0.1)',
+                    bgcolor: `rgba(207, 52, 118, 0.1)`,
                   }
                 }}
               >
